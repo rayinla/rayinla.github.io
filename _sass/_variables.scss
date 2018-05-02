@@ -25,3 +25,10 @@ $georgia: Georgia, serif;
     @content;
   }
 }
+
+//Shadows
+
+$close-shadow: 2px 3px 5px 0px rgba(0,0,0,0.75);
+$btm-shadow: 0px 3px 5px -2px rgba(0,0,0,0.75);
+$blr-shadow: 6px -2px 23px -4px rgba(0,0,0,0.75);
+$flp-shadow: 6px -2px 8px -4px rgba(0,0,0,0.75);

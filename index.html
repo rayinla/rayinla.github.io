@@ -4,14 +4,13 @@ layout: default
 <div class="p-container">
 <div class="posts">
   {% for post in site.posts %}
+   <a href="{{ site.baseurl }}{{ post.url }}">
     <article class="post">
       <img src="{{ site.baseurl }}/images/{{post.image}}" />
-      <h1><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h1> 
-      <div class="entry">
-        {{ post.excerpt }}
-      </div>
-      <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read More</a>
+      <h1>{{ post.title }}</h1> 
+      <!-- <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read More</a> -->
     </article>
+   </a>
   {% endfor %}
 </div>
 </div>

@@ -4,10 +4,12 @@
 
    var $dragBlocks = $('.how-blk li, .to-blk li, .code-blk li, .js-blk li');
 
-    $(window).on('load', function(){
-      wobbleBlks.addClass('.animateBlk');
-    });
+   var codeBlkOne = $('.code-blk li:nth-of-type(1)');
 
+   var $window = $('window');
+   $window.on('load', function(){
+     codeBlkOne.css({top: '60px'});
+   })
     $dragBlocks.draggable({
       cursor: 'move',
       stack: 'ul li',
