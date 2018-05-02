@@ -1,18 +1,29 @@
 ---
-layout: default
+layout: sticky
 ---
 
-<article class="post">
 
-  <h1>{{ page.title }}</h1>
+<div id="main" role="main" class="fp-container wrapper">
+	<article  class="post">
+	  <h1>{{ page.title }}</h1>
+	  <div class="entry">
+	    {{ content }}
+	  </div>
+	  <div class="date">
+	    Written on {{ page.date | date: "%B %e, %Y" }}
+	  </div>
+	  {% include disqus.html %}
+	</article>
+	<aside class="sidebar">
+	{% for post in site.posts %}
+    <article class="side-card">
+      <img src="{{ site.baseurl }}/images/{{post.image}}" />
+      <h1><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h1> 
+      <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read More</a>
+    </article>
+  {% endfor %}
+   </aside>
+</div>
 
-  <div class="entry">
-    {{ content }}
-  </div>
 
-  <div class="date">
-    Written on {{ page.date | date: "%B %e, %Y" }}
-  </div>
 
-  {% include disqus.html %}
-</article>

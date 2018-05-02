@@ -8,46 +8,63 @@
     <!--[if lt IE 9]>
       <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-
+    
     <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/style.css" />
+    <link rel="stylesheet" type="text/css" href="http://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css"/>
     <link rel="alternate" type="application/rss+xml" title="{{ site.name }} - {{ site.description }}" href="{{ site.baseurl }}/feed.xml" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="https://rawgit.com/alvarotrigo/fullPage.js/master/jquery.fullPage.css" />
 
     <!-- Created with Jekyll Now - http://github.com/barryclark/jekyll-now -->
   </head>
+  <body> 
+    <div id="fullpage">
+    <div class="section">
+      <div id="hero" >
+        <div class="site-info">
+           <img class="site-logo" src="{{site.baseurl}}/images/hjslogosm.png" />   
+           <ul class='how-blk'>
+             <li>H</li>
+             <li>o</li>
+             <li>w</li>
+           </ul>
+          
+           <ul class="to-blk">
+             <li>T</li>
+             <li>o</li>
+           </ul>
+          <ul class="code-blk">
+            <li>C</li>
+            <li>o</li>
+            <li>d</li>
+            <li>e</li>
+          </ul>
+           <ul class="js-blk">
+             <li>JS</li>
+           </ul>
 
-  <body>
-    
-        <header class="masthead clearfix">
-          <!-- <a href="{{ site.baseurl }}/" class="site-avatar"><img src="{{ site.avatar }}" /></a> -->
-
-      
-    <div id="hero" class="wrapper mast-paper">
-
-          <div class="site-info">
-            <h1 class="site-name"><a href="{{ site.baseurl }}/">How To Code</a></h1>
-            <p class="site-description">{{ site.description }}</p>
-          </div>
-
-          <nav>
-            <a href="{{ site.baseurl }}/">Blog</a>
-            <a href="{{ site.baseurl }}/about">About</a>
-          </nav>
-        </header>
         </div>
 
-      
-
-    <div id="main" role="main" class="container">
-      {{ content }}
+        <nav class="b-nav">
+          <a class="cta-learn" href="{{site.baseurl}}/#content"><i class="material-icons md-18">&#xE5D4;</i>Learn JS Now</a>
+        </nav>
+      </div>
     </div>
+    <div class="section">
+      
+    <!-- Main Content for pages -->
+      {{ content }}
 
-    <div class="wrapper-footer">
+    </div>
+    </div>
+    <!-- <div class="wrapper-footer">
       <div class="container">
         <footer class="footer">
           {% include svg-icons.html %}
         </footer>
       </div>
-    </div>
+    </div> -->
     {% include scripts.html %}
     {% include analytics.html %}
   </body>
