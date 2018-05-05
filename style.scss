@@ -123,6 +123,8 @@ img {
 
 .date {
   font-style: italic;
+  font-size: 17px;
+  margin-left: 55px;
   color: $gray;
 }
 
@@ -146,6 +148,18 @@ img {
 
 .clearfix:after {
     clear: both;
+}
+
+/* General Styles */
+
+.blk {
+    font-size: 20px;
+    color: #fdfdfd;
+    background-color: #000;
+    padding: 10px;
+    -webkit-box-shadow: $close-shadow;
+    -moz-box-shadow: $close-shadow;
+    box-shadow: $close-shadow;
 }
 
 /*********************/
@@ -176,6 +190,13 @@ img {
   top: 0px;
   left: 0px;
 }
+.fix {
+  position: fixed;
+}
+ .site-logo:hover {
+  animation: wobble 2s ease;
+  
+ }
 .site-name {
   margin-top: 140px;
   margin-left: 140px;
@@ -200,7 +221,6 @@ img {
     margin: 3px 0;
   }
 }
-
 
 
 .site-info {
@@ -296,35 +316,6 @@ img {
   100% {transform: rotate(0deg)}
 }
 
-.scrl-arw {
-  position: relative;
-  width: 0;
-  height: 0;
-  top: -80px;
-  margin-left: 600px;
-  border-top: 9px solid transparent;
-  border-right: 9px solid #000;
-  -webkit-transform: rotate(10deg);
-  -moz-transform: rotate(10deg);
-  -ms-transform: rotate(10deg);
-  -o-transform: rotate(10deg);
-}
-.scrl-arw:after {
-  content: "";
-  position: absolute;
-  border: 0 solid transparent;
-  border-top: 3px solid #000;
-  border-radius: 20px 0 0 0;
-  top: -12px;
-  left: -9px;
-  width: 12px;
-  height: 12px;
-  -webkit-transform: rotate(45deg);
-  -moz-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  -o-transform: rotate(45deg);
-}
-
 nav {
   margin-top: 23px; // @TODO: Vertically middle align
   font-family: $helveticaNeue;
@@ -374,11 +365,12 @@ nav {
 .material-icons.md-18 { font-size: 14px; }
 .s-nav {
   width: 100%;
-  height: 50px;
-  background-color: #000;
+  height: 100px;
+  background-color: #fdfdfd;
   border-bottom: 1px solid #adadad;
   overflow: hidden;
   text-align: center;
+  z-index: 4;
   a {
     display: block; 
    
@@ -401,8 +393,8 @@ nav {
 .ad-hero {
   width: 100%;
   height: 200px;
-  background-color: grey;
-
+  background-color: #fdfdfd;
+  z-index: -1;
 }
 
 .sticky-nav {
@@ -441,25 +433,49 @@ nav {
 .fp-container{
    display: flex;
    flex-direction: row;
-   margin-left: 100px;
+  
    height: 100%;
-   width: 90%;
+   width: 100%;
    border: 1px solid #000;
 }
 
 
-.sidebar {
-  width: 33.3%;
+.adbar {
   padding: 30px;
-  border: 1px solid #000;
-  background-color: $lightGray
-}
-.side-card {
   background-color: #fdfdfd;
-  width: 100%;
-  margin-bottom: 10px;
-
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  z-index: 0;
+  height: 900px;
+  overflow: hidden;
 }
+
+.sidebar {
+  padding: 30px;
+  background-color: #fdfdfd;
+  position: fixed;
+  top: 100px;
+  left: 0px;
+  z-index: 0;
+  height: 800px; 
+  overflow: hidden;
+  
+  .more {
+   text-align: center;
+  }
+  .archive p {
+    font-size: 18px;
+  }
+
+  .archive p a:link {
+    color: #fff;
+  }
+  .archive p a:visited {
+    color: #fff;
+  }
+}
+
 .p-container {
   margin: 0 auto;
   padding: 40px;
@@ -474,12 +490,17 @@ nav {
   
 }
 .posts > a > .post {
-  border: 1px solid $lightGray;
+
   margin: 20px;
   padding: 20px;
   max-width: 400px;
   width: 100%; 
-  box-shadow: $blr-shadow;
+  color: #fdfdfd;
+  background-color: #000;
+  -webkit-box-shadow: $close-shadow;
+  -moz-box-shadow: $close-shadow;
+  box-shadow: $close-shadow;
+
 }
 
 .posts > a > .post:after {
@@ -498,8 +519,19 @@ nav {
   box-shadow: $flp-shadow;
 
 }
-.post {
-  width: 66.7%;
+.fp-container .post {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 30px;
+  padding: 20px;
+  position: relative;
+  margin-left: 270px;
+  .fp-title {
+    font-weight: 700;
+    font-size: 50px;
+    text-align: center;
+    font-family: 'Source Sans Pro', sans-serif;
+  }
+
   blockquote {
     margin: 1.8em .8em;
     border-left: 2px solid $gray;

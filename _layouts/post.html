@@ -4,23 +4,32 @@ layout: sticky
 
 
 <div id="main" role="main" class="fp-container wrapper">
-	<article  class="post">
-	  <h1>{{ page.title }}</h1>
-	  <div class="entry">
-	    {{ content }}
-	  </div>
+
+  <aside class="sidebar col-1-6">
+   <p class="more blk">More Posts</p>
+   <!--temporary archive -->
+   <div class="archive blk">
+  {% for post in site.posts %}
+    <p><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></p> 
+  {% endfor %}
+  </div>
+  </aside>
+  <article  class="post col-2-3">
+	  <h1 class='fp-title'>{{ page.title }}</h1>
 	  <div class="date">
 	    Written on {{ page.date | date: "%B %e, %Y" }}
 	  </div>
+	  <div class="entry">
+	    {{ content }}
+	  </div>
+	  
 	  {% include disqus.html %}
 	</article>
-	<aside class="sidebar">
+	<aside class="adbar col-1-6">
 	{% for post in site.posts %}
-    <article class="side-card">
-      <img src="{{ site.baseurl }}/images/{{post.image}}" />
-      <h1><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h1> 
-      <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read More</a>
-    </article>
+    
+      
+  
   {% endfor %}
    </aside>
 </div>

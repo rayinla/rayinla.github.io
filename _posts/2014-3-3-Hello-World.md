@@ -1,6 +1,6 @@
 ---
 layout: post
-title: You're up and running!
+title: How to code js with a really, really long title
 image: config.png
 ---
 
