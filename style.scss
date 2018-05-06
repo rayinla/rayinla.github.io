@@ -21,7 +21,9 @@ html {
 
 body {
 	background: $white;
-  font: 18px/1.4 $helvetica;
+
+  font-size: 18px/1.4;
+  font-family: 'Source Sans Pro', sans-serif;
   color: $darkGray;
   overflow-x: hidden;
 }
@@ -37,7 +39,7 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: $helveticaNeue;
+  font-family: 'Source Sans Pro', sans-serif;
   color: $darkerGray;
   font-weight: bold;
 
@@ -185,10 +187,19 @@ img {
 .site-logo {
   border-bottom: 1px solid $lightGray;
   border-right: 1px solid $lightGray;
+  background-color: #fdfdfd;
   height: 100px;
   position: absolute;
   top: 0px;
   left: 0px;
+}
+.logo-footer {
+  height: 100px;
+  position: absolute;
+  background-color: #fdfdfd;
+  border-radius: 20px;
+  margin-top: -45px;
+  margin-left: 50%;
 }
 .fix {
   position: fixed;
@@ -345,10 +356,11 @@ nav {
 .b-nav {
   
   text-align: center;
+  margin-bottom: 100px;
   
 }
 .cta-learn {
-  margin-left: -200px;
+  
   border: 1px solid #000;
   background-color: #000;
   color: #fdfdfd;
@@ -421,7 +433,7 @@ nav {
   width: 100%;
   height: 100%;
   background-color: transparent;
-  border: 1px solid red;
+ 
   overflow: hidden;
   
 }
@@ -465,7 +477,7 @@ nav {
    text-align: center;
   }
   .archive p {
-    font-size: 18px;
+    font-size: 15px;
   }
 
   .archive p a:link {
@@ -495,28 +507,55 @@ nav {
   padding: 20px;
   max-width: 400px;
   width: 100%; 
-  color: #fdfdfd;
   background-color: #000;
   -webkit-box-shadow: $close-shadow;
   -moz-box-shadow: $close-shadow;
   box-shadow: $close-shadow;
+  transition: all 0.2s ease-in; 
 
+  h1 {
+   color: #fff;
+  }
+}
+.posts > a > .post:hover {
+  transform: rotate(1deg);
+}
+/*jigsaw*/
+
+/*
+* ToDO: decrement nth type based on media screen width
+* */
+.posts > a:nth-of-type(n + 4) > .post:before {
+  color: white;
+  background-color: #fff;
+  content: 'H';
+  position: absolute;
+  height: 20px;
+  width: 100px;
+  margin-left: 130px;
+  margin-top: -21.6px;
+  border-left: 1px solid $lightGray;
+  border-right: 1px solid $lightGray;
+  border-bottom: 1px solid $lightGray;
+  border-radius: 3px;
 }
 
 .posts > a > .post:after {
-  text-align: center;
-  font-weight: 900;
   color: white;
   background-color: #000;
-  content: 'H';
+  content: '';
   position: absolute;
-  height: 50px;
-  width: 50px;
+  height: 35px;
+  width: 100px;
   border: 1px solid #000;
+  border-radius: 3px;
   margin-left: 130px;
   margin-top: 0px;
   padding-bottom:  -30px;
-  box-shadow: $flp-shadow;
+  -webkit-box-shadow: $close-shadow;
+  -moz-box-shadow: $close-shadow;
+  box-shadow: $close-shadow;
+
 
 }
 .fp-container .post {
@@ -552,15 +591,20 @@ nav {
 }
 
 .wrapper-footer {
-  margin-top: 50px;
+  margin-top: 80px;
   border-top: 1px solid #ddd;
-  border-bottom: 1px solid #ddd;
-  background-color: $lightGray;
+  
 }
 
 footer {
+
   padding: 20px 0;
   text-align: center;
+
+}
+
+footer span {
+  margin-left: 5px;
 }
 
 // Settled on moving the import of syntax highlighting to the bottom of the CSS

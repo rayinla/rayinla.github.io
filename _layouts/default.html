@@ -23,13 +23,15 @@
     <div class="section">
       <div id="hero" >
         <div class="site-info">
-           <img class="site-logo" src="{{site.baseurl}}/images/hjslogosm.png" />   
+           <img class="site-logo" src="{{site.baseurl}}/images/hjslogosm.png" />
+           <nav class="b-nav">
+          <a class="cta-learn" href="{{site.baseurl}}/#content"><i class="material-icons md-18">&#xE5D4;</i>Learn JavaScript Now</a>
+        </nav>   
            <ul class='how-blk'>
              <li>H</li>
              <li>o</li>
              <li>w</li>
-           </ul>
-          
+           </ul>     
            <ul class="to-blk">
              <li>T</li>
              <li>o</li>
@@ -43,28 +45,26 @@
            <ul class="js-blk">
              <li>JS</li>
            </ul>
-
-        </div>
-
-        <nav class="b-nav">
-          <a class="cta-learn" href="{{site.baseurl}}/#content"><i class="material-icons md-18">&#xE5D4;</i>Learn JS Now</a>
-        </nav>
+        </div>   
       </div>
     </div>
-    <div class="section">
-      
+    <div class="section">  
     <!-- Main Content for pages -->
       {{ content }}
-
     </div>
     </div>
-    <!-- <div class="wrapper-footer">
+    <img class="site-logo" src="{{site.baseurl}}/images/hjslogosm.png" />
+    <div class="wrapper-footer">
+      <img class="logo-footer" src="{{site.baseurl}}/images/hjslogosm.png" />
+     <div class="blk"></div>
       <div class="container">
         <footer class="footer">
-          {% include svg-icons.html %}
+          <span>&copy All Rights Reserved 2018 howtocodejs.com</span>
+          <span><a href="https://termsfeed.com/terms-conditions/2460b3ff454f533c4d29560443c83d8b">Terms and Conditions</a></span>
+          <span><a href="{{site.baseurl}}/privacy-policy/">Privacy Policy</a></span>
         </footer>
       </div>
-    </div> -->
+    </div>
     {% include scripts.html %}
     {% include analytics.html %}
   </body>
