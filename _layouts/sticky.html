@@ -19,11 +19,48 @@
       <a class="s-brand" href="{{ site.baseurl }}/">HowToCode</a>
      
     </div> -->
-     <a href="{{ site.baseurl }}/"><img class="site-logo fix" src="{{site.baseurl}}/images/hjslogosm.png" /> </a>
+     <a href="{{ site.baseurl }}/"><img class="sticky-logo" src="{{site.baseurl}}/images/hjslogosm.png" /> </a>
     <!-- <div class='ad-hero'>
 
     </div> -->
-  
+    <div class="box-burger">
+      <div class="row" id="row-1">
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+      </div>
+      <div class="row" id="row-2">
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+      </div>
+      <div class="row" id="row-3">
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+      </div>
+   </div> <!-- .box-burger -->
+    <aside class="hiddenbar" >   
+      <div class="box-cross">
+        <div class="row" id="row-1">
+          <div class="box"></div>
+          <div class="box"></div>
+          <div class="box"></div>
+        </div>
+        <div class="row" id="row-2">
+          <div class="box"></div>
+          <div class="box"></div>
+          <div class="box"></div>
+        </div>
+      </div>
+     <p class="more blk">More Posts</p>
+     <!--temporary archive -->
+     <div class="archive blk">
+    {% for post in site.posts %}
+      <p><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></p> 
+    {% endfor %}
+  </div>
+  </aside>
     <!-- Main Content for pages -->
     
       {{ content }}

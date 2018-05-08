@@ -193,6 +193,20 @@ img {
   top: 0px;
   left: 0px;
 }
+.sticky-logo {
+  @include laptop {
+    position: absolute;
+    z-index: 10;
+  }
+  border-bottom: 1px solid $lightGray;
+  border-right: 1px solid $lightGray;
+  background-color: #fdfdfd;
+  height: 100px;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+
+}
 .logo-footer {
   height: 100px;
   position: absolute;
@@ -227,24 +241,42 @@ img {
   margin: -5px 0 0 0;
   color: $gray;
   font-size: 16px;
-
   @include mobile {
     margin: 3px 0;
   }
 }
 
 
-.site-info {
-  
+.site-info { 
   margin-top: 40px;
-  margin-left: 100px;
+  margin-left: 15%;
   max-width: 900px;
 
-  @include mobile {
-    float: none;
-    display: block;
-    margin: 0 auto;
+  @include laptop {
+    margin-left: 0px;
   }
+  @include ipad {
+    margin-left: -200px;
+  }
+  @include mini-mobile {
+    padding: 80px;
+    margin-left: -280px;
+  }
+
+  .cta-learn {
+    @include kindle {
+      margin-left: 200px;
+    }
+   
+    border: 1px solid #000;
+    background-color: #000;
+    color: #fdfdfd;
+    padding: 5px;
+    -webkit-box-shadow: 2px 3px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 2px 3px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 2px 3px 5px 0px rgba(0,0,0,0.75);
+}
+
 
   ul {
     list-style: none;
@@ -271,8 +303,19 @@ img {
 }
   ul li:hover {
      animation: wobble 2s ease-in;
+  }  
+  .blk-wrapper {
+    border: 1px solid #000;
+    @include kindle {
+      margin-left: -150px;
+    }
+    @include mobile {
+      margin-left: -220px;
+    }
+    @include mini-mobile {
+      margin-left: -260px;
+    }
   }
-
   .how-blk {
     top: 0px;
     left: 460px;
@@ -302,12 +345,19 @@ img {
   }
   
   .js-blk {
+  @include mini-mobile {
+   left: 600px;
+
+  }
    top: -200px;
    left: 800px;
    transition: all 0.2s ease-in;
    transform: rotate(10deg);
   }
   .js-blk li {
+    @include mini-mobile {
+     width: 100px;
+    }
     float: left;
   }
 }
@@ -327,6 +377,42 @@ img {
   100% {transform: rotate(0deg)}
 }
 
+.box-burger {
+  @include laptop {
+    display: block;
+  }
+  @include mobile {
+    position: absolute;
+  }
+  display: none;
+  cursor: pointer;
+  max-width: 33px;
+  position: fixed;
+  right: 0px;
+  z-index: 10;
+  margin-top: 30px;
+  margin-right: 60px;
+
+
+}
+
+
+.row {
+  display: flex;
+  margin-bottom: 3px;
+}
+
+.box {
+  background-color: #000;
+  width: 8px;
+  height: 5px;
+  display: block;
+  margin-left: 1px;
+}
+.box:nth-of-type(2){
+  width: 14px;
+}
+
 nav {
   margin-top: 23px; // @TODO: Vertically middle align
   font-family: $helveticaNeue;
@@ -339,13 +425,11 @@ nav {
     font-size: 16px;
   }
 
-  a {
-   
+  a { 
     color: $darkGray;
     text-align: right;
     font-weight: 300;
     letter-spacing: 1px;
-
     @include mobile {
       margin: 0 10px;
       color: $blue;
@@ -353,26 +437,13 @@ nav {
   }
 }
 
-.b-nav {
-  
+.b-nav { 
   text-align: center;
   margin-bottom: 100px;
-  
 }
-.cta-learn {
-  
-  border: 1px solid #000;
-  background-color: #000;
-  color: #fdfdfd;
-  padding: 5px;
-  -webkit-box-shadow: 2px 3px 5px 0px rgba(0,0,0,0.75);
-  -moz-box-shadow: 2px 3px 5px 0px rgba(0,0,0,0.75);
-  box-shadow: 2px 3px 5px 0px rgba(0,0,0,0.75);
 
-}
 .material-icons {
   margin-left: -8px;
- 
 }
 .material-icons.md-18 { font-size: 14px; }
 .s-nav {
@@ -384,8 +455,7 @@ nav {
   text-align: center;
   z-index: 4;
   a {
-    display: block; 
-   
+    display: block;  
     font-family: sans-serif;
     font-size: 9px;
     color: #000;
@@ -411,7 +481,6 @@ nav {
 
 .sticky-nav {
   transition: all 1s ease-out;
-  
   position: fixed;
   width: 100%;
   height: 61px;
@@ -433,7 +502,6 @@ nav {
   width: 100%;
   height: 100%;
   background-color: transparent;
- 
   overflow: hidden;
   
 }
@@ -442,58 +510,25 @@ nav {
  .main
 
 */
-.fp-container{
-   display: flex;
-   flex-direction: row;
-  
-   height: 100%;
-   width: 100%;
-   border: 1px solid #000;
-}
-
-
-.adbar {
-  padding: 30px;
-  background-color: #fdfdfd;
-  position: fixed;
-  top: 0px;
-  right: 0px;
-  z-index: 0;
-  height: 900px;
-  overflow: hidden;
-}
-
-.sidebar {
-  padding: 30px;
-  background-color: #fdfdfd;
-  position: fixed;
-  top: 100px;
-  left: 0px;
-  z-index: 0;
-  height: 800px; 
-  overflow: hidden;
-  
-  .more {
-   text-align: center;
-  }
-  .archive p {
-    font-size: 15px;
-  }
-
-  .archive p a:link {
-    color: #fff;
-  }
-  .archive p a:visited {
-    color: #fff;
-  }
-}
 
 .p-container {
+  border: 1px solid #000;
   margin: 0 auto;
   padding: 40px;
   width: 100%;
 }
 .posts {
+  @include wide-laptop {
+    padding-left: 180px;
+  }
+  @include kindle {
+    padding-left: 70px;
+  }
+  @include mobile {
+    padding-left: 0px;
+    margin-left: -20px;
+  }
+
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -502,7 +537,6 @@ nav {
   
 }
 .posts > a > .post {
-
   margin: 20px;
   padding: 20px;
   max-width: 400px;
@@ -526,6 +560,9 @@ nav {
 * ToDO: decrement nth type based on media screen width
 * */
 .posts > a:nth-of-type(n + 4) > .post:before {
+  @include mini-mobile {
+    margin-left: 50px;
+  }
   color: white;
   background-color: #fff;
   content: 'H';
@@ -541,6 +578,9 @@ nav {
 }
 
 .posts > a > .post:after {
+  @include mini-mobile {
+    margin-left: 50px;
+  }
   color: white;
   background-color: #000;
   content: '';
@@ -555,19 +595,54 @@ nav {
   -webkit-box-shadow: $close-shadow;
   -moz-box-shadow: $close-shadow;
   box-shadow: $close-shadow;
-
-
 }
+
+.fp-container{
+   display: flex;
+   flex-direction: row;
+   height: 100%;
+   width: 100%;
+   border: 1px solid #000;
+   transition: all ease-in 2s;
+}
+
 .fp-container .post {
+  @include wide-laptop {
+    padding: 75px;
+    margin-left: 180px;
+  }
+  @include laptop {
+   width: 75%;
+   margin-left: 0px;
+  }
+  @include ipad {
+    padding-right: 100px;
+  }
+  @include lg-mobile {
+    width: 100%;
+  }
+  @include mobile { 
+   padding: 30px;
+   padding-top: 50px;
+  }
+
   font-family: 'Source Sans Pro', sans-serif;
   font-size: 30px;
-  padding: 20px;
+  padding: 70px;
   position: relative;
-  margin-left: 270px;
+  margin-left: 210px;
   .fp-title {
+    @include wide-laptop {
+      padding: 60px;
+    }
+    @include ipad {
+      padding: 10px;
+    }
+    @include kindle {
+      padding: 0px;
+    }
     font-weight: 700;
     font-size: 50px;
-    text-align: center;
     font-family: 'Source Sans Pro', sans-serif;
   }
 
@@ -590,6 +665,99 @@ nav {
   }
 }
 
+.hiddenbar {
+  @include mini-mobile {
+    padding-left: 60px;
+  }
+  position: fixed;
+  display: none;
+  z-index: 30;
+  right:-500px;
+  background-color: #fff;
+  height: 100%;
+  padding-left: 30px;
+  padding-right: 30px;
+  transition: all ease 2s;
+  .box-cross {
+    z-index: 50;
+    cursor: pointer;
+    width: 100px;
+    margin-top: 50px;
+    margin-bottom: 80px;
+    margin-left: 270px;
+    #row-1 {
+      transform: rotate(40deg);
+      margin-bottom: -30px;
+    }
+    #row-2 {
+      transform: rotate(-40deg);
+    }
+    .row {
+      display: flex;
+      margin-bottom: 1px;
+      margin-left: 2px;  
+    }
+    .box {
+      background-color: #000;
+      width: 20px;
+      height: 5px;
+      display: block;
+      margin-bottom: 1px;
+    }
+    .box:nth-of-type(2){
+      width: 14px;
+    }
+  }
+}
+  .inactive {
+    display: none;
+  }
+.adbar {
+  @include laptop {
+    width: 30%;
+  }
+  @include lg-mobile {
+    display: none;
+  }
+  padding: 30px;
+  background-color: #fdfdfd;
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  z-index: 0;
+  height: 900px;
+  overflow: hidden;
+  border: 1px solid #000;
+}
+
+.sidebar {
+ border: 1px solid #000;
+  @include laptop {
+   display: none;
+  }
+  padding: 30px;
+  background-color: #fdfdfd;
+  position: fixed;
+  top: 100px;
+  left: 0px;
+  z-index: 0;
+  height: 800px; 
+  overflow: hidden;
+  
+  .more {
+   text-align: center;
+  }
+  .archive p {
+    font-size: 15px;
+  }
+  .archive p a:link {
+    color: #fff;
+  }
+  .archive p a:visited {
+    color: #fff;
+  }
+}
+
 .wrapper-footer {
   margin-top: 80px;
   border-top: 1px solid #ddd;
@@ -597,10 +765,8 @@ nav {
 }
 
 footer {
-
   padding: 20px 0;
   text-align: center;
-
 }
 
 footer span {
