@@ -1,8 +1,9 @@
+'use strict';
 
 /*
 *  Deps: ace, acorn, interpreter.js, esprima
 **/
-var _ = require('lodash');
+
 
 /*
 *  Helpers
@@ -76,7 +77,6 @@ class Node {
     remove(el) {
       var currentNode = this.head;
       var previousNode;
-
       if (currentNode.element === el) {
         currentNode.next = this.head;
       } else {
@@ -99,15 +99,13 @@ class Node {
             " " +
             (this.length - 1) +
             ".";
-        } catch (e) {
-          
-        }
+        }catch(e){
+
+        } 
       } else {
-        return _.last(
-          _(idx).times(() => {
+        return _.last( _(idx).times(() => {
             return this.next();
-          })
-        );
+          }));
       }
     }
     
@@ -135,7 +133,7 @@ class Node {
       if (idx < end && idx >= start) {
        return thisArr[idx] = arr[idx - start] ;
       }
-      return el
+      return el;
     });
   };
   Array.prototype.chunk = function(group) {
@@ -250,7 +248,7 @@ class Node {
     ],
 
     limit: 1,
-  }
+  };
   var variablesQuiz = lexSpeech.variables;
   var groupSpeech = lexSpeech.variables.toGroupList(lexSpeech.limit);
   var groupCalls = lexSpeech.calls.toGroupList(1);
@@ -258,7 +256,7 @@ class Node {
  //Run the instruction
   $talkButton.on("click", function(){
     speechInterval(2500,7000,12500,17000);
-  })
+  });
   //Run the interpreter
   $runButton.on("click", function(){ 
     run();   
@@ -301,7 +299,7 @@ class Node {
   function setupEditor(){
   	editor.setTheme("ace/theme/monokai");
     editor.session.setMode("ace/mode/javascript");
-    editor.setValue(`var java = "noob"`, 1);
+    editor.setValue("var java = 'noob'", 1);
     editor.getSession().on('change', function(){
     	update();
     }); 
@@ -310,9 +308,6 @@ class Node {
     	fontSize: '15pt',
     	showLineNumbers: true,
     	cursorStyle: "slim",
-    	useSoftTabs: true,
-    	tabSize: 20,
-        navigateWithinSoftTabs: true
     });
   }
 
