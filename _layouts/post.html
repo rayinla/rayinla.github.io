@@ -4,7 +4,7 @@ layout: sticky
 
 
 <div id="main" role="main" class="fp-container wrapper">
-  
+
   <aside class="sidebar col-1-6">
    <p class="more blk">More Posts</p>
    <!--temporary archive -->
@@ -21,6 +21,39 @@ layout: sticky
 	  </div>
 	  <div class="entry">
 	    {{ content }}
+	    <div id='lex-wrapper'>
+      <div class='speech-bubble'><p></p></div>
+      <img src='{{site.baseurl}}/images/lex-logo.png' alt="Lex logo" id='lex-logo' />
+    <nav id='lex-nav'>
+      
+      
+      <div id="talk" class='btn'>
+       <i class="material-icons">rss_feed</i>
+       <p>Talk</p>
+     </div>
+     <div id="run" class='btn'>
+       <i class="material-icons">play_arrow</i>
+       <p>Run</p>
+     </div>
+     <p id='brand'>LEX</p>
+    </nav>
+    <div id='lex-container'>
+      <div id='editor'>
+      </div>
+      <div id='iframe'>
+        <div class='output-row'>
+          <i class="material-icons">chevron_right</i>
+          <p class='output'></p>
+        </div>
+      </div>
+    </div>
+    <footer id='lex-foot'>
+      <div class='bug-report'>
+        <i class='material-icons'>bug_report</i>
+        <p class='bugput'></p>
+      </div>
+    </footer>
+  </div>
 	  </div>
 	  
 	  {% include disqus.html %}

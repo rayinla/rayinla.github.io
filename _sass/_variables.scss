@@ -3,6 +3,9 @@
 // VARIABLES
 //
 
+//Numbers
+
+
 // Colors
 $blue: #4183C4;
 
@@ -21,13 +24,19 @@ $georgia: Georgia, serif;
 
 // Mobile breakpoints
 @mixin wide-laptop {
-  @media screen and (max-width: 1322px) {
+  @media screen and (max-width: 1371px) {
     @content;
   }
 }
 
 @mixin laptop {
   @media screen and (max-width: 1175px) {
+    @content;
+  }
+}
+
+@mixin mini-top {
+  @media screen and (max-width: 1052px) {
     @content;
   }
 }

@@ -557,8 +557,10 @@ nav {
 /*jigsaw*/
 
 /*
-* ToDO: decrement nth type based on media screen width
+* Decrement nth type based on media screen width
 * */
+
+
 .posts > a:nth-of-type(n + 4) > .post:before {
   @include mini-mobile {
     margin-left: 50px;
@@ -576,6 +578,45 @@ nav {
   border-bottom: 1px solid $lightGray;
   border-radius: 3px;
 }
+@include wide-laptop {
+  .posts > a:nth-of-type(n + 3) > .post:before {
+  @include mini-mobile {
+    margin-left: 50px;
+  }
+  color: white;
+  background-color: #fff;
+  content: 'H';
+  position: absolute;
+  height: 20px;
+  width: 100px;
+  margin-left: 130px;
+  margin-top: -21.6px;
+  border-left: 1px solid $lightGray;
+  border-right: 1px solid $lightGray;
+  border-bottom: 1px solid $lightGray;
+  border-radius: 3px;
+ }
+}
+@include mini-top {
+  .posts > a:nth-of-type(n + 2) > .post:before {
+    @include mini-mobile {
+      margin-left: 50px;
+    }
+    color: white;
+    background-color: #fff;
+    content: 'H';
+    position: absolute;
+    height: 20px;
+    width: 100px;
+    margin-left: 130px;
+    margin-top: -21.6px;
+    border-left: 1px solid $lightGray;
+    border-right: 1px solid $lightGray;
+    border-bottom: 1px solid $lightGray;
+    border-radius: 3px;
+  }
+}
+
 
 .posts > a > .post:after {
   @include mini-mobile {
@@ -602,7 +643,6 @@ nav {
    flex-direction: row;
    height: 100%;
    width: 100%;
-   border: 1px solid #000;
    transition: all ease-in 2s;
 }
 
@@ -709,9 +749,7 @@ nav {
     }
   }
 }
-  .inactive {
-    display: none;
-  }
+  
 .adbar {
   @include laptop {
     width: 30%;
@@ -727,11 +765,9 @@ nav {
   z-index: 0;
   height: 900px;
   overflow: hidden;
-  border: 1px solid #000;
 }
 
 .sidebar {
- border: 1px solid #000;
   @include laptop {
    display: none;
   }
@@ -773,7 +809,200 @@ footer span {
   margin-left: 5px;
 }
 
-// Settled on moving the import of syntax highlighting to the bottom of the CSS
-// ... Otherwise it really bloats up the top of the CSS file and makes it difficult to find the start
+
+/* LEX Styles*/
+
+#lex-wrapper {
+  font-family: monospace;
+  margin-top: 50px;
+  margin-bottom: 30px;
+  height: 700px;
+  padding-left: 30px;
+  padding-right: 30px;
+  
+ 
+}
+#lex-container {
+  padding: 0px;
+  height: 50%;
+  width: auto;
+  white-space: nowrap;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  box-shadow: 2px 3px 5px 0px rgba(0,0,0,0.75);
+}
+
+#lex-nav {
+  width: 100%;
+  height: 60px;
+  color: #fff;
+  background-color: #fbb040;
+  display: flex;
+  flex-direction: row;
+  box-shadow:   2px 3px 5px 0px rgba(0,0,0,0.75)
+}
+
+#lex-foot {
+  width: 100%;
+  height: 60px;
+  color: #fff;
+  background-color: #fbb040;
+  display: flex;
+  flex-direction: row;
+   box-shadow:  2px 3px 5px 0px rgba(0,0,0,0.75)
+}
+#lex-logo {
+  position: relative;
+  top: 120px; 
+  margin-left: 10px; 
+}
+.speech-bubble {
+ font-size: 14px;
+ color: #fff;
+ display: none;
+ position: relative;
+ border-radius: 4px;  
+ top: 115px;
+ left: 90px;
+ width: 24%;
+ height: 14%;
+ margin-left: 10px;
+ padding: 5px;
+ background-color: #00aabb;
+ z-index: 10;
+}
+.speech-bubble p {
+  margin-top: 4px;
+
+}
+.speech-bubble:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border: 20px solid transparent;
+  border-top-color: #00aabb;
+  border-bottom: 0;
+  border-left: 0;
+  margin-left: -10px;
+  margin-bottom: -20px;
+}
+#lex-nav .btn {
+  display: flex;
+  
+  height: 30px;
+  width: 70px;
+  margin-top: 10px;
+  margin-left: 150px;
+    
+  border: none;
+  background-color: #6540fb;
+  cursor: pointer; 
+  box-shadow: 0px 3px 5px -2px rgba(0,0,0,0.75);
+}
+
+#lex-nav .btn p {
+  font-size: 18px;
+  font-weight: 700;
+  margin-top: 5px;
+   
+}
+
+#brand {
+  font-size: 55px;
+  font-weight: 900;  
+  margin: auto;
+  background-color: #94512d;
+    color: transparent;
+    text-shadow: 2px 2px 3px rgba(255,255,255,0.5);
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;    
+}
+
+#editor {
+  height: 100%;
+  width: 50%;
+}
+#iframe {
+  font-family: monospace;
+  font-size: 17px;
+  height: 100%;
+  width: 50%;
+  color: #fff;
+  background-color: #000;
+  overflow-wrap: break-word;
+  padding-left: 40px;
+}
+#iframe:before {
+   content: '';
+  position: absolute;
+  margin-left: 90px;
+  margin-top: 47px;
+  transform: rotate(-60deg);
+  width: 150px;
+  height: 11px;
+  background-color: #fff;
+  opacity: 0.08;
+  z-index: 10px;
+  
+}
+#iframe:after {
+  content: '';
+  position: absolute;
+  margin-left: 95px;
+  margin-top: 47px;
+  transform: rotate(-60deg);
+  width: 180px;
+  height: 11px;
+  background-color: #fff;
+  opacity: 0.04;
+  z-index: 10px;
+}
+
+.output-row {
+  display: flex;  
+  flex-direction: row;
+
+}
+.output-row .output {
+  color: #40b0fb;
+  margin-top: 3px;  
+}
+.ace_editor,
+.ace_editor div,
+{
+  font-family: monospace, sans-serif;
+}
+
+.material-icons {
+  margin-top: px;
+  margin-left: 5px;
+  font-size: 18px;
+}
+
+.bug-report {
+  background-color: red;
+  color: #fff;
+  height: 30px;
+  width: 50%;
+  border-radius: 5px;
+  padding-bottom: 10px;
+  margin-top: 10px;
+  margin-left: 5px; 
+  display: none;
+  
+}
+
+.bug-report p {
+  margin-left: 10px;
+  margin-top: 10px;
+}
+
+
+
 @import "highlights";
 @import "svg-icons";
