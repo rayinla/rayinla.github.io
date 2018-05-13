@@ -231,6 +231,8 @@ Interpreter.prototype.initGlobalScope = function(scope) {
   this.setProperty(scope, 'this', scope,
                    Interpreter.READONLY_DESCRIPTOR);
   this.setProperty(scope, 'self', scope); // Editable.
+  this.setProperty(scope, 'console', scope);
+  this.setProperty(scope, 'log', scope);
 
   // Create the objects which will become Object.prototype and
   // Function.prototype, which are needed to bootstrap everything else.

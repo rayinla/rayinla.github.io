@@ -161,7 +161,6 @@ class Node {
   };
    
   
-
 (function(){
    
   
@@ -174,6 +173,7 @@ class Node {
   var $parseButton = $('#parse');
   var $speechBubble = $('.speech-bubble');
   var $speechText = $('.speech-bubble p')[0];
+  var $logger = $('.log');
   var lexSpeech = {
     calls: [
       ["Hey, I wanna ask you something."],
@@ -248,7 +248,7 @@ class Node {
     ],
 
     limit: 1,
-  };
+  }
   var variablesQuiz = lexSpeech.variables;
   var groupSpeech = lexSpeech.variables.toGroupList(lexSpeech.limit);
   var groupCalls = lexSpeech.calls.toGroupList(1);
@@ -258,9 +258,26 @@ class Node {
     speechInterval(2500,7000,12500,17000);
   });
   //Run the interpreter
-  $runButton.on("click", function(){ 
-    run();   
+  var editorCache = [];
+  $runButton.on("click", function(){
+    if (editorCache[0] == undefined){
+      editorCache.push(editor.getValue())
+       resetConsole();
+       run();
+    } else if(editorCache[0] == editor.getValue()) {
+      return;
+    } else{
+      editorCache[0] = editor.getValue()
+      resetConsole();
+      run(); 
+    }
+    
+      
   });
+
+  function resetConsole(){
+    $logger[0].innerHTML = '';
+  }
  //Switches speech types every few seconds
   function speechInterval(qtime,atime,ktime,fintime ){
     $speechText.innerHTML = groupCalls.head.element[0][0];
@@ -284,30 +301,33 @@ class Node {
   
   //Update esprima with new data to parse on user input
   function update() {
-  	try{
+    try{
       esprima.parseScript(editor.getValue());
       if($bugContainer.css('display') != 'none'){
-        $bugContainer.css({'display': 'none'});
+        $bugContainer.css({'display': 'none'})
       }
     }catch(e){
       $bugReport[0].innerHTML = e.message;
-      $bugContainer.css({'display': 'flex'});       
+      $bugContainer.css({'display': 'flex'})       
     }   
   }
 
 //Basic Ace JavaScript configuration
   function setupEditor(){
-  	editor.setTheme("ace/theme/monokai");
+    editor.setTheme("ace/theme/monokai");
     editor.session.setMode("ace/mode/javascript");
-    editor.setValue("var java = 'noob'", 1);
+    editor.setValue(`var java = "noob"`, 1);
     editor.getSession().on('change', function(){
-    	update();
+      update();
     }); 
     editor.focus();
     editor.setOptions({
-    	fontSize: '15pt',
-    	showLineNumbers: true,
-    	cursorStyle: "slim",
+      fontSize: '15pt',
+      showLineNumbers: true,
+      cursorStyle: "slim",
+      useSoftTabs: true,
+      tabSize: 20,
+        navigateWithinSoftTabs: true
     });
   }
 
@@ -316,20 +336,64 @@ class Node {
     update();   
   }
 
+  const customStringify = function (v) {
+  const cache = new Map();
+  return JSON.stringify(v, function (key, value) {
+    if (typeof value === 'object' && value !== null) {
+      if (cache.get(value)) {
+        // Circular reference found, discard key
+        return;
+      }
+      // Store value in our map
+      cache.set(value, true);
+    }
+    return value
+  });
+};
+
+   var log = console.dir
+   
+   log = function () {
+      for (var i = 0; i < arguments.length; i++) {
+        if (typeof arguments[i] == 'object') {
+            var obj = customStringify(arguments[i])
+            
+            var nobj = JSON.parse(obj);
+            var prop = nobj.properties
+            $logger[0].innerHTML += customStringify(prop);
+
+
+        } else {
+           
+            $logger.append('<p>'  +  arguments[i] + '</p>');
+            
+        }
+      }
+    }
+
  //Basic Interpreter.js config
   var myInterpreter;
-   function initAlert(interpreter, scope) {
+
+   function initApi(interpreter, scope) {
       var wrapper = function(text) {
         return alert(arguments.length ? text : '');
       };
       interpreter.setProperty(scope, 'alert',
+          interpreter.createNativeFunction(wrapper));
+
+       var wrapper = function(text) {
+        return log(arguments.length ? text : '');
+      };
+
+       interpreter.setProperty(scope, 'log',
           interpreter.createNativeFunction(wrapper));
     }
 
     function parse() {    
       try{
         var code = editor.getValue();
-        myInterpreter = new Interpreter(code, initAlert);
+        myInterpreter = new Interpreter(code, initApi);
+    
         return true;
       } catch(e){
           $output.css({'color': '#ff2b18'})
@@ -339,7 +403,9 @@ class Node {
     }
 
     function run() {
+       
        var re =  /(,)+/;
+
        var arrReg = new RegExp(re);
        //Run only if code passes initial parse
        //Improve output by checking type
