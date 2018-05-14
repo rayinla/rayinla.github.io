@@ -4,7 +4,7 @@ title: How to code js with a really, really long title
 image: config.png
 ---
 
-![chain](https://thepracticaldev.s3.amazonaws.com/i/5x4rpu4wh28ms82qqx1v.jpg)
+
 
  *Originally published in codburst.io as Pass Your Front End Interview By Knowing JavaScript's Prototype Chain.*
 
