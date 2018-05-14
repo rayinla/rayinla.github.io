@@ -5,23 +5,18 @@ layout: sticky
 <!-- <p class="more blk">More Posts</p>
    <div class="archive blk">
   {% for post in site.posts %}
-    <p><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></p> 
+    <p><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></p>
   {% endfor %}
+
+ <h1 class='fp-title'>{{ page.title }}</h1>
+ <div class="date">
+		Written on {{ page.date | date: "%B %e, %Y" }}
+ </div>
   </div> -->
 <div id="main" role="main" class="fp-container wrapper">
 
-  <aside class="sidebar col-1-4">
-   <h1 class='fp-title'>{{ page.title }}</h1>
-	  <div class="date">
-	    Written on {{ page.date | date: "%B %e, %Y" }}
-	  </div>
-	   <div class="entry"> 
-	    {{ content }}
-	  </div>
-  </aside>
-  <article  class="lex col-3-4">
-	  
 	  <div id='lex-wrapper'>
+	  	<div id='lex-b'>
         <div class='speech-bubble'><p></p></div>
         <img src='{{site.baseurl}}/images/lex-logo.png' alt="Lex logo" id='lex-logo' />
         <nav id='lex-nav'>
@@ -36,6 +31,9 @@ layout: sticky
           <p id='brand'>LEX</p>
         </nav>
         <div id='lex-container'>
+          <div id='lex-content'>
+						{{content}}
+          </div>
           <div id='editor'>
           </div>
           <div id='iframe'>
@@ -56,16 +54,13 @@ layout: sticky
          </div>
        </footer>
      </div>
-	
-	  
-	  {% include disqus.html %}
-	</article>
+     </div>
+
+
+
 	<!-- <aside class="adbar col-1-4">
 	{% for post in site.posts %}
-    
+
   {% endfor %}
    </aside> -->
 </div>
-
-
-

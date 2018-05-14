@@ -21,19 +21,18 @@ html {
 
 body {
 	background: $white;
-
+  padding: 0px;
+  margin: 0px;
   font-size: 18px/1.4;
   font-family: 'Source Sans Pro', sans-serif;
   color: $darkGray;
   overflow-x: hidden;
 }
 
-
-
 .container {
   margin: 0 auto;
   max-width: 840px;
- 
+
   padding: 40px;
   width: 100%;
 }
@@ -195,18 +194,13 @@ img {
   left: 0px;
 }
 .sticky-logo {
-  @include laptop {
-    position: absolute;
-    z-index: 10;
-  }
-  border-bottom: 1px solid $lightGray;
-  border-right: 1px solid $lightGray;
-  background-color: #fdfdfd;
-  height: 100px;
-  position: fixed;
-  top: 0px;
-  left: 0px;
+  position: relative;
 
+  background-color: transparent;
+  height: 100px;
+  top: -40px;
+  left: 0px;
+   z-index: 10;
 }
 .logo-footer {
   height: 100px;
@@ -221,7 +215,7 @@ img {
 }
  .site-logo:hover {
   animation: wobble 2s ease;
-  
+
  }
 .site-name {
   margin-top: 140px;
@@ -248,7 +242,7 @@ img {
 }
 
 
-.site-info { 
+.site-info {
   margin-top: 40px;
   margin-left: 15%;
   max-width: 900px;
@@ -268,7 +262,7 @@ img {
     @include kindle {
       margin-left: 200px;
     }
-   
+
     border: 1px solid #000;
     background-color: #000;
     color: #fdfdfd;
@@ -282,7 +276,7 @@ img {
   ul {
     list-style: none;
     padding: 0px;
-    position: relative; 
+    position: relative;
     left: 200px;
   }
 
@@ -300,11 +294,11 @@ img {
     -webkit-box-shadow: $close-shadow;
     -moz-box-shadow: $close-shadow;
     box-shadow: $close-shadow;
-    
+
 }
   ul li:hover {
      animation: wobble 2s ease-in;
-  }  
+  }
   .blk-wrapper {
     border: 1px solid #000;
     @include kindle {
@@ -334,17 +328,17 @@ img {
    height: 200px;
    margin-top: 4px;
    margin-bottom: 4px;
-         
+
   }
-  .code-blk li {  
+  .code-blk li {
     margin-bottom: 30px;
-    margin-right: 10px;    
+    margin-right: 10px;
     float: left;
   }
   .code-blk li:nth-of-type(odd) {
     top: 30px;
   }
-  
+
   .js-blk {
   @include mini-mobile {
    left: 600px;
@@ -426,7 +420,7 @@ nav {
     font-size: 16px;
   }
 
-  a { 
+  a {
     color: $darkGray;
     text-align: right;
     font-weight: 300;
@@ -438,7 +432,7 @@ nav {
   }
 }
 
-.b-nav { 
+.b-nav {
   text-align: center;
   margin-bottom: 100px;
 }
@@ -449,14 +443,14 @@ nav {
 .material-icons.md-18 { font-size: 14px; }
 .s-nav {
   width: 100%;
-  height: 100px;
-  background-color: #fdfdfd;
-  border-bottom: 1px solid #adadad;
-  overflow: hidden;
+  height: 50px;
+  background-color: #fff;
+
+
   text-align: center;
   z-index: 4;
   a {
-    display: block;  
+    display: block;
     font-family: sans-serif;
     font-size: 9px;
     color: #000;
@@ -485,9 +479,9 @@ nav {
   position: fixed;
   width: 100%;
   height: 61px;
-  background-color: #fdfdfd;  
+  background-color: #fdfdfd;
   border-bottom: 1px solid #adadad;
-  z-index: 1;  
+  z-index: 1;
 }
 .clip-img {
   width: 100%;
@@ -504,7 +498,6 @@ nav {
   height: 100%;
   background-color: transparent;
   overflow: hidden;
-  
 }
 
 /*
@@ -535,18 +528,18 @@ nav {
   flex-wrap: wrap;
   width: 100%;
   padding-left: 70px;
-  
+
 }
 .posts > a > .post {
   margin: 20px;
   padding: 20px;
   max-width: 400px;
-  width: 100%; 
+  width: 100%;
   background-color: #000;
   -webkit-box-shadow: $close-shadow;
   -moz-box-shadow: $close-shadow;
   box-shadow: $close-shadow;
-  transition: all 0.2s ease-in; 
+  transition: all 0.2s ease-in;
 
   h1 {
    color: #fff;
@@ -640,11 +633,12 @@ nav {
 }
 
 .fp-container{
-   display: flex;
-   flex-direction: row;
-   height: 100%;
+
+
    width: 100%;
-   transition: all ease-in 2s;
+   height: 100%;
+   background-color: #fbb040;
+
 }
 
 .fp-container .post {
@@ -662,7 +656,7 @@ nav {
   @include lg-mobile {
     width: 100%;
   }
-  @include mobile { 
+  @include mobile {
    padding: 30px;
    padding-top: 50px;
   }
@@ -736,7 +730,7 @@ nav {
     .row {
       display: flex;
       margin-bottom: 1px;
-      margin-left: 2px;  
+      margin-left: 2px;
     }
     .box {
       background-color: #000;
@@ -750,7 +744,7 @@ nav {
     }
   }
 }
-  
+
 .adbar {
   @include laptop {
     width: 30%;
@@ -778,9 +772,9 @@ nav {
   top: 100px;
   left: 0px;
   z-index: 0;
-  height: 800px; 
+  height: 800px;
   overflow: hidden;
-  
+
   .more {
    text-align: center;
   }
@@ -815,19 +809,23 @@ footer span {
 
 #lex-wrapper {
   font-family: monospace;
-  margin-top: 50px;
-  margin-bottom: 30px;
   height: 700px;
-  padding-left: 30px;
-  padding-right: 30px;
-  
- 
+  width: 100%;
+  padding-left: 5px;
+  padding-right: 5px;
+  border: 1px solid #000;
+}
+
+#lex-b {
+  height: 81.3%;
+  position: relative;
+  top: -170px;
 }
 #lex-container {
+  position: relative;
   padding: 0px;
-  height: 50%;
+  height: 100%;
   width: auto;
-  white-space: nowrap;
   overflow: hidden;
   display: flex;
   flex-direction: row;
@@ -838,7 +836,8 @@ footer span {
   width: 100%;
   height: 60px;
   color: #fff;
-  background-color: #fbb040;
+  background-color: #000;
+  border-bottom: 5px solid #fbb040;
   display: flex;
   flex-direction: row;
   box-shadow:   2px 3px 5px 0px rgba(0,0,0,0.75)
@@ -848,60 +847,59 @@ footer span {
   width: 100%;
   height: 60px;
   color: #fff;
-  background-color: #fbb040;
+  border-top: 7px solid #fbb040;
+  background-color: #000;
   display: flex;
   flex-direction: row;
    box-shadow:  2px 3px 5px 0px rgba(0,0,0,0.75)
 }
 #lex-logo {
   position: relative;
-  top: 120px; 
-  margin-left: 10px; 
+  top: 120px;
+  margin-left: 540px;
 }
 .speech-bubble {
  font-size: 14px;
- color: #fff;
+ color: #000;
  display: none;
- position: relative;
- border-radius: 4px;  
- top: 115px;
- left: 90px;
+ position: absolute;
+ border-radius: 4px;
+ top: 190px;
+ left: 640px;
  width: 24%;
  height: 14%;
  margin-left: 10px;
  padding: 5px;
- background-color: #00aabb;
+ background-color: #fff;
  z-index: 10;
+ box-shadow: $close-shadow;
 }
 .speech-bubble p {
   margin-top: 4px;
-
 }
 .speech-bubble:after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  width: 0;
-  height: 0;
-  border: 20px solid transparent;
-  border-top-color: #00aabb;
-  border-bottom: 0;
-  border-left: 0;
-  margin-left: -10px;
-  margin-bottom: -20px;
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 50%;
+	width: 0;
+	height: 0;
+	border: 20px solid transparent;
+	border-right-color: #fff;
+	border-left: 0;
+	margin-top: -20px;
+	margin-left: -20px;
+
 }
 #lex-nav .btn {
   display: flex;
-  
   height: 30px;
   width: 70px;
   margin-top: 10px;
   margin-left: 150px;
-    
   border: none;
   background-color: #6540fb;
-  cursor: pointer; 
+  cursor: pointer;
   box-shadow: 0px 3px 5px -2px rgba(0,0,0,0.75);
 }
 
@@ -909,30 +907,45 @@ footer span {
   font-size: 18px;
   font-weight: 700;
   margin-top: 5px;
-   
-}
 
+}
 #brand {
   font-size: 55px;
-  font-weight: 900;  
+  font-weight: 900;
   margin: auto;
-  background-color: #94512d;
+  background-color: $lightGray;
     color: transparent;
     text-shadow: 2px 2px 3px rgba(255,255,255,0.5);
     -webkit-background-clip: text;
     -moz-background-clip: text;
-    background-clip: text;    
+    background-clip: text;
+}
+#lex-content {
+  height: 100%;
+  width: 33.7%;
+  background-color: #fdfdfd;
+  overflow-wrap: normal;
+  overflow-y: scroll;
+  padding: 10px;
+  border-right: 5px solid #fbb040;
 }
 
+// .cnt-wrpr {
+//
+//   margin-right: 100px;
+//
+//   // font-size: 80px;
+// }
 #editor {
   height: 100%;
-  width: 50%;
+  width: 33.7%;
+  border-right: 5px solid #fbb040;
 }
 #iframe {
   font-family: monospace;
   font-size: 17px;
   height: 100%;
-  width: 50%;
+  width: 33.7%;
   color: #fff;
   background-color: #000;
   overflow-wrap: break-word;
@@ -949,7 +962,7 @@ footer span {
   background-color: #fff;
   opacity: 0.08;
   z-index: 10px;
-  
+
 }
 #iframe:after {
   content: '';
@@ -965,13 +978,13 @@ footer span {
 }
 
 .output-row {
-  display: flex;  
+  display: flex;
   flex-direction: row;
 
 }
 .output-row .output {
   color: #40b0fb;
-  margin-top: 3px;  
+  margin-top: 3px;
 }
 .ace_editor,
 .ace_editor div,
@@ -993,15 +1006,17 @@ footer span {
   border-radius: 5px;
   padding-bottom: 10px;
   margin-top: 10px;
-  margin-left: 5px; 
+  margin-left: 5px;
   display: none;
-  
+
 }
 
 .bug-report p {
   margin-left: 10px;
   margin-top: 10px;
 }
+
+/* Effects */
 
 
 

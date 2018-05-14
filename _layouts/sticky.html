@@ -16,17 +16,17 @@
       rel="stylesheet" />
     <link rel="alternate" type="application/rss+xml" title="{{ site.name }} - {{ site.description }}" href="{{ site.baseurl }}/feed.xml" />
     <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed|Source+Sans+Pro" rel="stylesheet">
-    
+
   </head>
-  <body> 
-    <!-- <div class='s-nav'>  
-      <a class="s-brand" href="{{ site.baseurl }}/">HowToCode</a>
-     
-    </div> -->
-     <a href="{{ site.baseurl }}/"><img class="sticky-logo" src="{{site.baseurl}}/images/home-logo.png" /> </a>
+  <body>
+    <div class='s-nav'>
+          <a href="{{ site.baseurl }}/"><img class="sticky-logo" src="{{site.baseurl}}/images/home-logo.png" /> </a>
+
+    </div>
+     <!-- <a href="{{ site.baseurl }}/"><img class="sticky-logo" src="{{site.baseurl}}/images/home-logo.png" /> </a> -->
     <!-- <div class='ad-hero'>
 
-    </div> -->
+    </div>
     <div class="box-burger">
       <div class="row" id="row-1">
         <div class="box"></div>
@@ -44,7 +44,7 @@
         <div class="box"></div>
       </div>
    </div> <!-- .box-burger -->
-    <aside class="hiddenbar" >   
+    <aside class="hiddenbar" >
       <div class="box-cross">
         <div class="row" id="row-1">
           <div class="box"></div>
@@ -61,15 +61,15 @@
      <!--temporary archive -->
      <div class="archive blk">
     {% for post in site.posts %}
-      <p><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></p> 
+      <p><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></p>
     {% endfor %}
   </div>
   </aside>
     <!-- Main Content for pages -->
-    
+
       {{ content }}
-    
-    <!-- <div class="wrapper-footer">
+
+    <div class="wrapper-footer">
       <img class="logo-footer" src="{{site.baseurl}}/images/hjslogosm.png" />
      <div class="blk"></div>
       <div class="container">
@@ -79,7 +79,7 @@
           <span><a href="{{site.baseurl}}/privacy-policy/">Privacy Policy</a></span>
         </footer>
       </div>
-    </div> -->
+    </div>
     {% include scripts.html %}
     {% include analytics.html %}
   </body>
