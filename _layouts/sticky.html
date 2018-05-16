@@ -4,84 +4,115 @@
 <html>
   <head>
     <title>{% if page.title %}{{ page.title }} – {% endif %}{{ site.name }} – {{ site.description }}</title>
-
     {% include meta.html %}
-
     <!--[if lt IE 9]>
       <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-
+    <link rel="stylesheet" type="text/css" href="http://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css"/>
     <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/style.css" />
    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet" />
     <link rel="alternate" type="application/rss+xml" title="{{ site.name }} - {{ site.description }}" href="{{ site.baseurl }}/feed.xml" />
     <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed|Source+Sans+Pro" rel="stylesheet">
-
   </head>
   <body>
-    <div class='s-nav'>
-          <a href="{{ site.baseurl }}/"><img class="sticky-logo" src="{{site.baseurl}}/images/home-logo.png" /> </a>
-
-          <div class="box-burger">
-            <div class="row" id="row-1">
-              <div class="box"></div>
-              <div class="box"></div>
-              <div class="box"></div>
-            </div>
-            <div class="row" id="row-2">
-              <div class="box"></div>
-              <div class="box"></div>
-              <div class="box"></div>
-            </div>
-            <div class="row" id="row-3">
-              <div class="box"></div>
-              <div class="box"></div>
-              <div class="box"></div>
-            </div>
-         </div> <!-- .box-burger -->
-    </div>
-     <!-- <a href="{{ site.baseurl }}/"><img class="sticky-logo" src="{{site.baseurl}}/images/home-logo.png" /> </a> -->
- <!-- <div class='ad-hero'>
-
-    </div> -->
-
-    <aside class="hiddenbar" >
-      <div class="box-cross">
-        <div class="row" id="row-1">
-          <div class="box"></div>
-          <div class="box"></div>
-          <div class="box"></div>
-        </div>
-        <div class="row" id="row-2">
-          <div class="box"></div>
-          <div class="box"></div>
-          <div class="box"></div>
+    <div class='ship-loader'>
+      <div class="tile-row">
+        <div class='tile'></div>
+        <div class='tile'></div>
+        <div class='tile'></div>
+        <div class='tile'></div>
+        <div class='tile'></div>
+        <div class='tile'></div>
+      </div>
+      <div class="tile-row">
+        <div class='tile'></div>
+        <div class='tile'></div>
+        <div class='tile'></div>
+        <div class='tile'></div>
+        <div class='tile'></div>
+        <div class='tile'></div>
+      </div>
+      <div class="tile-row">
+        <div class='tile'></div>
+        <div class='tile'></div>
+        <div class='tile'></div>
+        <div class='tile'></div>
+        <div class='tile'></div>
+        <div class='tile'></div>
+      </div>
+      <div class="tile-row">
+        <div class='tile'></div>
+        <div class='tile'></div>
+        <div class='tile'></div>
+        <div class='tile'></div>
+        <div class='tile'></div>
+        <div class='tile'></div>
+      </div>
+    </div> <!-- .ship-loader -->
+    <main>
+      <div class='s-nav'>
+            <a href="{{ site.baseurl }}/"><img class="home-logo" src="{{site.baseurl}}/images/home-logo.png" /> </a>
+            <div class="box-burger">
+              <div class="row" id="row-1">
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+              </div>
+              <div class="row" id="row-2">
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+              </div>
+              <div class="row" id="row-3">
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+              </div>
+           </div> <!-- .box-burger -->
+      </div>
+   <!-- <div class='ad-hero'>
+      Ads soon to come =)
+      </div> -->
+      <aside class="hiddenbar" >
+        <div class="box-cross">
+          <div class="row" id="row-1">
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+          </div>
+          <div class="row" id="row-2">
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+          </div>
+        </div> <!-- .box-cross -->
+       <p class="more blk">Learn More JavaScript</p>
+       <!--temporary archive -->
+      {% for post in site.posts %}
+        <a href="{{ site.baseurl }}{{ post.url }}">
+          <div class="archive">
+            <p>{{ post.title }}</p>
+          </div>
+        </a>
+      {% endfor %}
+      </aside><!--.hiddenbar -->
+      <!-- Main Content for pages -->
+        {{ content }}
+       <!-- end of main content -->
+      <div class="wrapper-footer">
+        <img class="logo-footer-s" src="{{site.baseurl}}/images/hjslogosm.png" />
+       <div class="blk"></div>
+        <div class="container">
+          <footer class="footer">
+            <span>&copy; All Rights Reserved 2018 howtocodejs.com</span>
+            <span><a href="https://termsfeed.com/terms-conditions/2460b3ff454f533c4d29560443c83d8b">Terms and Conditions</a></span>
+            <span><a href="{{site.baseurl}}/privacy-policy/">Privacy Policy</a></span>
+          </footer>
         </div>
       </div>
-     <p class="more blk">Learn More JavaScript</p>
-     <!--temporary archive -->
-     <div class="archive blk">
-    {% for post in site.posts %}
-      <p><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></p>
-    {% endfor %}
-  </div>
-  </aside>
-    <!-- Main Content for pages -->
-
-      {{ content }}
-
-    <div class="wrapper-footer">
-      <img class="logo-footer" src="{{site.baseurl}}/images/hjslogosm.png" />
-     <div class="blk"></div>
-      <div class="container">
-        <footer class="footer">
-          <span>&copy; All Rights Reserved 2018 howtocodejs.com</span>
-          <span><a href="https://termsfeed.com/terms-conditions/2460b3ff454f533c4d29560443c83d8b">Terms and Conditions</a></span>
-          <span><a href="{{site.baseurl}}/privacy-policy/">Privacy Policy</a></span>
-        </footer>
-      </div>
-    </div>
-    {% include scripts.html %}
-    {% include analytics.html %}
+      {% include scripts.html %}
+      {% include analytics.html %}
+    </main>
   </body>
 </html>

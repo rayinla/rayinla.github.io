@@ -180,9 +180,11 @@ Array.prototype.toGroupList = function (group) {
 };
 
 (function(){
-   
-  
+
+
   var editor = ace.edit("editor");
+  var $editor = $('#editor');
+  var $content = $('#lex-content');
   var $bugContainer = $('.bug-report');
   var $bugReport = $('.bug-report p');
   var $output  = $('.output');
@@ -204,7 +206,7 @@ Array.prototype.toGroupList = function (group) {
       ["I'm Groot...kidding I'm Lex."],
       ["I'm fluffy on the outside, smooth and cool on the inside"],
       //advanced speech pattern
-      ["So, sky's pretty grey, me being color blind and all.", 
+      ["So, sky's pretty grey, me being color blind and all.",
       "Ok..that was bleak...",
        "anyways..."],
       ],
@@ -274,6 +276,7 @@ Array.prototype.toGroupList = function (group) {
    var log = console.dir;
    log = function () {
       for (var i = 0; i < arguments.length; i++) {
+        debugger
           if(arguments[i].class  != undefined  && arguments[i].class  == 'Array'){
               $logger.append('<p>' + "[" + arguments[i] + "]" +'</p>');
            }else if(arguments[i].class  != undefined && arguments[i].class  == 'Function') {
@@ -289,7 +292,7 @@ Array.prototype.toGroupList = function (group) {
            }
       }
     }
-   
+
  //Basic Interpreter.js config
   var myInterpreter;
 
@@ -308,44 +311,44 @@ Array.prototype.toGroupList = function (group) {
           interpreter.createNativeFunction(wrapper));
     }
 
-    function parse() {    
+    function parse() {
       try{
         var code = editor.getValue();
         myInterpreter = new Interpreter(code, initApi);
-    
+
         return true;
       } catch(e){
           $output.css({'color': '#ff2b18'})
-          $output[0].innerHTML =  e.message;    
+          $output[0].innerHTML =  e.message;
           return false;
-      }  
+      }
     }
 
     function run() {
-       
+
        var re =  /(,)+/;
-  
+
        var arrReg = new RegExp(re);
        //Run only if code passes initial parse
        //Improve output by checking type
        if(parse()){
          try{myInterpreter.run();
-           
+
             $output.css({'color': '#40b0fb'})
            if(myInterpreter.value != undefined && myInterpreter.value.class == 'Array'){
-           
+
               $output[0].innerHTML = "[" + myInterpreter.value + "]";
            }else if(myInterpreter.value == undefined || myInterpreter.value == true || myInterpreter.value == false|| isNaN(myInterpreter.value) == false){
               $output[0].innerHTML = myInterpreter.value;
            }else if(myInterpreter.value != undefined && myInterpreter.value.class == 'Function') {
-            
+
               $output[0].innerHTML = "[" + 'Function: ' +  myInterpreter.value.node.id.name + "]";
            }else if(myInterpreter.value != undefined && myInterpreter.value.class == 'Object') {
-              
+
               $output[0].innerHTML = JSON.stringify(myInterpreter.value.properties);
            }
            else if(myInterpreter.value != undefined && typeof myInterpreter.value == 'string') {
-              
+
               $output[0].innerHTML = "'" + myInterpreter.value + "'";
            }
 
@@ -354,7 +357,7 @@ Array.prototype.toGroupList = function (group) {
           $output.css({'color': '#ff2b18'})
           $output[0].innerHTML = e.message;
          }
-       }     
+       }
     }
 
 
@@ -381,12 +384,12 @@ Array.prototype.toGroupList = function (group) {
       return;
     } else{
       editorCache[0] = editor.getValue()
-    
+
       resetConsole();
-      run(); 
+      run();
     }
-    
-      
+
+
   });
 
   function resetConsole(){
@@ -412,7 +415,7 @@ Array.prototype.toGroupList = function (group) {
       $speechBubble.toggle();
     },fintime);
   }
-  
+
   //Update esprima with new data to parse on user input
   function update() {
     try{
@@ -422,8 +425,8 @@ Array.prototype.toGroupList = function (group) {
       }
     }catch(e){
       $bugReport[0].innerHTML = e.message;
-      $bugContainer.css({'display': 'flex'})       
-    }   
+      $bugContainer.css({'display': 'flex'})
+    }
   }
 
 //Basic Ace JavaScript configuration
@@ -431,13 +434,13 @@ Array.prototype.toGroupList = function (group) {
     editor.setTheme("ace/theme/monokai");
     editor.session.setMode("ace/mode/javascript");
     editor.setValue(`function bob(){
-                    
+
 }
 
 console.log(bob)`, 1);
     editor.getSession().on('change', function(){
       update();
-    }); 
+    });
     editor.focus();
     editor.setOptions({
       fontSize: '15pt',
@@ -451,7 +454,7 @@ console.log(bob)`, 1);
 
   function ready(){
     setupEditor();
-    update();   
+    update();
   }
 
 
@@ -471,8 +474,33 @@ console.log(bob)`, 1);
 };
 
 
+/* Draggable Interface */
+// 
+// $editor.draggable({
+//   cursor: 'move',
+//   snap: true,
+//   snapTolerance: 5,
+//   stack: '#iframe, #lex-content'
+// })
+// $content.draggable({
+//   cursor: 'move',
+//   snap: true,
+//   snapTolerance: 5,
+//   stack: '#iframe, #editor'
+// })
+// $('#iframe').draggable({
+//   cursor: 'move',
+//   snap: true,
+//   snapTolerance: 5,
+//   stack: '#lex-content, #editor'
+// });
 
-     
+
+
+
+
+
+
     ready();
-      
+
 })()

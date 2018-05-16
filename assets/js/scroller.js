@@ -7,10 +7,10 @@
 
 
  	$burger.on('click', function(){
- 	  $hiddenbar.css({right:'0px', display:'block'});
+ 	  $hiddenbar.css({right:'0px'});
  	});
 
  	$cross.on('click', function(){
-      $hiddenbar.css({right: '-500px', display: 'none'});
+      $hiddenbar.css({right: '-500px'});
  	});
  });

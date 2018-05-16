@@ -54,7 +54,7 @@
     // be either 3 or 5. This
     // influences support for strict mode, the set of reserved words, and
     // support for getters and setter.
-    ecmaVersion: 5,
+    ecmaVersion: 6,
     // Turn on `strictSemicolons` to prevent the parser from doing
     // automatic semicolon insertion.
     strictSemicolons: false,
@@ -268,7 +268,7 @@
   var _do = {keyword: "do", isLoop: true}, _else = {keyword: "else", beforeExpr: true};
   var _finally = {keyword: "finally"}, _for = {keyword: "for", isLoop: true}, _function = {keyword: "function"};
   var _if = {keyword: "if"}, _return = {keyword: "return", beforeExpr: true}, _switch = {keyword: "switch"};
-  var _throw = {keyword: "throw", beforeExpr: true}, _try = {keyword: "try"}, _var = {keyword: "var"};
+  var _throw = {keyword: "throw", beforeExpr: true}, _try = {keyword: "try"}, _var = {keyword: "var"}, _let = {keyword: "let"};
   var _while = {keyword: "while", isLoop: true}, _with = {keyword: "with"}, _new = {keyword: "new", beforeExpr: true};
   var _this = {keyword: "this"};
 
@@ -289,7 +289,7 @@
                       "continue": _continue, "debugger": _debugger, "default": _default,
                       "do": _do, "else": _else, "finally": _finally, "for": _for,
                       "function": _function, "if": _if, "return": _return, "switch": _switch,
-                      "throw": _throw, "try": _try, "var": _var, "while": _while, "with": _with,
+                      "throw": _throw, "try": _try, "var": _var, "let": _let, "while": _while, "with": _with,
                       "null": _null, "true": _true, "false": _false, "new": _new, "in": _in,
                       "instanceof": {keyword: "instanceof", binop: 7, beforeExpr: true}, "this": _this,
                       "typeof": {keyword: "typeof", prefix: true, beforeExpr: true},
@@ -408,7 +408,7 @@
 
   // And the keywords.
 
-  var isKeyword = makePredicate("break case catch continue debugger default do else finally for function if return switch throw try var while with null true false instanceof typeof void delete new in this");
+  var isKeyword = makePredicate("break case catch continue debugger default do else finally for function if return switch throw try let var while with null true false instanceof typeof void delete new in this");
 
   // ## Character categories
 
@@ -1200,6 +1200,15 @@
           return parseForIn(node, init);
         return parseFor(node, init);
       }
+      if (tokType === _let) {
+        var init = startNode();
+        next();
+        parseLet(init, true);
+        finishNode(init, "VariableDeclaration");
+        if (init.declarations.length === 1 && eat(_in))
+          return parseForIn(node, init);
+        return parseFor(node, init);
+      }
       var init = parseExpression(false, true);
       if (eat(_in)) {checkLVal(init); return parseForIn(node, init);}
       return parseFor(node, init);
@@ -1296,6 +1305,12 @@
       parseVar(node);
       semicolon();
       return finishNode(node, "VariableDeclaration");
+
+   case _let:
+        next();
+        parseLet(node);
+        semicolon();
+        return finishNode(node, "VariableDeclaration");
 
     case _while:
       next();
@@ -1407,6 +1422,21 @@
   function parseVar(node, noIn) {
     node.declarations = [];
     node.kind = "var";
+    for (;;) {
+      var decl = startNode();
+      decl.id = parseIdent();
+      if (strict && isStrictBadIdWord(decl.id.name))
+        raise(decl.id.start, "Binding " + decl.id.name + " in strict mode");
+      decl.init = eat(_eq) ? parseExpression(true, noIn) : null;
+      node.declarations.push(finishNode(decl, "VariableDeclarator"));
+      if (!eat(_comma)) break;
+    }
+    return node;
+  }
+
+  function parseLet(node, noIn) {
+    node.declarations = [];
+    node.kind = "let";
     for (;;) {
       var decl = startNode();
       decl.id = parseIdent();
