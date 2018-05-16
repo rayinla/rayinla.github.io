@@ -1,6 +1,6 @@
 ---
 layout: post
-title: How to code js with a really, really long title
+title: Learn Variables
 image: config.png
 ---
 
@@ -72,7 +72,7 @@ function Mammal(){
 }
 
 function Carnivore(){
-   
+
 }
 
 function Lion(name){
@@ -129,4 +129,3 @@ Object.assign(Lion.prototype, Carnivore.prototype);
 ##Conclusion
 
 Creating methods and inheriting using the prototype chain may seem tedious as compared to the sugary class implementation. Still, what you come to appreciate is the dynamic and modular nature of JavaScript’s language. One important thing to note is that you don’t want to get carried away with prototypical inheritance. Recall this: the charlie.growHair() function had to travel a long way up the chain before it could be executed. Short chains equal better performance.
-

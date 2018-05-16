@@ -80,7 +80,7 @@ var Interpreter = function(code, opt_initFunc) {
  * @const {!Object} Configuration used for all Acorn parsing.
  */
 Interpreter.PARSE_OPTIONS = {
-  ecmaVersion: 5
+  ecmaVersion: 6
 };
 
 /**
@@ -2311,9 +2311,16 @@ Interpreter.prototype.setValueToScope = function(name, value) {
  */
 Interpreter.prototype.populateScope_ = function(node, scope) {
   if (node['type'] === 'VariableDeclaration') {
+
     for (var i = 0; i < node['declarations'].length; i++) {
+      if (node['kind'] === 'var'){
       this.setProperty(scope, node['declarations'][i]['id']['name'],
           undefined, Interpreter.VARIABLE_DESCRIPTOR);
+      } else if (node['kind'] === 'let'){
+          // debugger
+        this.setProperty(scope, node['declarations'][i]['id']['name'],
+            undefined, Interpreter.VARIABLE_DESCRIPTOR);
+      }
     }
   } else if (node['type'] === 'FunctionDeclaration') {
     this.setProperty(scope, node['id']['name'],
@@ -2848,6 +2855,7 @@ Interpreter.prototype['stepCallExpression'] = function(stack, state, node) {
         var scope = state.directEval_ ? state.scope : this.global;
         if (scope.strict) {
           // Strict mode get its own scope in eval.
+          //debugger
           scope = this.createScope(ast, scope);
         } else {
           // Non-strict mode pollutes the current scope.
@@ -2913,9 +2921,12 @@ Interpreter.prototype['stepConditionalExpression'] =
     state.mode_ = 2;
     var value = Boolean(state.value);
     if (value && node['consequent']) {
+      this.createScope(node, state.scope);
+      // debugger
       // Execute 'if' block.
       return new Interpreter.State(node['consequent'], state.scope);
     } else if (!value && node['alternate']) {
+          this.createSpecialScope(state.scope.parentScope);
       // Execute 'else' block.
       return new Interpreter.State(node['alternate'], state.scope);
     }
