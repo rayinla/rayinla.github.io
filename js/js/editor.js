@@ -314,7 +314,8 @@ Array.prototype.toGroupList = function (group) {
     function parse() {
       try{
         var code = editor.getValue();
-        myInterpreter = new Interpreter(code, initApi);
+        var babelCode = Babel.transform(code, { presets: ['es2015'] }).code;
+        myInterpreter = new Interpreter(babelCode, initApi);
 
         return true;
       } catch(e){
@@ -475,7 +476,7 @@ console.log(bob)`, 1);
 
 
 /* Draggable Interface */
-// 
+//
 // $editor.draggable({
 //   cursor: 'move',
 //   snap: true,
