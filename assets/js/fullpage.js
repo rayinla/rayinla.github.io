@@ -339,10 +339,10 @@
 
                 if(value){
                     setMouseWheelScrolling(false);
-                    addTouchHandler();
+                    // addTouchHandler();
                 }else{
                     setMouseWheelScrolling(false);
-                    removeTouchHandler();
+                    // removeTouchHandler();
                 }
             }
         }
