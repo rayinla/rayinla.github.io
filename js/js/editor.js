@@ -271,7 +271,6 @@ Array.prototype.toGroupList = function (group) {
   }
 
 
-
    //console.log definition
    var log = console.dir;
    log = function () {
@@ -326,33 +325,22 @@ Array.prototype.toGroupList = function (group) {
     }
 
     function run() {
-
-       var re =  /(,)+/;
-
-       var arrReg = new RegExp(re);
        //Run only if code passes initial parse
-       //Improve output by checking type
        if(parse()){
          try{myInterpreter.run();
-
             $output.css({'color': '#40b0fb'})
            if(myInterpreter.value != undefined && myInterpreter.value.class == 'Array'){
-
               $output[0].innerHTML = "[" + myInterpreter.value + "]";
            }else if(myInterpreter.value == undefined || myInterpreter.value == true || myInterpreter.value == false|| isNaN(myInterpreter.value) == false){
               $output[0].innerHTML = myInterpreter.value;
            }else if(myInterpreter.value != undefined && myInterpreter.value.class == 'Function') {
-
               $output[0].innerHTML = "[" + 'Function: ' +  myInterpreter.value.node.id.name + "]";
            }else if(myInterpreter.value != undefined && myInterpreter.value.class == 'Object') {
-
               $output[0].innerHTML = JSON.stringify(myInterpreter.value.properties);
            }
            else if(myInterpreter.value != undefined && typeof myInterpreter.value == 'string') {
-
               $output[0].innerHTML = "'" + myInterpreter.value + "'";
            }
-
          }
          catch(e){
           $output.css({'color': '#ff2b18'})
@@ -360,10 +348,6 @@ Array.prototype.toGroupList = function (group) {
          }
        }
     }
-
-
-
-
 
 
   var variablesQuiz = lexSpeech.variables;
@@ -389,7 +373,6 @@ Array.prototype.toGroupList = function (group) {
       resetConsole();
       run();
     }
-
 
   });
 
@@ -475,7 +458,7 @@ console.log(bob)`, 1);
 };
 
 
-/* Draggable Interface */
+/* toDo Draggable Interface */
 //
 // $editor.draggable({
 //   cursor: 'move',
