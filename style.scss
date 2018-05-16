@@ -557,6 +557,9 @@ nav {
   }
 
   display: flex;
+  -webkit-flex-direction: row;
+  -moz-flex-direction: row;
+  -ms-flex-direction: row;
   flex-direction: row;
   flex-wrap: wrap;
   width: 100%;
@@ -907,9 +910,15 @@ footer span {
   width: auto;
   // overflow: hidden;
   display: flex;
+  -webkit-flex-direction: row;
+  -moz-flex-direction: row;
+  -ms-flex-direction: row;
   flex-direction: row;
   box-shadow: 2px 3px 5px 0px rgba(0,0,0,0.75);
   @include kindle {
+    -webkit-flex-direction: column;
+    -moz-flex-direction: column;
+    -ms-flex-direction: column;
     flex-direction: column;
   }
 }
@@ -921,6 +930,9 @@ footer span {
   background-color: #000;
   border-bottom: 5px solid #fbb040;
   display: flex;
+  -webkit-flex-direction: row;
+  -moz-flex-direction: row;
+  -ms-flex-direction: row;
   flex-direction: row;
   box-shadow:   2px 3px 5px 0px rgba(0,0,0,0.75)
 }
@@ -971,6 +983,9 @@ footer span {
   border-top: 7px solid #fbb040;
   background-color: #000;
   display: flex;
+  -webkit-flex-direction: row;
+  -moz-flex-direction: row;
+  -ms-flex-direction: row;
   flex-direction: row;
    box-shadow:  2px 3px 5px 0px rgba(0,0,0,0.75)
 }
@@ -1021,15 +1036,10 @@ footer span {
   font-size: 55px;
   font-weight: 900;
   margin: auto;
-  background-color: $lightGray;
-    color: transparent;
-    text-shadow: 2px 2px 3px rgba(255,255,255,0.5);
-    -webkit-background-clip: text;
-    -moz-background-clip: text;
-    background-clip: text;
-    @include mobile {
-      display: none;
-    }
+  color: #fff;
+  @include mobile {
+    display: none;
+  }
 }
 #lex-content {
   height: 100%;
@@ -1119,6 +1129,9 @@ footer span {
 
 .output-row {
   display: flex;
+  -webkit-flex-direction: row;
+  -moz-flex-direction: row;
+  -ms-flex-direction: row;
   flex-direction: row;
 
 }
@@ -1126,11 +1139,11 @@ footer span {
   color: #40b0fb;
   margin-top: 3px;
 }
-.ace_editor,
-.ace_editor div,
-{
-  font-family: monospace, sans-serif;
-}
+// .ace_editor,
+// .ace_editor *, div,
+// {
+//   font-family:Courier,Monaco,Menlo,"Ubuntu Mono",Consolas,source-code-pro,monospace;
+// }
 
 .material-icons {
   margin-top: px;
@@ -1525,6 +1538,9 @@ html.fp-enabled,
 }
 .box-row{
   display: flex;
+  -webkit-flex-direction: row;
+  -moz-flex-direction: row;
+  -ms-flex-direction: row;
   flex-direction: row;
 }
 .d-box {
@@ -1660,24 +1676,31 @@ box-shadow: -10px -7px 12px -11px rgba(0,0,0,0.75);
 
 /* Loader */
 .ship-loader {
-
+  @include mobile {
+      width: 180px;
+      animation: fly 4s infinite;
+  }
+  @include mini-mobile {
+      width: 220px;
+      left: 0px;
+      animation: fly 4s infinite;
+  }
   animation: fly 2s infinite;
   width: 220px;
   position: absolute;
   top: 50%;
-  left: 50%px;
+  left:0px;
+  transform: rotate(130deg);
 
 }
 @keyframes fly {
    0% {
-    transform: rotate(0deg);
+
     left: 0px;
   }
-  20%{
-   transform: rotate(130deg);
-  }
+
   100% {
-     transform: rotate(90deg);
+
     left: 1800px;
   }
 
@@ -1685,6 +1708,9 @@ box-shadow: -10px -7px 12px -11px rgba(0,0,0,0.75);
 
 .tile-row{
   display: flex;
+  -webkit-flex-direction: row;
+  -moz-flex-direction: row;
+  -ms-flex-direction: row;
   flex-direction: row;
 }
 .tile {

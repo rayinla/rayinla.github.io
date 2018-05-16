@@ -415,24 +415,19 @@ Array.prototype.toGroupList = function (group) {
 
 //Basic Ace JavaScript configuration
   function setupEditor(){
+    var exampleCode = "var dogFood = kibble;";
     editor.setTheme("ace/theme/monokai");
     editor.session.setMode("ace/mode/javascript");
-    editor.setValue(`function bob(){
-
-}
-
-console.log(bob)`, 1);
+    editor.setValue(exampleCode, 1);
     editor.getSession().on('change', function(){
       update();
     });
     editor.focus();
     editor.setOptions({
       fontSize: '15pt',
+      fontFamily: 'monospace',
       showLineNumbers: true,
       cursorStyle: "slim",
-      useSoftTabs: true,
-      tabSize: 20,
-        navigateWithinSoftTabs: true
     });
   }
 
