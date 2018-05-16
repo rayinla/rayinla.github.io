@@ -1,0 +1,22 @@
+{
+  "short_name": "Code JS",
+  "name": "How To Code JS",
+  "icons": [
+    {
+      "src": "/images/hjslogosm.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/images/hjslogo.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "https://howtocodejs.com",
+  "background_color": "#fff",
+  "display": "standalone",
+  "scope": "{{site.url}}/variables",
+  "theme_color": "#000",
+  
+}

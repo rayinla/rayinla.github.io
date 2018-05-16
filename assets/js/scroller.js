@@ -6,6 +6,8 @@
  	var $container = $('.fp-container');
 
 
+  addToHomescreen();
+
  	$burger.on('click', function(){
  	  $hiddenbar.css({right:'0px'});
  	});
