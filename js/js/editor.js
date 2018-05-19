@@ -313,8 +313,14 @@ Array.prototype.toGroupList = function (group) {
     function parse() {
       try{
         var code = editor.getValue();
-        var babelCode = Babel.transform(code, { presets: ['es2015'] }).code;
-        myInterpreter = new Interpreter(babelCode, initApi);
+        var babelCode = Babel.transform(code, {
+           presets: ['es2015'],
+
+       }).code
+
+      var babelCode =  babelCode.slice(0,14);
+      debugger
+        myInterpreter = new Interpreter(babelCode.slice(0,14), initApi);
 
         return true;
       } catch(e){

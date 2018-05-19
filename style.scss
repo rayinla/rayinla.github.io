@@ -717,14 +717,6 @@ nav {
     font-family: 'Source Sans Pro', sans-serif;
   }
 
-  blockquote {
-    margin: 1.8em .8em;
-    border-left: 2px solid $gray;
-    padding: 0.1em 1em;
-    color: $gray;
-    font-size: 22px;
-    font-style: italic;
-  }
 
   .comments {
     margin-top: 10px;
@@ -735,6 +727,8 @@ nav {
     font-size: 15px;
   }
 }
+
+
 
 .hiddenbar {
   @include mini-mobile {
@@ -856,24 +850,19 @@ nav {
   z-index: 0;
   height: 800px;
   overflow: hidden;
-
   .more {
    text-align: center;
   }
-
 }
-
 .wrapper-footer {
   margin-top: 80px;
   border-top: 1px solid #ddd;
   z-index: 100;
 }
-
 footer {
   padding: 20px 0;
   text-align: center;
 }
-
 footer span {
     font-size: 15px;
     margin-top: 5px;
@@ -948,22 +937,17 @@ footer span {
   cursor: pointer;
   box-shadow: 0px 3px 5px -2px rgba(0,0,0,0.75);
 }
-
 .btn p {
   font-size: 18px;
   font-weight: 700;
   margin-top: 5px;
-
 }
-
 #talk {
 
   @include mobile {
     left: -100px;
   }
-
 }
-
 #lex-foot  #run {
   display: flex;
   justify-content: center;
@@ -971,11 +955,7 @@ footer span {
   top: -12px;
   // right: -50px;
   margin: auto;
-
 }
-
-
-
 #lex-foot {
   width: 100%;
   height: 60px;
@@ -993,7 +973,6 @@ footer span {
   position: relative;
   top: 120px;
   margin: auto;
-
 }
 .speech-bubble {
  font-size: 14px;
@@ -1031,7 +1010,6 @@ footer span {
 	margin-top: -20px;
 	margin-left: -20px;
 }
-
 #brand {
   font-size: 55px;
   font-weight: 900;
@@ -1042,19 +1020,97 @@ footer span {
   }
 }
 #lex-content {
-  height: 100%;
+  height: 100%;  //height is important in portrait
   width: 33.7%;
+  transition: width 1s ease-out;
+  position: relative;
   background-color: #fdfdfd;
   overflow-wrap: normal;
   overflow-y: scroll;
   padding: 10px;
   border-right: 5px solid #fbb040;
+  font-size: 18px;
+  line-height: 26px;
+  font-family: Garamond, Baskerville, "Baskerville Old Face", "Hoefler Text", "Times New Roman", serif;
   @include kindle {
-      width: 100%;
+      transition: height 1s ease-out;
+      width: 100% !important; //width shouldn't be overridden in landscape
       height: 33.7%;
   }
-}
+  .resize-width {
+    position: relative;
+    top: 0px;
+    right: 0px;
+    width: 50px;
+    height: 50px;
+    opacity: 0.5;
+    cursor: pointer;
+    @include kindle {
+        display: none;
+    }
+  }
 
+  .resize-height {
+    display: none;
+    position: relative;
+    top: 0px;
+    right: 0px;
+    width: 50px;
+    height: 50px;
+    opacity: 0.5;
+    cursor: pointer;
+    @include kindle {
+        display: block;
+    }
+  }
+  .resize-width:hover {
+    cursor: pointer;
+  }
+  h1 {
+    text-align: center;
+    background-color:$lexOrange;
+    padding: 10px;
+    font-size: 30px;
+  }
+
+  h2,h3,h4,h5 {
+    background-color: #000;
+    color: #fff;
+    border-radius: 4px;
+    padding: 8px;
+    -moz-box-shadow: $close-shadow;
+    -webkit-box-shadow: $close-shadow;
+    box-shadow: $close-shadow;
+
+  }
+  h2 {
+    text-align: center;
+  }
+  h3 {
+    width: 75%;
+  }
+  h4 {
+    width: 50%;
+  }
+  h5 {
+    width: 25%;
+  }
+
+  blockquote {
+    margin: 1.8em .8em;
+    border: 1px solid $gray;
+    padding: 5px;
+    background-color: $lexOrange;
+    padding: 0.1em 1em;
+    color: #fff;
+    font-size: 22px;
+    font-style: italic;
+    -moz-box-shadow: $close-shadow;
+    -webkit-box-shadow: $close-shadow;
+    box-shadow: $close-shadow;
+  }
+
+}
 // .cnt-wrpr {
 //
 //   margin-right: 100px;
@@ -1112,7 +1168,6 @@ footer span {
   background-color: #fff;
   opacity: 0.08;
   z-index: 10px;
-
 }
 #iframe:after {
   content: '';
@@ -1126,14 +1181,12 @@ footer span {
   opacity: 0.04;
   z-index: 10px;
 }
-
 .output-row {
   display: flex;
   -webkit-flex-direction: row;
   -moz-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
-
 }
 .output-row .output {
   color: #40b0fb;
@@ -1144,13 +1197,11 @@ footer span {
 // {
 //   font-family:Courier,Monaco,Menlo,"Ubuntu Mono",Consolas,source-code-pro,monospace;
 // }
-
 .material-icons {
   margin-top: px;
   margin-left: 5px;
   font-size: 18px;
 }
-
 .bug-report {
   background-color: red;
   color: #fff;
@@ -1162,30 +1213,23 @@ footer span {
   top: -11px;
   margin-left: 5px;
   display: none;
-
-
 }
-
 .bug-report p {
   margin-left: 10px;
   margin-top: 10px;
 }
-
 /* Full Page*/
 html.fp-enabled,
 .fp-enabled body {
     margin: 0;
     padding: 0;
     overflow:hidden;
-
     -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 #superContainer {
     height: 100%;
     position: relative;
-
     -ms-touch-action: none;
-
     touch-action: none;
 }
 .fp-section {
