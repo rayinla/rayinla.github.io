@@ -70,17 +70,17 @@ What's the use of data if you can't do anything to it? That's where operators co
 <h3> 1) Arithmetic Operators </h3>
 
 
-<h4>Addition(+)</h4>
+<h4>Addition(+) -</h4>
 
-<h5>Number: </h5>`1234 + 4579;`
+<b>Number:</b> `1234 + 4579;`
 
-<h5>String:</h5>`"hello" + "Jerry";`
+<b>String: </b> `"hello" + "Jerry";`
 
-Yes, you can add a string. There's a fancy term for this called string concatenation. Notice how the two strings glob together. We can solve this problem by adding an empty string in between.
+You can actually add strings. There's a fancy term for this called string concatenation. If you tried this in the code editor, you probably noticed how the two strings glob together. We can solve this problem by adding an empty string in between.
 
 `"hello" + " " + "Jerry";`
 
-<h5>Boolean:</h5> `true + false;`
+<b>Boolean:</b> `true + false;`
 
 Performing arithmetic operations on boolean values actually returns a value. In this case, the value 1 isn't just any ordinary 1. It's a bitwise 1. In the language of computers, this translates to true. So, we can conclude that true plus false equals true. 
 
@@ -93,37 +93,45 @@ false: 0
 result:1 + 0 or 0 + 1 = 1
 ```
 
-<h4>Subtraction(-)</h4>
+<h4>Subtraction(-) - </h4>
 
-<h5>Number:</h5>`1234 - 1234;`
-<h5>String:</h5> `NaN`
+<b>Number:</b>`1234 - 1234;`
+
+<b>String:</b> `NaN`
+
 > Note: NaN(Not a Number) is the error you'll get when you try to subtract String values.
 
-<h5>Boolean:</h5> `true - false; ` or `false - true;`
+<b>Boolean:</b> `true - false; ` or `false - true;`
 
-<h4>Division(/)</h4>
-<h5>Number:</h5>`1234 / 1234;`
-<h5>String:</h5> `NaN`
-<h5>Boolean:</h5> `true / false;` or `false/true;`
+<h4>Division(/) - </h4>
+<b>Number:</b>`1234 / 1234;`
 
+<b>String:</b> `NaN`
 
-<h4>Multiplication(\*\)</h4>
-
-<h5>Number:</h5>`1234 * 1234;`
-<h5>String:</h5> `NaN`
-<h5>Boolean:</h5> `true * false;` or `false * true;`
+<b>Boolean:</b> `true / false;` or `false/true;`
 
 
-<h4>Modulo(%)</h4>
+<h4>Multiplication(\*\) - </h4>
+
+<b>Number:</b>`1234 * 1234;`
+
+<b>String:</b> `NaN`
+
+<b>Boolean:</b> `true * false;` or `false * true;`
+
+
+<h4>Modulo(%) - </h4>
 
 This cool operator tells us the remainder of a division of two values.
 
-<h5>Number:</h5> `10%3;`
-<h5>String:</h5> `NaN`
-<h5>Boolean:</h5> `true % false;` or `false % true;`
+<b>Number:</b> `10%3;`
+
+<b>String:</b> `NaN`
+
+<b>Boolean:</b> `true % false;` or `false % true;`
 
 
-<h4>Increment(++)</h4>
+<h4>Increment(++) - </h4>
 
 `++` is a fancy way to say add 1 to any value. It matters where you put the incrementer. Oh, and by the way, we need variables now. JavaScript's interpreter can't read `++10` if 10 is not saved inside a variable. why? Because the plus, plus operator is what we call syntactic sugar. It's something that was created  to make life easier for developers, because it turns out we're pretty lazy. Instead of saying 10 + 1, we get to forgo adding the 1. Since plus, plus is technically not a real arithmetic operator, you need to define a variable so that you won't get errors.
 
@@ -143,7 +151,7 @@ console.log(++cookies);// > 7
 
 So…why are we not getting the values we expect???
 
-Well, writing the variable before ++ gives us the original value before it can be incremented and vice versa.
+Well, writing the variable before `++` gives us the original value before it can be incremented and vice versa.
 
 Think of it this way: we asked the baker for 5 cookies before he knew we wanted to add one more to the order(cookies)(++).
 
@@ -155,13 +163,15 @@ Finally, when we ask for our cookies, our total is 7 cookies.
 
 JavaScript's interpreter is that poor baker when it comes to incrementing and decrementing.
 
-<h4>decrement(--)</h4>
+<h4>decrement(--) - </h4>
 
-<h5>Number:</h5> `-- number`
-<h5>String:</h5> `NaN`
-<h5>Boolean:</h5> `--true`
+<b>Number:</b> `-- number`
 
-<h4>+= Plus Equals, and -= Minus Equals, and, Times Equals, and /= Divided Equals</h4>
+<b>String:</b> `NaN`
+
+<b>Boolean:</b> `--true`
+
+<h4>+= Plus Equals, and -= Minus Equals, and, Times Equals, and /= Divided Equals </h4>
 
 It turns out programmers are lazier than you thought. Yes, there are more arithmetic shortcuts.
 
@@ -191,9 +201,11 @@ There's also a special triple equals(===). This checks to make sure that the typ
 
 Try this out: `3 == '3';`. You got `true`, right? The fact that JavaScript ignored our stringed `'3'` can cause some unwanted bugs. To fix this, add another equals. Now you should get false. That's because triple equals also ensures that the types are exactly the same as well.
 
-<h5>Number:</h5> `1 === 2;`
-<h5>String:</h5> `'string' === 'string';`
-<h5>Boolean:</h5> `false != true;`
+<b>Number:</b> `1 === 2;`
+
+<b>String:</b> `'string' === 'string';`
+
+<b>Boolean:</b> `false != true;`
 
 Okay, let's play around some more by using what's called an if/else statement.
 
@@ -221,7 +233,7 @@ Be sure to use different data types in your if/else statement. You can even play
 
 <h3>3) Logical Operators</h3>
 
-<h4>Logical and &&, Logical or||, Logical not !</h4>
+<h4> &&(And), ||(Or), !(Not) </h4>
 
 Logical operators allows us to add complexity to our conditional statements. Practically, if you want maximum control over a condition, you'd use && because all of the conditions must be met in order to be true. Conversely, if you want the condition to be more inclusive, you'd use logical OR because only one condition has to be true to get a return value of true.
 
@@ -239,6 +251,7 @@ Variables, Finally!
 -------------------
 
 You were introduced to variables  a bit prematurely. Even then, you saw how badly we needed a variable in order to get the increment and decrement operator working. 
+
 Now, let's think of numbers, strings, and booleans as Snap chat photos that ghost away after a short period. They don't stay around long enough to be useful. If you want to use the same data, you'd have to re-type it somewhere else in your JavaScript file.
 
 Imagine having to write this formula over and over again: `1/2(60 * 120);`
@@ -322,7 +335,7 @@ triangleArea = 1/2(60 * 120);
 poppinsQoute = "superkalafragilisticespialadocious";
 ```
 
-<h3>boolean</h3>
+<h3>Boolean</h3>
 ```javascript
 let  true_ = true;
 ```

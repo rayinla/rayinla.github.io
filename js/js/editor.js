@@ -12,6 +12,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 *  Helpers
 **/
 
+
 var Node = function Node(el) {
   _classCallCheck(this, Node);
 
@@ -310,18 +311,104 @@ Array.prototype.toGroupList = function (group) {
           interpreter.createNativeFunction(wrapper));
     }
 
+    function removeStrict() {
+        return {
+            visitor: {
+                Program: {
+                    exit: function exit(path) {
+                        var list = path.node.directives;
+                        for(var i=list.length-1, it; i>=0 ; i--){
+                            it = list[i];
+                            if (it.value.value==='use strict'){
+                                list.splice(i,1);
+                            }
+                        }
+                    }
+
+                }
+            }
+        };
+    }
+    Babel.registerPlugin('removeStrict', removeStrict);
+
     function parse() {
       try{
         var code = editor.getValue();
-        var babelCode = Babel.transform(code, {
-           presets: ['es2015'],
 
-       }).code
+        var babelCode = Babel.transform(code,
+           {plugins:[
+             'removeStrict',
+             'check-es2015-constants',
+             'external-helpers',
+             'inline-replace-variables',
+             'syntax-async-functions',
+             'syntax-async-generators',
+             'syntax-class-constructor-call',
+             'syntax-class-properties',
+             'syntax-decorators',
+             'syntax-do-expressions',
+             'syntax-exponentiation-operator',
+             'syntax-export-extensions',
+             'syntax-flow',
+             'syntax-function-bind',
+             'syntax-function-sent',
+             'syntax-jsx',
+             'syntax-object-rest-spread',
+             'syntax-trailing-function-commas',
+             'transform-async-functions',
+             'transform-async-to-generator',
+             'transform-async-to-module-method',
+             'transform-class-constructor-call',
+             'transform-class-properties',
+             'transform-decorators',
+             'transform-decorators-legacy',
+             'transform-do-expressions',
+             'transform-es2015-arrow-functions',
+             'transform-es2015-block-scoped-functions',
+             'transform-es2015-block-scoping',
+             'transform-es2015-classes',
+             'transform-es2015-computed-properties',
+             'transform-es2015-destructuring',
+             'transform-es2015-duplicate-keys',
+             'transform-es2015-for-of',
+             'transform-es2015-function-name',
+             'transform-es2015-instanceof',
+             'transform-es2015-literals',
+             'transform-es2015-object-super',
+             'transform-es2015-parameters',
+             'transform-es2015-shorthand-properties',
+             'transform-es2015-spread',
+             'transform-es2015-sticky-regex',
+             'transform-es2015-template-literals',
+             'transform-es2015-unicode-regex',
+             'transform-es3-member-expression-literals',
+             'transform-es3-property-literals',
+             'transform-es5-property-mutators',
+             'transform-eval',
+             'transform-exponentiation-operator',
+             'transform-export-extensions',
+             'transform-flow-comments',
+             'transform-flow-strip-types',
+             'transform-function-bind',
+             'transform-jscript',
+             'transform-object-assign',
+             'transform-object-rest-spread',
+             'transform-object-set-prototype-of-to-assign',
+             'transform-proto-to-assign',
+             'transform-react-constant-elements',
+             'transform-react-display-name',
+             'transform-react-inline-elements',
+             'transform-react-jsx',
+             'transform-react-jsx-compat',
+             'transform-react-jsx-self',
+             'transform-react-jsx-source',
+             'transform-regenerator',
+             'transform-runtime',
+           ]
+          }).code
 
-      var babelCode =  babelCode.slice(0,14);
-      debugger
-        myInterpreter = new Interpreter(babelCode.slice(0,14), initApi);
 
+        myInterpreter = new Interpreter(babelCode, initApi);
         return true;
       } catch(e){
           $output.css({'color': '#ff2b18'})
@@ -421,7 +508,7 @@ Array.prototype.toGroupList = function (group) {
 
 //Basic Ace JavaScript configuration
   function setupEditor(){
-    var exampleCode = "var dogFood = kibble;";
+    var exampleCode = "var dogFood = 'kibble';";
     editor.setTheme("ace/theme/monokai");
     editor.session.setMode("ace/mode/javascript");
     editor.setValue(exampleCode, 1);
