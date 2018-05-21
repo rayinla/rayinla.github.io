@@ -2241,11 +2241,14 @@ Interpreter.prototype.createScope = function(node, parentScope) {
  */
 Interpreter.prototype.createSpecialScope = function(parentScope, opt_scope) {
   if (!parentScope) {
+
     throw Error('parentScope required');
   }
+
   var scope = opt_scope || this.createObjectProto(null);
   scope.parentScope = parentScope;
   scope.strict = parentScope.strict;
+
   return scope;
 };
 
