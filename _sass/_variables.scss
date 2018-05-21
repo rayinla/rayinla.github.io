@@ -46,6 +46,11 @@ $georgia: Georgia, serif;
     @content;
   }
 }
+@mixin mini-pad {
+  @media screen and (max-width: 830px) {
+    @content;
+  }
+}
 
 @mixin kindle {
   @media screen and (max-width: 771px) {

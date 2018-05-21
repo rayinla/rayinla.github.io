@@ -176,13 +176,14 @@ img {
   }
 }
 
-
-
 .site-logo {
-  border-bottom: 1px solid $lightGray;
-  border-right: 1px solid $lightGray;
+
+  border-radius: 2px;
   background-color: #fdfdfd;
-  height: 100px;
+  -webkit-box-shadow: 6px 9px 5px -8px rgba(0,0,0,0.75);
+  -moz-box-shadow: 6px 9px 5px -8px rgba(0,0,0,0.75);
+  box-shadow: 6px 9px 5px -8px rgba(0,0,0,0.75);
+  height: 50px;
   position: absolute;
   top: 0px;
   left: 0px;
@@ -669,12 +670,9 @@ nav {
 }
 
 .fp-container{
-
-
    width: 100%;
    height: 100%;
    background-color: #fbb040;
-
 }
 
 .fp-container .post {
@@ -1072,8 +1070,8 @@ footer span {
     padding: 10px;
     font-size: 30px;
   }
-
-  h2,h3,h4,h5 {
+  h2 {
+    text-align: center;
     background-color: #000;
     color: #fff;
     border-radius: 4px;
@@ -1084,35 +1082,35 @@ footer span {
     -webkit-box-shadow: $close-shadow;
     box-shadow: $close-shadow;
   }
-
-  h2 {
-    text-align: center;
+  h3, h4 {
+    border-bottom: 2px solid $lightGray;
+    padding-bottom: 8px;
+    -webkit-box-shadow: 6px 9px 5px -10px rgba(0,0,0,0.75);
+    -moz-box-shadow: 6px 9px 5px -10px rgba(0,0,0,0.75);
+    box-shadow: 6px 9px 5px -10px rgba(0,0,0,0.75);
   }
-
   h3 {
     width: 75%;
   }
   h4 {
+
     width: 50%;
   }
   h5 {
     width: 25%;
   }
-
   blockquote {
     margin: 1.8em .8em;
-    border: 1px solid $gray;
+    border: 3px solid $lexOrange;
     padding: 5px;
-    background-color: $lexOrange;
+    background-color: #fff;
     padding: 0.1em 1em;
-    color: #fff;
-    font-size: 22px;
-    font-style: italic;
+    color: #000;
+    font-size: 19px;
     -moz-box-shadow: $close-shadow;
     -webkit-box-shadow: $close-shadow;
     box-shadow: $close-shadow;
   }
-
 }
 // .cnt-wrpr {
 //
@@ -1464,14 +1462,20 @@ html.fp-enabled,
     margin: 0px;
     a {
       h1 {
-        @include lg-mobile {
-            font-size: 70px;
+        @include mini-pad{
+          font-size: 50px;
         }
+        // @include kindle {
+        //   font-size: 50px;
+        // }
+        // @include lg-mobile {
+        //     font-size: 70px;
+        // }
         @include mobile {
-             font-size: 60px;
+             font-size: 45px;
         }
         @include mini-mobile {
-             font-size: 40px;
+             font-size: 35px;
         }
        font-size: 80px;
        margin-bottom: 200px;

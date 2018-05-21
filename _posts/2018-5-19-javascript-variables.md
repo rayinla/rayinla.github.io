@@ -1,11 +1,11 @@
 ---
 layout: post
-title: Learn Variables
+title: JavaScript Variables
 image: config.png
 ---
 
 
-Variables
+JavaScript Variables
 ===========
 
 Welcome, Coders!
@@ -22,15 +22,23 @@ Open up your Twitter or Instagram account and you're hit with a log in screen pr
 
 In JavaScript, this data is divided into three groups:
 
-<h3> 1 ) Numbers </h3> 
+<h3> 1 ) Numbers: 101010 </h3> 
 
 Numbers are exactly what you've known them to be all your life - 1, 50, 22.3, 5…Integers, decimals, fractions. 
 
 JavaScript is real friendly when it comes to numbers, because you don't have to specify the type of number. We call this behavior <b>untyped</b>. JavaScript is untyped because determining whether a number is an integer or a decimal(float) is taken care of by the language's interpreter. 
 
-Why don't you try entering `typeof 5` into the editor and hit the run button. You should get `'number'`.
+Why don't you try entering `typeof 5;` into the editor and hit the run button. You should get `'number'`. Also, please mind the semicolon. They're like periods in English. Make sure to put them at the end of every statement or expression.
 
->Pro tip: typeof 5 is a statement. You wrote JavaScript code and expected to get a value in return. That's what statements are all about. If you're getting undefined, you most likely have an expression on your hands.
+
+>Pro tip: `typeof 5` is a statement. You wrote JavaScript code and expected to get a value in return. That's what statements are all about. If you're getting `undefined` as a value, you most likely have an expression on your hands.
+
+You can also try this cool tool:
+
+```javascript
+console.log(typeof 5);
+```
+>Pro tip: `console.log()` is a web tool that prints JavaScript code to a console. Every web browser has a console you can access. "Web tools" makeup what's called a Web API. It's much easier to think of API's as a set of tools that make your job a whole lot easier. No need to worry about opening a console here though. Lex will log the result for you.
 
 <h3> 2) Strings: "Hello there" </h3>
 
@@ -39,7 +47,7 @@ Strings are simply fields of text. Even the words you're reading now form a stri
 In JavaScript, this is also a string: `"123";`
 
 ~~~javascript
-typeof "1,2,3";// > 'string'
+typeof "123";// > 'string'
 typeof "hello world"; // 'string'
 ~~~
 
@@ -50,8 +58,8 @@ You can probably guess by now that your passwords are stringy bytes of data. 
 Don't let the name throw you off. It's the namesake of the mathematician George Bool. Booleans only have two values: true and false.
 
 ```javascript
-typeof true;
-typeof false;
+typeof true; // > 'boolean'
+typeof false; // > 'boolean'
 ```
 
 As you'll come to know, these are important values when it comes to adding logic to our programs. With just those two values, you can create a complex system of loops and conditions.
@@ -72,21 +80,31 @@ What's the use of data if you can't do anything to it? That's where operators co
 
 <h4>Addition(+) -</h4>
 
-<b>Number:</b> `1234 + 4579;`
-
-<b>String: </b> `"hello" + "Jerry";`
+<b>Number:</b>
+```javascript
+1234 + 4579; // > 5813
+```
+<b>String: </b>
+```javascript
+"hello" + "Jerry"; // > 'helloJerry'
+```
 
 You can actually add strings. There's a fancy term for this called string concatenation. If you tried this in the code editor, you probably noticed how the two strings glob together. We can solve this problem by adding an empty string in between.
+```javascript
+"hello" + " " + "Jerry"; // > 'hello Jerry'
+```
 
-`"hello" + " " + "Jerry";`
-
-<b>Boolean:</b> `true + false;`
+<b>Boolean:</b>
+```javascript
+true + false; // > 1
+```
 
 Performing arithmetic operations on boolean values actually returns a value. In this case, the value 1 isn't just any ordinary 1. It's a bitwise 1. In the language of computers, this translates to true. So, we can conclude that true plus false equals true. 
 
 Why is that so? You'll understand once we turn true and false into what our computer actually sees.
 
 ```javascript
+//Beep boop bop...
 true: 1
 false: 0
 
@@ -147,7 +165,7 @@ console.log(++cookies);// > 7
 
 >Pro tip: `var cookies = 5;` is called an expression. You defined what value cookie has but you didn't ask for its value. As you learned earlier, `cookies;` would be a statement.
 
->Note: `console.log()` is a web tool that prints JavaScript code to a console. Every web browser has a console you can access. This "web tool" is really called a Web API. It's much easier to think of API's as a set of tools that make your job a whole lot easier.
+
 
 So…why are we not getting the values we expect???
 
@@ -163,7 +181,7 @@ Finally, when we ask for our cookies, our total is 7 cookies.
 
 JavaScript's interpreter is that poor baker when it comes to incrementing and decrementing.
 
-<h4>decrement(--) - </h4>
+<h4>decrement(- -) - </h4>
 
 <b>Number:</b> `-- number`
 
@@ -171,33 +189,46 @@ JavaScript's interpreter is that poor baker when it comes to incrementing and de
 
 <b>Boolean:</b> `--true`
 
-<h4>+= Plus Equals, and -= Minus Equals, and, Times Equals, and /= Divided Equals </h4>
+<h3>2) Assignment Operators</h3>
+<h4>Equals(=)</h4>
+```javascript
+var favoriteSoda = 'Coke';
+```
+Here's another brief glimpse at a variable in action. The equals sign, in this case, is not the same as the equal sign you use in math. You see now that there's a reason we use double equals in comparison operators. The single equals simply means that you want to assign a particular data type to a variable name you made up. The operator used is called an assignment operator.
+
+
+<h4>Plus Equals(+=)</h4>
 
 It turns out programmers are lazier than you thought. Yes, there are more arithmetic shortcuts.
 
 Say you have `var score = 5;` and, instead of incrementing score by 1, you want to increment it by 6.
 
-Normally you'd write `score = score + 6;`
+Normally you'd write, `score = score + 6;`
 
-With Plus Equals(+=) you simply have to write it as `score += 6;`
+With Plus Equals(+=) you simply have to write it as, `score += 6;`
 
-Why don't you try it out with different operators?
+Why don't you try it out with the different arithmetic operators?
 
+```javascript
+score *= 6;
+score -= 6;
+score /= 6;
+```
 
-<h3>2. Comparison Operators</h3>
+<h3>3) Comparison Operators</h3>
 
-<h4>
-equals(==), 
-not equal(!=),
-greater (>),
-less (<),
-greater than or equal(>=),
-less than or equal(<=)
-</h4>
-
+```javascript
+//this isn't code =)
+equals: ==, 
+not equal: !=,
+greater: >,
+less: <,
+greater than or equal: >=,
+less than or equal: <=,
+```
 Comparison operators return true or false. Without them, we wouldn't have all of the complex apps that are available to us. 
 
-There's also a special triple equals(===). This checks to make sure that the types are the same as well.
+There's also a special triple equals `===`. This checks to make sure that the types are the same as well.
 
 Try this out: `3 == '3';`. You got `true`, right? The fact that JavaScript ignored our stringed `'3'` can cause some unwanted bugs. To fix this, add another equals. Now you should get false. That's because triple equals also ensures that the types are exactly the same as well.
 
@@ -207,6 +238,7 @@ Try this out: `3 == '3';`. You got `true`, right? The fact that JavaScript ignor
 
 <b>Boolean:</b> `false != true;`
 
+<h4> Bonus: Comparison Operators and What If </h4>
 Okay, let's play around some more by using what's called an if/else statement.
 
 ```javascript
@@ -223,15 +255,15 @@ Try this real if/else statement instead.
 if(2==3){
  console.log('correctomundo');
 }else {
-console.log('wrooong');
+ console.log('wrooong');
 }
 ```
 >Note: the end of if statements don't receive semi-colons.
 
-> Pro tip: Exclude them from any statements or expressions ending in a bracket.
+> Pro tip: Exclude semicolons from any statements or expressions ending in a bracket.
 Be sure to use different data types in your if/else statement. You can even play around with all of the operators you've learned so far.
 
-<h3>3) Logical Operators</h3>
+<h3>4) Logical Operators</h3>
 
 <h4> &&(And), ||(Or), !(Not) </h4>
 
@@ -279,9 +311,9 @@ if(3==3){
 }
 ```
 
-Notice the assignment operator. In this example, I've declared and initialized my variable at the same time. The equals sign in this case is not the same as the equal sign you use in math. It simply means that you want to assign particular data to a variable name you made up. The operator used is called an assignment operator. 
+>Note: In this example, we've declared and initialized our variable at the same time.
 
-Alright. Remember what I mentioned about global and local variables. You're probably guessing that if I were to use this variable outside of the block, we should get an error.
+Remember what we discussed about global and local variables. You're probably guessing that if we were to use this variable outside of the `if` block, we should get an error.
 
 ```javascript
 if(3===3){
@@ -298,13 +330,15 @@ Well, the problem with the `var` keyword is that it loves to expose itself in pu
 function test(){
   var number = 3;
 }
-console.log(number);
+console.log(number); // number is not defined
 ```
+>Pro tip: Being able to read and understand errors is crucial to being able to debug your JavaScript applications. In our case, a <b>ReferenceError</b> occurs when we try to use a variable that hasn't been declared. If we try to use a variable that is out of scope, we also get a ReferenceError.
+
 
 We will get into functions another time, but all you need to know for now is that functions create their own scope. They're like highly secured mansions.
 That's all fine and dandy that functions are so secure, but how do I secure an if/else statement? 
 
-There is a new way to declare variables as of Es6.  Every so often Ecma International comes up with new ways for us to code in JavaScript. What they've come up with to solve this issue is the let keyword.
+There is a new way to declare variables as of es6.  Every so often Ecma International comes up with new ways for us to code in JavaScript. What they've come up with to solve this issue is the `let` keyword.
 
 Let's use it!
 
@@ -312,10 +346,10 @@ Let's use it!
 if(3===3){
  let number = 3;
 }
-console.log(number);
+console.log(number); // > number is not defined
 ```
 
-Great. Now we truly have global and local variables. 
+Great. We got an error! Now we truly have global and local variables. 
 
 Going back to our original variable declarations, `var triangleArea, poppinsQoute;`, you can see that we are able to declare multiple variables at the same time by separating them with a comma. Also, look at how the second word in the variable name starts off with a capitalized letter. This convention is called camel case. It's good to stick to this convention so that your code is legible to you and to others that might look at your code one day. 
 
@@ -327,20 +361,20 @@ We've messed around with variables a little, but we haven't pushed them to the l
 
 <h3>Numerical statements</h3>
 ```javascript
-triangleArea = 1/2(60 * 120);
+let triangleArea = 1/2(60 * 120);
 ```
 
 <h3>Strings</h3>
 ```javascript
-poppinsQoute = "superkalafragilisticespialadocious";
+let poppinsQoute = "superkalafragilisticespialadocious";
 ```
 
 <h3>Boolean</h3>
 ```javascript
-let  true_ = true;
+let true_ = true;
 ```
 
-Wait. Why the underscore? See, you can't name a variable anything that is already named by those who've designed the language. Just make sure that you don't start naming your variables with numbers: 123true.
+Wait. Why the underscore? See, you can't name a variable anything that is already named by those who've designed the language. These untouchable names include keywords and reserved words. Also, make sure that you don't start your variable names with numbers: `123true`.
  
 <h3>Logical statements</h3>
 ```javascript
@@ -366,7 +400,7 @@ Functions can also be assigned to variables. These functions are called anonymou
 
 <h3>Arrays</h3>
 ```javascript
-var myArray = [1,3,4,5];
+let myArray = [1,3,4,5];
 ```
 
 Arrays are a collection of data. More on them some athor time.
@@ -374,7 +408,7 @@ Arrays are a collection of data. More on them some athor time.
 <h3>Objects</h3>
 
 ```javascript
-var myObject = {me: "too", save: "me"};
+let myObject = {me: "too", save: "me"};
 ```
 
 Objects also hold a collection of data. Actually, everything in JavaScript is an object. Yep, even data types.
@@ -382,15 +416,15 @@ Objects also hold a collection of data. Actually, everything in JavaScript is an
 
 <h3> Null</h3>
 ```javascript
-var empty = null;
+let empty = null;
 ```
 
 Null means nothing. You can intentionally set null to  a variable if you're not expecting the variable to have a type or value.
 
 <h3>Other variables</h3>
 ```javascript
-var oldVariable = 25;
-var newVariable = oldVariable * 2;
+let oldVariable = 25;
+let newVariable = oldVariable * 2;
 ```
 
 <h3>Multiple variables!</h3>
@@ -404,7 +438,7 @@ Don't try this one at home, because it has unwanted side effects. Variable assig
 Closing Note
 ------------
 
-Variables are here to stay so make sure you get into the habit of using them. Whenever you find yourself using the same data type repeatedly, try sticking it into a variable. You'll be happy you did.
+Variables are here to stay, so make sure you get into the habit of using them. Whenever you find yourself using the same data type repeatedly, try sticking it into a variable. You'll be happy you did.
 
 
 >Challenge: Write a function that return a variable. Don't be afraid to ask Google for anything.
