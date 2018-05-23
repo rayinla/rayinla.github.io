@@ -214,8 +214,8 @@ Array.prototype.toGroupList = function (group) {
     variables: [
       {
        question: "How many primitive datatypes are there in Javascript?",
-       answer: "Too slow. There are three: Numbers, Strings, and Booleans",
-       quip: "Bet you didn't know that."
+       answer: "Too slow. There are six: Numbers, Strings, and Booleans, Sytbols, undefined, and null",
+       quip: "Bet you thought there were seven. Objects ain't primitive."
       },
       {
        question: "What type of data is object?",
