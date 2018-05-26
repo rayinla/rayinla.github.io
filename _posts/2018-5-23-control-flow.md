@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Data Types
+title: Control Flow
 image: config.png
 ---
 
@@ -29,7 +29,7 @@ Think of conditionals as forks in a road. One conditional you may be familiar wi
 
 <h3>If/else</h3>
 
-Suppose we've been tasked with building a submission form for a pet daycare called Pet Nirvana. One of the questions the CEO wants to ask the costumer is, 'how many pets do you have?'.
+Suppose we've been tasked with building a submission form for a pet daycare called Pet Nirvana. One of the questions that CEO Larry Davis wants to ask his potential costumer is, 'how many pets do you have?'.
 
 ```javascript
 var answer = prompt("how many pets do you have?");
@@ -48,7 +48,7 @@ Without control flow, this is what we might get from a malicious user:
 
 That little line of SQL code can drop all of the users in a database. That's just one example. Really, all it takes is a simple string to break our app.
 
-Imagine if we wanted to calculate the average pets per owner so that Pet Nirvana can know how much they should be spending on supplies.
+Imagine if we wanted to calculate the average pets per owner so that Mr. Davis can know how much he should be spending on supplies.
 
 Don't worry about the functions. Copy the code below into the editor and try entering a number.
 
@@ -275,7 +275,7 @@ Loops
 
 So now we know how to control the data that comes in, but how about the data that goes out to the user?
 
-Larry now wants to add a rating system to his handlers. He'd like stars to show up under their profile name.
+Mr. Davis now wants to add a rating system to his handlers. He'd like stars to show up under their profile name.
 
 We could render all of the stars manually...
 
@@ -481,4 +481,4 @@ for (let i = 0; i < 10; i++) {
 Summary
 =======
 
-We conquered `if/else if/else` statements, tackled `switch` statements, and untangled `while`, `do while`, and `for loops`. We also learned how to break loops and continue them. Next, we'll learn how a JavaScript program flows around functions. 
+We conquered `if/else if/else` statements, tackled `switch` statements, and untangled `while`, `do while`, and `for loops`. We also learned how to break loops and continue them. Next, we'll learn how a JavaScript program flows around functions.
