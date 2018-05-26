@@ -533,6 +533,8 @@ Array.prototype.toGroupList = function (group) {
       fontFamily: 'monospace',
       showLineNumbers: true,
       cursorStyle: "slim",
+      useWrapMode: true,   // wrap text to view
+      indentedSoftWrap: false,
     });
   }
 
