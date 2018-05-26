@@ -80,7 +80,7 @@ var Interpreter = function(code, opt_initFunc) {
  * @const {!Object} Configuration used for all Acorn parsing.
  */
 Interpreter.PARSE_OPTIONS = {
-  ecmaVersion: 6
+  ecmaVersion: 5
 };
 
 /**
@@ -233,7 +233,7 @@ Interpreter.prototype.initGlobalScope = function(scope) {
   this.setProperty(scope, 'self', scope); // Editable.
   this.setProperty(scope, 'console', scope);
   this.setProperty(scope, 'log', scope);
-
+  this.setProperty(scope, 'setTimeout', scope);
   // Create the objects which will become Object.prototype and
   // Function.prototype, which are needed to bootstrap everything else.
   this.OBJECT_PROTO = new Interpreter.Object(null);
@@ -2929,7 +2929,7 @@ Interpreter.prototype['stepConditionalExpression'] =
       // Execute 'if' block.
       return new Interpreter.State(node['consequent'], state.scope);
     } else if (!value && node['alternate']) {
-          this.createSpecialScope(state.scope.parentScope);
+    
       // Execute 'else' block.
       return new Interpreter.State(node['alternate'], state.scope);
     }

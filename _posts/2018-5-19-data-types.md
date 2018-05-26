@@ -38,7 +38,7 @@ console.log(typeof 5);
 
 There are also two special numbers that are worth mentioning: `Infinity` and `NaN`.
 
-1.Infinity is the greatest numerical quantity. It is, quiet simply, infinite.
+1.Infinity is the greatest numerical quantity. It is, quite simply, infinite.
 ```javascript
 console.log(typeof Infinity); // > 'number'
 console.log(typeof -Infinity); // > 'number'
@@ -74,7 +74,7 @@ Double and single qoutes may appear similar, but double qoutes are safer because
 Take this example:
 ~~~javascript
  "I'm Sally"; // Correct
- 'Im Sally'; // incorrect
+ 'I'm Sally'; // incorrect
 ~~~
 
 Backticks allow you to create multiple lines:
@@ -167,7 +167,7 @@ The symbol type is the latest primitive type to enter the JavaScript language. T
 
 Bonus data type
 ---------------
-There are six "primitive" data types, but there's also an extra data type called object. This is the grand daddy of all data types. Quiet literally. In fact, you can safely say that every primitive data type except null and undefined is also an object.
+There are six "primitive" data types, but there's also an extra data type called object. This is the grand daddy of all data types. Quite literally. In fact, you can safely say that every primitive data type except null and undefined is also an object.
 
 Here's the proof:
 
