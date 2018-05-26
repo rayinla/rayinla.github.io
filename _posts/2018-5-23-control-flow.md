@@ -328,10 +328,8 @@ Let's revisit that pet number prompt and rewrite it using a do while loop.
 let answer;
 do {
   answer = prompt("how many pets do you have?");
-  if(isNaN(answer)){
-     alert("error: enter a number");
-  }
-}while(isNaN(number))
+
+}while(isNaN(answer))
 
 ```
 This code will keep badgering a user to enter information if they don't enter a number.
@@ -345,8 +343,7 @@ do {
   if(isNaN(answer)){
      alert("error: enter a number");
   }
-}while(isNaN(number))
-
+}while(isNaN(answer))
 ```
 
 Now we've created a feedback loop that alerts the user of their error and allows them to immediately correct it.
