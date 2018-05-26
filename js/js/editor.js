@@ -276,7 +276,7 @@ Array.prototype.toGroupList = function (group) {
    var log = console.dir;
    log = function () {
       for (var i = 0; i < arguments.length; i++) {
-        debugger
+
           if(arguments[i].class  != undefined  && arguments[i].class  == 'Array'){
               $logger.append('<p>' + "[" + arguments[i] + "]" +'</p>');
            }else if(arguments[i].class  != undefined && arguments[i].class  == 'Function') {
@@ -297,6 +297,15 @@ Array.prototype.toGroupList = function (group) {
   var myInterpreter;
 
    function initApi(interpreter, scope) {
+
+
+
+     var wrapper = function(text){
+       return prompt(arguments.length ? text : '');
+     }
+     interpreter.setProperty(scope, 'prompt',
+         interpreter.createNativeFunction(wrapper));
+
       var wrapper = function(text) {
         return alert(arguments.length ? text : '');
       };
@@ -306,9 +315,16 @@ Array.prototype.toGroupList = function (group) {
        var wrapper = function(text) {
         return log(arguments.length ? text : '');
       };
-
        interpreter.setProperty(scope, 'log',
           interpreter.createNativeFunction(wrapper));
+
+          var wrapper = function(func, timer){
+        // debugger
+           return setTimeout(func, timer);
+          }
+          interpreter.setProperty(scope, 'setTimeout',
+              interpreter.createAsyncFunction(wrapper));
+
     }
 
     function removeStrict() {
@@ -331,10 +347,9 @@ Array.prototype.toGroupList = function (group) {
     }
     Babel.registerPlugin('removeStrict', removeStrict);
 
-    function parse() {
+    function parse(code) {
       try{
-        var code = editor.getValue();
-
+        var code = code;
         var babelCode = Babel.transform(code,
            {plugins:[
              'removeStrict',
@@ -417,9 +432,9 @@ Array.prototype.toGroupList = function (group) {
       }
     }
 
-    function run() {
+    function run(code) {
        //Run only if code passes initial parse
-       if(parse()){
+       if(parse(code)){
          try{myInterpreter.run();
             $output.css({'color': '#40b0fb'})
            if(myInterpreter.value != undefined && myInterpreter.value.class == 'Array'){
@@ -457,14 +472,11 @@ Array.prototype.toGroupList = function (group) {
     if (editorCache[0] == undefined){
       editorCache.push(editor.getValue())
        resetConsole();
-       run();
-    } else if(editorCache[0] == editor.getValue()) {
-      return;
-    } else{
+       run(editorCache[0]);
+    }else{
       editorCache[0] = editor.getValue()
-
       resetConsole();
-      run();
+      run(editorCache[0]);
     }
 
   });
@@ -508,7 +520,7 @@ Array.prototype.toGroupList = function (group) {
 
 //Basic Ace JavaScript configuration
   function setupEditor(){
-    var exampleCode = "var dogFood = 'kibble';";
+    var exampleCode = "";
     editor.setTheme("ace/theme/monokai");
     editor.session.setMode("ace/mode/javascript");
     editor.setValue(exampleCode, 1);

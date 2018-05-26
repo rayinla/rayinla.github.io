@@ -54,7 +54,7 @@
     // be either 3 or 5. This
     // influences support for strict mode, the set of reserved words, and
     // support for getters and setter.
-    ecmaVersion: 6,
+    ecmaVersion: 5,
     // Turn on `strictSemicolons` to prevent the parser from doing
     // automatic semicolon insertion.
     strictSemicolons: false,

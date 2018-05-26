@@ -42,11 +42,11 @@ if(true){
 
 ```
 
- Within an if/else statement, `var triangleArea;` and `var poppinsQoute;` can be accessed within the if/else's block, because we declared them in a global scope.
+ Within an if statement, `var triangleArea;` and `var poppinsQoute;` can be accessed within the if statement's block, because we declared them in a global scope.
 
 Think of scope as perspective. From the perspective of the outside, we can't always see what is inside someone's house. But from the inside, we can see everything that's outside. 
 
-We shouldn't be able to look inside an if/else statement and see its local variables. Local variables are variables that are declared within a block.
+We shouldn't be able to look inside an if statement and see its local variables. Local variables are variables that are declared within a block.
 
 
 ```javascript
@@ -81,9 +81,9 @@ console.log(number); // number is not defined
 
 We will get into functions another time, but all you need to know for now is that functions create their own scope. They're like highly secured mansions.
 
-That's all fine and dandy that functions are so secure, but how do I secure an if/else statement? 
+That's all fine and dandy that functions are so secure, but how do I secure an if statement? 
 
-There is a new way to declare variables as of es6. Every so often Ecma International comes up with new ways for us to code in JavaScript. What they've come up with to solve this issue is the `let` keyword.
+There is a new way to declare variables as of es6. Every so often ECMA International comes up with new ways for us to code in JavaScript. What they've come up with to solve this issue is the `let` keyword.
 
 Let's use it!
 
@@ -122,7 +122,7 @@ console.log(poppinsQoute); // > "Mary Poppins, practically perfect in every way.
 
 <h3>Const: A constant friend </h3>
 
-The `const` keword is yet another way to declare a variable. You would use this keyword if you want to tell yourself and other developers that this variable should not change. Perhaps we should redeclare our `triangleArea` variable.
+The `const` keword is yet another way to declare a variable. You would use this keyword if you wanted to tell yourself and other developers that this variable should not change. Perhaps we should redeclare our `triangleArea` variable.
 
 ```javascript
 const TRIANGLE_AREA = 1/2(60 * 120);
