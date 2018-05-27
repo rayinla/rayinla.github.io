@@ -177,13 +177,22 @@ img {
 }
 
 .site-logo {
-
-  border-radius: 2px;
-  background-color: #fdfdfd;
   height: 80px;
   position: absolute;
   top: 0px;
   left: 0px;
+  @include mini-pad {
+    display: none;
+  }
+}
+.m-logo {
+  height: 45px;
+  margin-left: 5px;
+  margin-top: 5px;
+  display: none;
+  @include mini-pad {
+    display: block;
+  }
 }
 .home-logo {
   position: relative;
@@ -293,6 +302,10 @@ img {
     -webkit-box-shadow: $close-shadow;
     -moz-box-shadow: $close-shadow;
     box-shadow: $close-shadow;
+    @include mini-mobile {
+      font-size: 35px;
+      width: 60px;
+    }
 
 }
   ul li:hover {
@@ -314,7 +327,7 @@ img {
       margin-left: -220px;
     }
     @include s-mini-mobile {
-      margin-left: -230px;
+      margin-left: -250px;
     }
   }
   .how-blk {
@@ -334,6 +347,9 @@ img {
    height: 200px;
    margin-top: 4px;
    margin-bottom: 4px;
+   @include mini-mobile {
+    margin-top: 60px;
+   }
 
   }
   .code-blk li {
@@ -409,17 +425,17 @@ img {
     right: 0px;
   }
   cursor: pointer;
-  max-width: 33px;
+  max-width: 28px;
   position: absolute;
-  top: -62px;
-  right: -30px;
+  top: -13px;
+  right: 0px;
   z-index: 10;
   margin-top: 30px;
   margin-right: 60px;
-}
 
+}
 .df-brgr {
-  margin-top: 80px;
+  right: -20px;
 }
 .row {
   display: flex;
@@ -435,6 +451,14 @@ img {
 .box:nth-of-type(2){
   width: 14px;
 }
+
+.box:nth-of-type(1){
+  border-radius: 10px;
+}
+.box:nth-of-type(3){
+  border-radius: 10px;
+}
+
 nav {
   margin-top: 23px; // @TODO: Vertically middle align
   font-family: $helveticaNeue;

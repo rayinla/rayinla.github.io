@@ -16,7 +16,7 @@ When you write a bunch of statements like,
 ```javascript
  let firstVar = 'dummy';
  let secondVar = 'bozo';
- let thirdVar = 'stoog';
+ let thirdVar = 'stooge';
 
  console.log(firstVar);
  console.log(secondVar);
@@ -43,10 +43,10 @@ We'd assume that the user would enter a number, but what if someone wanted to en
 Without control flow, this is what we might get from a malicious user:
 
 
-![image]({{site.baseurl}}/images/prompt-1.JPG);
+![image]({{site.baseurl}}/images/prompt-1.JPG)
 
 
-That little line of SQL code can drop all of the users in a database. That's just one example. Really, all it takes is a simple string to break our app.
+That little line of SQL code can drop all of the users in a database. That's just one example. Really, all it takes is a simple string to break our app. We'll see why that is with a real life example.
 
 Imagine if we wanted to calculate the average pets per owner so that Mr. Davis can know how much he should be spending on supplies.
 
