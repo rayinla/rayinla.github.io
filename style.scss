@@ -1135,22 +1135,21 @@ footer span {
     box-shadow: $close-shadow;
   }
 }
-
 #editor {
   height: 100%;
-  width: 33.7%;
+  width: 43.7%;
   border-right: 5px solid #fbb040;
 
   @include kindle {
       width: 100%;
-      height: 33.7%;
+      height: 43.7%;
   }
 }
 #iframe {
   font-family: monospace;
   font-size: 17px;
   height: 100%;
-  width: 33.7%;
+  width: 23.7%;
   max-width: 100%;
   color: #fff;
   background-color: #000;
@@ -1158,7 +1157,7 @@ footer span {
   padding-left: 40px;
   @include kindle {
       width: 100%;
-      height: 33.7%;
+      height: 23.7%;
   }
 
   .c-arrow {

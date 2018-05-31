@@ -5,7 +5,7 @@ title: Functions
 Functions
 ==========
 
-We can wax poetry about functions and their uses all day, but just look at this first, okay?
+We can wax poetics about functions and their uses all day. Instead, let's explore life with and without functions.
 
 <h3>Life without Functions</h3>
 
@@ -74,19 +74,15 @@ return x * y; // a return statement allows
               //the function to produce value
 
 ```
-
-
-
 A function has a parameter or parameters. We can name them whatever we like, just like variables. Though, we should think of parameters more like references rather than storage. We're telling the function that we're expecting some variable or data type to be plugged into this space by the user. We then operate on the parameter names within the body of the function.
 
 More times than not, you'll want to make sure you return your expected result. Not doing so will produce `undefined` when you invoke the function. If you intend to use your function to set value, include the return keyword.
 
-
-
 Return
 -------
 
-The `return` statement can return any data type. Let's explore some of the ways
+The `return` statement can *return* any data type.
+
 Numbers:
 ```javascript
 return 2;
@@ -94,6 +90,14 @@ return 2;
 Strings:
 ```javascript
 return "hello";
+```
+Null:
+```javascript
+return null;
+```
+Undefined:
+```javascript
+return undefined;
 ```
 Arrays:
 ```javascript
@@ -123,17 +127,12 @@ multiply(2,2); // 4
 You can invoke a function before its declaration and it'll still work. This is called hoisting.
 
 ```javascript
-
 multiply(2,2); // 4
 
 function multiply(x, y){
   return x * y;
 }
-
 ```
-
-
-
 Function notations
 --------------------
 
@@ -198,7 +197,7 @@ let greet = _=>{
 
 ```
 
-For the most part, the difference in syntax was introduced to satisfy purists who are fond of writing minimal code. Though, the arrow function does introduce auto binding.
+For the most part, the difference in syntax was introduced to satisfy purists who are fond of writing minimal code. Though, the arrow function does introduce auto binding. Instead of getting overly technical, we'll show you what auto binding is later.
 
 <b>Anonymous functions</b> are versatile. You can set them as a value to a key in an object literal:
 
@@ -250,8 +249,9 @@ function outie(){
 ```
 <b>Context:</b>
 
- Now is a good time to address context. Functions create their own context, which effects the `this` keyword, but if we wrote a closure within the anonymous function, `this` would refer to our function. Thus, we'd get undefined.
+ Now is a good time to address context. Functions create their own context, which effects the `this` keyword, but if we wrote a closure within an anonymous function, `this` would refer to our function. Thus, we'd get undefined.
 
+Here's an example:
 ```javascript
  let person = {
   name: "Mark",
@@ -264,7 +264,7 @@ function outie(){
 // double invoke ()() can invoke a returned closure
 person.greet()();// >'hello undefined'
 ```
-To fix the problem, developers just set `this` to a variable to preserve the context:
+To fix the problem, developers just set `this` to a variable to preserve the context. In other words, we're *binding* this. Starting to see what auto binding may entail?:
 
 ```javascript
 //code excerpt
@@ -277,7 +277,36 @@ greet: function(){
 //end of excerpt
 ```
 
-> Pro Tip: Remember the new `()=>` syntax? Well, it can auto bind. Before, you had to remember to bind `this` in a variable like we had to do earlier. Now, you just use the new syntax and, wala!, you have a functioning `this` keyword. Try it out by rewriting the closure.
+An alternate solution is to explicitly call `bind(this)` on the closing bracket of a function.
+
+```javascript
+//code excerpt
+greet: function(){
+  let self = this;   
+  return function(){
+        return 'hello' + ' ' +  self.name;  
+  }.bind(this)      
+}
+//end of excerpt
+```
+It looks ugly, but it works.
+
+> Pro Tip: Remember the new `()=>` syntax? The example above gives a good example of why we need auto binding. Before, you had to remember to bind `this` in a variable like we had to do earlier. Now, you just use the new syntax and, wala!, you have a functioning `this` keyword. Try it out by rewriting the closure.
+
+The final solution is to use the Es6 arrow function.
+
+```javascript
+//code excerpt
+greet: function(){
+  let self = this;   
+  return ()=>{
+        return 'hello' + ' ' +  self.name;  
+  }      
+}
+//end of excerpt
+```
+
+> Note: Using the arrow function on the outer anonymous function destroys context. Because the arrow function binds automatically, you will be binding `this` to a context outside of the `person` object. So, `this.person` would no longer work.
 
 
 <h3>IIFE</h3>
@@ -307,7 +336,10 @@ var greet =
 greet // 'hi'
 ```
 
-This may not appear useful, but we can use the IFFE and closures, combined with anonymous functions, to create an android.
+Function Mania
+---------------
+
+We can use IFFE's and closures, combined with anonymous functions, to create an android.
 ```javascript
 //function expression
 let android = (function(){
@@ -336,10 +368,9 @@ android.greet(); //'Hello, I'm Raj'
 ```
 
 
-The code above takes advantage of all that functions give us to produce a functioning object. If we set a different name, it will give us a different name when we call `greet()`. We will learn more about object oriented programming in another section.
+The code above takes advantage of all that functions give us to produce a functioning object. It manages its own state, meaning that any changes we make will be saved. So, if we set a new name, and tell the android to greet us, it will greet us with that new name. That's some powerful stuff! We will learn more about object oriented programming in another chapter.
 
 >Note: Oftentimes, developers wrap JavaScript code with an IFFE if they want their code to run without having to be triggered by an event.
-
 
 
 Summary
