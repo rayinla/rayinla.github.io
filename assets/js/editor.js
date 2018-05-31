@@ -32,7 +32,7 @@ class Node {
       this.head = this.tip;
       return this.head;
     }
-    
+
     current() {
       return this.head;
     }
@@ -101,26 +101,26 @@ class Node {
             ".";
         }catch(e){
 
-        } 
+        }
       } else {
         return _.last( _(idx).times(() => {
             return this.next();
           }));
       }
     }
-    
+
     index(){
       return this.head.index;
     }
-  
+
     spread(){
       var spreadR = (this.idxCnt - 1) - this.head.index;
       var spreadL = this.head.index;
       return {right: spreadR, left: spreadL};
     }
   }
-  
-  
+
+
   Array.prototype.copy = function(start, end) {
     return this.filter((el, idx) => {
       if (idx < end && idx >= start) {
@@ -159,11 +159,11 @@ class Node {
     }
     return list;
   };
-   
-  
+
+
 (function(){
-   
-  
+
+
   var editor = ace.edit("editor");
   var $bugContainer = $('.bug-report');
   var $bugReport = $('.bug-report p');
@@ -186,7 +186,7 @@ class Node {
       ["I'm Groot...kidding I'm Lex."],
       ["I'm fluffy on the outside, smooth and cool on the inside"],
       //advanced speech pattern
-      ["So, sky's pretty grey, me being color blind and all.", 
+      ["So, sky's pretty grey, me being color blind and all.",
       "Ok..that was bleak...",
        "anyways..."],
       ],
@@ -269,10 +269,10 @@ class Node {
     } else{
       editorCache[0] = editor.getValue()
       resetConsole();
-      run(); 
+      run();
     }
-    
-      
+
+
   });
 
   function resetConsole(){
@@ -298,7 +298,7 @@ class Node {
       $speechBubble.toggle();
     },fintime);
   }
-  
+
   //Update esprima with new data to parse on user input
   function update() {
     try{
@@ -308,8 +308,8 @@ class Node {
       }
     }catch(e){
       $bugReport[0].innerHTML = e.message;
-      $bugContainer.css({'display': 'flex'})       
-    }   
+      $bugContainer.css({'display': 'flex'})
+    }
   }
 
 //Basic Ace JavaScript configuration
@@ -319,7 +319,7 @@ class Node {
     editor.setValue(`var java = "noob"`, 1);
     editor.getSession().on('change', function(){
       update();
-    }); 
+    });
     editor.focus();
     editor.setOptions({
       fontSize: '15pt',
@@ -333,7 +333,7 @@ class Node {
 
   function ready(){
     setupEditor();
-    update();   
+    update();
   }
 
   const customStringify = function (v) {
@@ -352,21 +352,16 @@ class Node {
 };
 
    var log = console.dir
-   
+
    log = function () {
       for (var i = 0; i < arguments.length; i++) {
         if (typeof arguments[i] == 'object') {
             var obj = customStringify(arguments[i])
-            
             var nobj = JSON.parse(obj);
             var prop = nobj.properties
             $logger[0].innerHTML += customStringify(prop);
-
-
         } else {
-           
-            $logger.append('<p>'  +  arguments[i] + '</p>');
-            
+            $logger.append('<p>' + arguments[i] + '</p>');        
         }
       }
     }
@@ -389,21 +384,21 @@ class Node {
           interpreter.createNativeFunction(wrapper));
     }
 
-    function parse() {    
+    function parse() {
       try{
         var code = editor.getValue();
         myInterpreter = new Interpreter(code, initApi);
-    
+
         return true;
       } catch(e){
           $output.css({'color': '#ff2b18'})
-          $output[0].innerHTML =  e.message;    
+          $output[0].innerHTML =  e.message;
           return false;
-      }  
+      }
     }
 
     function run() {
-       
+
        var re =  /(,)+/;
 
        var arrReg = new RegExp(re);
@@ -418,15 +413,15 @@ class Node {
               $output[0].innerHTML = myInterpreter.value;
            }else {
               $output[0].innerHTML = "'" + myInterpreter.value + "'";
-           } 
+           }
          }
          catch(e){
           $output.css({'color': '#ff2b18'})
           $output[0].innerHTML = e.message;
          }
-       }     
+       }
     }
-     
+
     ready();
-      
+
 })()
