@@ -1,0 +1,355 @@
+---
+layout: post
+title: Functions
+---
+
+We can spit poetry about functions and their uses all day, but just look at this first, okay?
+
+<h3>Life without Functions</h3>
+
+```javascript
+var pets = 35;
+var owners = 15;
+var petsPerOwner = pets / owners;
+//======Pet Info Form
+var answer = prompt("how many pets do you have?");
+//============
+ // update based on answer, add new owner
+pets += answer / 1; //  coerce string into number
+owners += 1; // register new owner
+petsPerOwner = pets / owners;
+
+//test
+`There are now ${petsPerOwner} pets per owner at Pet Nirvana `;
+
+```
+
+Is that easier to read than this?
+
+<h3> Life with functions </h3>
+```javascript
+var pets = 35;
+var owners = 15;
+var petsPerOwner = average(pets, owners);
+
+var answer = prompt("how many pets do you have?");
+registerPets(answer);
+registerOwner();
+updateAvg(); // update based on answer, add new owner
+console.log(`There are now ${petsPerOwner} pets per owner at Pet Nirvana `);
+
+
+function average(total, number){
+  return total / number;
+}
+function registerPets(newNum){
+  pets += Number(newNum); // register new pet(s)
+}
+function registerOwner(){
+  ++owners;
+}
+function updateAvg(){
+  petsPerOwner = Math.ceil(average(pets, owners)); // find new average, round up
+}
+```
+
+Besides legibility, you can also see how much easier it is to do our job when we have all these built-in functions provided for us. `Math.ceil` rounds up and `log()` helps us debug code. Also, notice how the first example still uses a function for pure necessity.
+
+Without functions, there is no JavaScript, at least all the good parts of JavaScript that we know and love.
+
+Anatomy of a Function
+--------------------
+
+```javascript
+function multiply(x, y){
+  return x * y;
+}
+
+function // keyword for decleration
+multiply // function name
+(x,y)   // parameters
+return x * y; // a return statement allows
+              //the function to produce value
+
+```
+
+
+
+A function has a parameter or parameters. We can name them whatever we like, just like variables. Though, we should think of parameters more like references rather than storage. We're telling the function that we're expecting some variable or data type to be plugged into this space by the user. We then operate on the parameter names within the body of the function.
+
+More times than not, you'll want to make sure you return your expected result. Not doing so will produce `undefined` when you invoke the function. If you intend to use your function to set value, include the return keyword.
+
+
+
+Return
+-------
+
+The `return` statement can return any data type. Let's explore some of the ways
+Numbers:
+```javascript
+return 2;
+```
+Strings:
+```javascript
+return "hello";
+```
+Arrays:
+```javascript
+return [1,2,3];
+```
+Objects:
+```javascript
+return {one: 1, two: 2, three: 3};
+```
+Functions:
+```javascript
+return function(){
+  return "I'm in a function";
+}
+```
+
+Invoking a function
+-------------------
+You invoke a function by adding `()` to its name. If the function requires parameters, you must enter them or you'll get an error.
+
+```javascript
+function multiply(x, y){
+  return x * y;
+}
+multiply(2,2); // 4
+```
+You can invoke a function before its declaration and it'll still work. This is called hoisting.
+
+```javascript
+
+multiply(2,2); // 4
+
+function multiply(x, y){
+  return x * y;
+}
+
+```
+
+
+
+Function notations
+--------------------
+
+When a landmark or a *thing* is significant in any human language, there's often more than one way to declare its name.
+
+>Fun fact: In Classical Arabic, there are hundreds of ways to name a camel.
+
+Similarly, functions are so important to JavaScript that there are numerous names for them depending on the context in which they're used.
+
+<h3>Function Declaration</h3>
+
+You have the tried and true <b>function declaration</b>:
+
+```javascript
+function greet(){
+  return 'hello';
+}
+
+// we can the call or invoke this functions
+
+greet(); // 'hello'
+
+```
+<h3>Function Expression</h3>
+You also have a <b>function expression</b>. It's called a function expression because you're assigning a function to a variable:
+
+```javascript
+let greet = function(){
+  return 'hello';
+}
+
+// we can still call or invoke this functions
+
+greet(); // 'hello'
+
+```
+One important thing to note is that hoisting does not work with function expressions.
+
+```javascript
+greet(); // undefined
+
+let greet = function(){
+  return 'hello';
+}
+```
+<h3>Anonymous Functions</h3>
+
+The function keyword(`function()`) without a name after it is called an <b>anonymous function</b>. Es6 introduced a new way to write an anonymous function. Instead of using the function keyword, you can delete it and add the arrow operator `=>` to the parenthesis.
+
+```javascript
+let greet = ()=>{
+  return 'hello';
+}
+
+//if there are nor params
+//you can also write it like so
+
+let greet = _=>{
+  return 'hello';
+}
+
+
+```
+
+For the most part, the difference in syntax was introduced to satisfy purists who are fond of writing minimal code. Though, the arrow function does introduce auto binding.
+
+<b>Anonymous functions</b> are versatile. You can set them as a value to a key in an object literal:
+
+```javascript
+let person = {
+  name: "Mark",
+  greet: function(){
+    return 'hello' + ' ' +  this.name;   
+  }
+}; // end of object literal
+
+person.greet();
+```
+>Note: `this` refers to `person` within our anonymous function. We could have just as easily wrote `person.name`.
+
+<h3>Callback Functions</h3>
+
+Anonymous functions can also go in a parameter. Doing so turns the anonymous function into what's called a <b>callback</b>.
+
+```javascript
+//here's a function expression
+let greet = (callback, times)=>{
+  for(let cnt=0; cnt < times; cnt ++){
+      console.log(callback()); //it doesn't return.
+                              //This will cause a side effect
+  }
+}
+
+
+//here's our anonymous func AKA callback
+greet(_=>{return 'hello'}, 3);
+//we could have written it like this:
+greet(function(){return 'hello'}, 3);
+```
+>Note: Remember when we talked about the anatomy of a function? When you define a function, you create a mock up. The callback just takes advantage of that because we can wait for the function to arrive. We're telling the interpreter that we want to invoke the function when it arrives by attaching `()` to our parameter name.
+
+
+<h3>Closures</h3>
+
+A function within a function is called a <b>closure</b>:
+```javascript
+// We have two functions. One is named outie and the other is named closure *wink* *wink*
+function outie(){
+  // this is closure's first and only outer scope
+  function closure(){
+   // this is closure's local scope
+  }
+}
+```
+<b>Context:</b>
+
+ Now is a good time to address context. Functions create their own context, which effects the `this` keyword, but if we wrote a closure within the anonymous function, `this` would refer to our function. Thus, we'd get undefined.
+
+```javascript
+ let person = {
+  name: "Mark",
+  greet: function(){    
+    return function(){
+          return 'hello' + ' ' +  this.name;  
+    }      
+  }
+}
+// double invoke ()() can invoke a returned closure
+person.greet()();// >'hello undefined'
+```
+To fix the problem, developers just set `this` to a variable to preserve the context:
+
+```javascript
+//code excerpt
+greet: function(){
+  let self = this;   
+  return function(){
+        return 'hello' + ' ' +  self.name;  
+  }      
+}
+//end of excerpt
+```
+
+> Pro Tip: Remember the new `()=>` syntax? Well, it can auto bind. Before, you had to remember to bind `this` in a variable like we had to do earlier. Now, you just use the new syntax and, wala!, you have a functioning `this` keyword. Try it out by rewriting the closure.
+
+
+<h3>IIFE</h3>
+
+A function that calls itself is called an <b>Immediately Invoked Function Expression(IIFE)</b>.
+
+```javascript
+(function(){
+  return 'hello'; //'hello'
+}());
+```
+You can still do anything that you can do with other functions. You can set parameters and use the "invoker" `()` to feed in data.
+```javascript
+(function(name){
+  return name;   // 'hi'
+}("hi"));
+```
+
+You can set an IIFE to a variable, but you have to declare the name. You don't have to invoke it though.
+
+```javascript
+var greet =
+(function(name){
+  return name;   
+}("hi"));
+
+greet // 'hi'
+```
+
+This may not appear useful, but we can use the IFFE and closures, combined with anonymous functions, to create an android.
+```javascript
+//function expression
+let android = (function(){
+    //==private
+    this.name = "Mark VI";
+    //declaration
+    function addStrings(){
+       return "hello" + " " + this.name;
+    }
+    function setName(name){
+      this.name = name;
+    }
+    //==public: we're just returning an object.
+    return {  //anonymous functions
+       setName:(name)=>{
+          return setName(name);
+        },    
+        greet: _=>{
+            return addStrings();
+        }
+    }
+}());//IIFE
+
+android.setName("Raj");
+android.greet(); //'Hello, I'm Raj'
+```
+
+
+The code above takes advantage of all that functions give us to produce a functioning object. If we set a different name, it will give us a different name when we call `greet()`. We will learn more about object oriented programming in another section.
+
+>Note: Oftentimes, developers wrap JavaScript code with an IFFE if they want their code to run without having to be triggered by an event.
+
+
+
+Summary
+--------
+
+It may be hard to keep track of all of these different type of functions, so let's list the different function types.
+
+- Declared functions
+- Anonymous functions
+- Callbacks
+- Closures
+- Immediately Invoked Function Expressions
+
+
+>Challenge: write a program that utilizes all of these different functions
