@@ -2,8 +2,10 @@
 layout: post
 title: Functions
 ---
+Functions
+==========
 
-We can spit poetry about functions and their uses all day, but just look at this first, okay?
+We can wax poetry about functions and their uses all day, but just look at this first, okay?
 
 <h3>Life without Functions</h3>
 
