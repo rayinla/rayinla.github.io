@@ -737,19 +737,19 @@ nav {
     font-size: 50px;
     font-family: 'Source Sans Pro', sans-serif;
   }
-
-
-  .comments {
-    margin-top: 10px;
-  }
-
-  .read-more {
-    text-transform: uppercase;
-    font-size: 15px;
-  }
 }
 
+.comments {
+ @include ipad {
+   width: 80%;
+ }
+ width: 50%;
+ position: relative;
+ left: 50%;
+ transform: translateX(-50%);
+ margin-top: 15px;
 
+}
 
 .hiddenbar {
   @include mini-mobile {
@@ -925,7 +925,7 @@ footer span {
   -ms-flex-direction: row;
   flex-direction: row;
   box-shadow: 2px 3px 5px 0px rgba(0,0,0,0.75);
-  @include kindle {
+  @include ipad {
     -webkit-flex-direction: column;
     -moz-flex-direction: column;
     -ms-flex-direction: column;
@@ -1054,7 +1054,7 @@ footer span {
   line-height: 26px;
   font-family: Garamond, Baskerville, "Baskerville Old Face", "Hoefler Text", "Times New Roman", serif;
 
-  @include kindle {
+  @include ipad {
       transition: height 1s ease-out;
       width: 100% !important; //width shouldn't be overridden in landscape
       height: 33.7%;
@@ -1067,7 +1067,7 @@ footer span {
     height: 50px;
     opacity: 0.5;
     cursor: pointer;
-    @include kindle {
+    @include ipad {
         display: none;
     }
   }
@@ -1080,7 +1080,7 @@ footer span {
     height: 50px;
     opacity: 0.5;
     cursor: pointer;
-    @include kindle {
+    @include ipad {
         display: block;
     }
   }
@@ -1140,7 +1140,7 @@ footer span {
   width: 43.7%;
   border-right: 5px solid #fbb040;
 
-  @include kindle {
+  @include ipad {
       width: 100%;
       height: 43.7%;
   }
@@ -1155,7 +1155,7 @@ footer span {
   background-color: #000;
   overflow-wrap: break-word;
   padding-left: 40px;
-  @include kindle {
+  @include ipad {
       width: 100%;
       height: 23.7%;
   }
