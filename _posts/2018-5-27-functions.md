@@ -187,14 +187,6 @@ let greet = ()=>{
   return 'hello';
 }
 
-//if there are nor params
-//you can also write it like so
-
-let greet = _=>{
-  return 'hello';
-}
-
-
 ```
 
 For the most part, the difference in syntax was introduced to satisfy purists who are fond of writing minimal code. Though, the arrow function does introduce auto binding. Instead of getting overly technical, we'll show you what auto binding is later.
@@ -228,7 +220,7 @@ let greet = (callback, times)=>{
 
 
 //here's our anonymous func AKA callback
-greet(_=>{return 'hello'}, 3);
+greet(()=>{return 'hello'}, 3);
 //we could have written it like this:
 greet(function(){return 'hello'}, 3);
 ```
@@ -247,9 +239,11 @@ function outie(){
   }
 }
 ```
-<b>Context:</b>
+If you've been playing around with callbacks, you might have guessed correctly that a callback is also a closure. At some point during its existence, it gets called within another function.
 
- Now is a good time to address context. Functions create their own context, which effects the `this` keyword, but if we wrote a closure within an anonymous function, `this` would refer to our function. Thus, we'd get undefined.
+
+<b>Context:</b>'
+Now that we've started nesting functions, we should address context. Functions create their own context, which effects the `this` keyword, but if we wrote a closure within an anonymous function, `this` would refer to our nested function. Thus, we'd get undefined.
 
 Here's an example:
 ```javascript
@@ -357,7 +351,7 @@ let android = (function(){
        setName:(name)=>{
           return setName(name);
         },    
-        greet: _=>{
+        greet: ()=>{
             return addStrings();
         }
     }
