@@ -1,5 +1,6 @@
 ---
 layout: sticky
+comments: true
 ---
 
 <!-- <p class="more blk">More Posts</p>
@@ -14,7 +15,6 @@ layout: sticky
  </div>
   </div> -->
 <div id="main" role="main" class="fp-container wrapper">
-
 	  <div id='lex-wrapper'>
 	  	<div id='lex-b'>
         <div class='speech-bubble'><p></p></div>
@@ -24,12 +24,10 @@ layout: sticky
             <i class="material-icons">rss_feed</i>
             <p>Talk</p>
           </div>
-
           <p id='brand'>LEX</p>
         </nav>
         <div id='lex-container'>
           <div markdown="1" id='lex-content'>
-
 							<i class="material-icons resize-width" alt='resize'>aspect_ratio</i>
               <i class="material-icons resize-height">aspect_ratio</i>
 						{{content}}
@@ -52,18 +50,10 @@ layout: sticky
            <p class='bugput'></p>
          </div>
 				 <div id="run" class='btn'>
-
 					 <p>Run</p>
 				 </div>
        </footer>
      </div>
      </div>
-
-
-
-	<!-- <aside class="adbar col-1-4">
-	{% for post in site.posts %}
-
-  {% endfor %}
-   </aside> -->
+     {% include disqus.html %}
 </div>
