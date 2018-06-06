@@ -110,7 +110,6 @@ var LinkedList = function () {
     key: "findAt",
     value: function findAt(idx) {
       var _this = this;
-
       this.root();
       if (idx === 0) {
         return this.root();
@@ -183,7 +182,7 @@ Array.prototype.toGroupList = function (group) {
 (function(){
 
 
-  var editor = ace.edit("editor");
+  var editor = ace.edit("lex-editor");
   var $editor = $('#editor');
   var $content = $('#lex-content');
   var $bugContainer = $('.bug-report');
@@ -295,11 +294,7 @@ Array.prototype.toGroupList = function (group) {
 
  //Basic Interpreter.js config
   var myInterpreter;
-
-   function initApi(interpreter, scope) {
-
-
-
+  function initApi(interpreter, scope) {
      var wrapper = function(text){
        return prompt(arguments.length ? text : '');
      }
@@ -421,8 +416,6 @@ Array.prototype.toGroupList = function (group) {
              'transform-runtime',
            ]
           }).code
-
-
         myInterpreter = new Interpreter(babelCode, initApi);
         return true;
       } catch(e){
@@ -468,7 +461,7 @@ Array.prototype.toGroupList = function (group) {
   });
   //Run the interpreter
   var editorCache = [];
-  $runButton.on("click", function(){
+  $('.run').on('click', function(){
     if (editorCache[0] == undefined){
       editorCache.push(editor.getValue())
        resetConsole();
@@ -478,7 +471,18 @@ Array.prototype.toGroupList = function (group) {
       resetConsole();
       run(editorCache[0]);
     }
-
+  });
+  $runButton.on("click", function(){
+    // debugger
+    if (editorCache[0] == undefined){
+      editorCache.push(editor.getValue())
+       resetConsole();
+       run(editorCache[0]);
+    }else{
+      editorCache[0] = editor.getValue()
+      resetConsole();
+      run(editorCache[0]);
+    }
   });
 
   function resetConsole(){
@@ -518,12 +522,46 @@ Array.prototype.toGroupList = function (group) {
     }
   }
 
-//Basic Ace JavaScript configuration
+/*
+*   Ace Editor  configuration
+**/
+var $classicBtn = $('#classic');
+var $lexBtn     = $('#lex');
+var $lexEditor   = $('.lex-editor');
+var $classicEditor   = $('.classic-editor');
+var $fpContainer = $('.fp-container');
+var $stickyNav = $('.s-nav');
+var $wContainer  = $('.w-container');
+var currentCode = '';
+
+//Toggling Classic and Lex view
+
+  $classicBtn.on('click', function(){
+      $fpContainer.css({display: 'none'});
+      $wContainer.css({display: 'block'});
+      $stickyNav.css({position: 'fixed'});
+      currentCode = editor.getValue();
+      editor = ace.edit('classic-editor');
+      $runButton = $('.run');
+      $output  = $('.classic-output');
+      setupEditor();
+  });
+
+  $lexBtn.on('click', function(){
+      $fpContainer.css({display: 'block'});
+      $wContainer.css({display: 'none'});
+      $stickyNav.css({position: 'relative'});
+      currentCode = editor.getValue();
+      editor = ace.edit('lex-editor');
+      $runButton = $('#run');
+      $output = $('.output');
+      setupEditor();
+  });
+
   function setupEditor(){
-    var exampleCode = "";
     editor.setTheme("ace/theme/monokai");
     editor.session.setMode("ace/mode/javascript");
-    editor.setValue(exampleCode, 1);
+    editor.setValue(currentCode, 1);
     editor.getSession().on('change', function(){
       update();
     });
@@ -580,12 +618,6 @@ Array.prototype.toGroupList = function (group) {
 //   snapTolerance: 5,
 //   stack: '#lex-content, #editor'
 // });
-
-
-
-
-
-
 
     ready();
 

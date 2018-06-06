@@ -8,12 +8,13 @@ comments: true
   {% for post in site.posts %}
     <p><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></p>
   {% endfor %}
-
  <h1 class='fp-title'>{{ page.title }}</h1>
  <div class="date">
 		Written on {{ page.date | date: "%B %e, %Y" }}
  </div>
   </div> -->
+
+
 <div id="main" role="main" class="fp-container wrapper">
 	  <div id='lex-wrapper'>
 	  	<div id='lex-b'>
@@ -24,6 +25,10 @@ comments: true
             <i class="material-icons">rss_feed</i>
             <p>Talk</p>
           </div>
+					<div id="classic" class='btn'>
+            <i class="material-icons">view_carousel</i>
+            <p>Classic View</p>
+          </div>
           <p id='brand'>LEX</p>
         </nav>
         <div id='lex-container'>
@@ -32,17 +37,17 @@ comments: true
               <i class="material-icons resize-height">aspect_ratio</i>
 						{{content}}
           </div>
-          <div id='editor'>
+          <div id='lex-editor'>
           </div>
-          <div id='iframe'>
-          <div class='output-row'>
-            <div class='log'></div>
+          <div class='console'>
+	          <div class='output-row'>
+	            <div class='log'></div>
+	          </div>
+	          <div class='output-row'>
+	            <i class="material-icons c-arrow">chevron_right</i>
+	            <p class='output'></p>
+	          </div>
           </div>
-          <div class='output-row'>
-            <i class="material-icons c-arrow">chevron_right</i>
-            <p class='output'></p>
-          </div>
-        </div>
        </div>
        <footer id='lex-foot'>
          <div class='bug-report'>
@@ -57,4 +62,42 @@ comments: true
      </div>
 </div>
 
-   {% include disqus.html %}
+<div class="w-container">
+	<div class='content-bucket'>
+	  <div class="sidebar col-1-4">
+			 <img class=" bar-logo" src="{{site.baseurl}}/images/fav.png" />
+			 <div id='lex' class='btn'><p>Visit Lex</p></div>
+		</div>
+		<div class="switch code-switch">
+			<i class="material-icons console-ico">code</i>
+		</div>
+		<div class="post col-4-5">
+				 {{content}}
+		</div>
+  </div>
+	<div class='code-bucket'>
+		<div class='bug-report'>
+			<i class='material-icons'>bug_report</i>
+			<p class='bugput'></p>
+		</div>
+		<div class="switch content-switch">
+			<i class="material-icons content-ico">view_array</i>
+		</div>
+	  <div id='classic-editor'>
+		</div>
+		<div class='console'>
+			<div class='output-row'>
+				<div class='classic-log'></div>
+			</div>
+			<div class='output-row'>
+				<i class="material-icons c-arrow">chevron_right</i>
+				<p class='classic-output'></p>
+			</div>
+	  </div>
+ </div><!--code-bucket -->
+ <div class='menu'>
+	<div class='run'><p>Run</p></div>
+ </div>
+</div><!-- w-container -->
+
+{% include disqus.html %}
