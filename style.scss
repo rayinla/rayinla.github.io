@@ -158,7 +158,6 @@ img {
     -webkit-box-shadow: $close-shadow;
     -moz-box-shadow: $close-shadow;
     box-shadow: $close-shadow;
-
 }
 
 /*********************/
@@ -198,10 +197,17 @@ img {
   position: relative;
   background-color: transparent;
   height: 100px;
-  top: -40px;
+  top: -25px;
   left: 0px;
   z-index: 10;
-
+}
+.bar-logo {
+  position: relative;
+  top: 5px;
+  left: 5px;
+  height: 45px;
+  margin-left: 5px;
+  margin-top: 5px;
 }
 .logo-footer {
   height: 90px;
@@ -389,9 +395,7 @@ img {
   background-color: #fff;
   border: 5px solid $lexOrange;
   text-align: center;
-
   .cta-install-btn {
-
     position: relative;
     bottom: 0px;
     right: 0px;
@@ -451,7 +455,6 @@ img {
 .box:nth-of-type(2){
   width: 14px;
 }
-
 .box:nth-of-type(1){
   border-radius: 10px;
 }
@@ -481,40 +484,23 @@ nav {
     }
   }
 }
-
 .b-nav {
   text-align: center;
   margin-bottom: 100px;
 }
-
 .material-icons {
   margin-left: -8px;
 }
 .material-icons.md-18 { font-size: 14px; }
 .s-nav {
+  position: relative;
   width: 100%;
   height: 50px;
   background-color: #fff;
+  border-bottom: 1px solid $lightGray;
   text-align: center;
   z-index: 4;
-  a {
-    display: block;
-    font-family: sans-serif;
-    font-size: 9px;
-    color: #000;
-    text-shadow: 1px -1px -6px #000;
-    text-decoration: none;
-    padding-top: 20px;
-    padding-right: 10px;
-    padding-bottom: 20px;
-    padding-left: 10px;
-    margin-top: -4px;
-  }
-
-
-
 }
-
 .ad-hero {
   width: 100%;
   height: 200px;
@@ -522,7 +508,6 @@ nav {
   border-bottom: 5px solid #000;
 
 }
-
 .sticky-nav {
   transition: all 1s ease-out;
   position: fixed;
@@ -541,21 +526,17 @@ nav {
   Hero
 
 */
-
 #hero {
   width: 100%;
   height: 100%;
   background-color: transparent;
   overflow: hidden;
-
-
 }
 
 /*
  .main
 
 */
-
 .p-container {
   border: 1px solid #000;
   margin: 0 auto;
@@ -670,8 +651,6 @@ nav {
     border-radius: 3px;
   }
 }
-
-
 .posts > a > .post:after {
   @include mini-mobile {
     margin-left: 50px;
@@ -692,23 +671,150 @@ nav {
   box-shadow: $close-shadow;
 }
 
+
+.sticky-page {
+  width: 100%;
+  height: 100%;
+}
+
 .fp-container{
    width: 100%;
    height: 100%;
    background-color: #fbb040;
 }
 
-.fp-container .post {
+.w-container {
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  overflow-x: hidden;
+  display: none;
+}
+.switch {
+  position: fixed;
+  top: 40%;
+  width: 50px;
+  height: 50px;
+  background-color: #fff;
+  border-radius: 5px;
+  border: 2px solid $lexOrange;
+  z-index: 9999;
+}
+.content-bucket {
+  width: 100%;
+  overflow:  hidden;
+  transition: width 2s ease;
+  display: block;
+}
+.code-bucket {
+  position: relative;
+  display: none;
+  flex-direction: row;
+  width: 100%;
+  height: 800px;
+  background-color: #fff;
+  z-index: 1;
+}
+.w-container .code-bucket #classic-editor {
+  height: 650px;
+  width: 70%;
+
+}
+.menu {
+  display: none;
+  position: relative;
+  top: -150px;
+  height: 50px;
+  width: 70%;
+  z-index: 34;
+  background-color: #000;
+  .run {
+    position: relative;
+    width: 60px;
+    height: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+    margin: auto;
+    background-color: $lexOrange;
+    cursor: pointer;
+    color: #fff;
+    box-shadow: 0px 3px 5px -2px rgba(0,0,0,0.75);
+    p{
+      margin: 0px;
+      padding: 0px;
+      position: relative;
+      top: 50%;
+      transform: translateY(-50%);
+      text-align: center;
+    }
+  }
+}
+.w-container .code-bucket .console {
+  height: 700px;
+  width: 30%;
+}
+.w-container .switch {
+  position: fixed;
+  width: 50px;
+  height: 50px;
+  background-color: #fff;
+  border-radius: 5px;
+  border: 4px solid $lexOrange;
+  background-color: #fff;
+  box-shadow: $close-shadow;
+  z-index: 99;
+
+}
+.w-container .switch:hover {
+  cursor: pointer;
+}
+.content-bucket .code-switch {
+  transform: translateX(25%);
+  right: 0px;
+  .console-ico {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    font-weight: bold;
+    color: #000;
+  }
+}
+.code-bucket .content-switch {
+  left: 0px;
+  transform: translateX(-25%);
+  .content-ico {
+    position: relative;
+    top: 50%;
+    left: 25%;
+    transform: translateY(-50%);
+    color: #000;
+  }
+}
+.code-bucket .bug-report {
+  right: 0px;
+  top: 50%;
+  position: fixed;
+  z-index: 999;
+}
+.w-container .post {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 22px;
+  padding: 70px;
+  position: relative;
+  background-color: #fff;
+  margin-left: 280px;
   @include wide-laptop {
     padding: 75px;
     margin-left: 180px;
   }
-  @include laptop {
-   width: 75%;
-   margin-left: 0px;
-  }
-  @include ipad {
-    padding-right: 100px;
+  // @include laptop {
+  //  width: 75%;
+  //  margin-left: 0px;
+  // }
+  @include mini-pad {
+    width: 100%;
+    margin-left: 0px;
   }
   @include lg-mobile {
     width: 100%;
@@ -717,12 +823,6 @@ nav {
    padding: 30px;
    padding-top: 50px;
   }
-
-  font-family: 'Source Sans Pro', sans-serif;
-  font-size: 30px;
-  padding: 70px;
-  position: relative;
-  margin-left: 210px;
   .fp-title {
     @include wide-laptop {
       padding: 60px;
@@ -737,8 +837,55 @@ nav {
     font-size: 50px;
     font-family: 'Source Sans Pro', sans-serif;
   }
-}
 
+  h1 {
+    text-align: center;
+    background-color:$lexOrange;
+    padding: 10px;
+    font-size: 30px;
+  }
+  h2 {
+    text-align: center;
+    background-color: #000;
+    color: #fff;
+    border-radius: 4px;
+    border-top: 2px solid #000;
+    border-bottom: 2px solid #000;
+    padding: 8px;
+    -moz-box-shadow: $close-shadow;
+    -webkit-box-shadow: $close-shadow;
+    box-shadow: $close-shadow;
+  }
+  h3, h4 {
+    border-bottom: 2px solid $lightGray;
+    padding-bottom: 8px;
+    -webkit-box-shadow: 6px 9px 5px -10px rgba(0,0,0,0.75);
+    -moz-box-shadow: 6px 9px 5px -10px rgba(0,0,0,0.75);
+    box-shadow: 6px 9px 5px -10px rgba(0,0,0,0.75);
+  }
+  h3 {
+    width: 75%;
+  }
+  h4 {
+
+    width: 50%;
+  }
+  h5 {
+    width: 25%;
+  }
+  blockquote {
+    margin: 1.8em .8em;
+    border: 3px solid $lexOrange;
+    padding: 5px;
+    background-color: #fff;
+    padding: 0.1em 1em;
+    color: #000;
+    font-size: 19px;
+    -moz-box-shadow: $close-shadow;
+    -webkit-box-shadow: $close-shadow;
+    box-shadow: $close-shadow;
+  }
+}
 .comments {
  @include ipad {
    width: 80%;
@@ -748,20 +895,17 @@ nav {
  left: 50%;
  transform: translateX(-50%);
  margin-top: 15px;
-
 }
-
 .hiddenbar {
   @include mini-mobile {
     padding-left: 60px;
   }
   position: fixed;
-  z-index: 30;
+  z-index: 999;
   top: 0px;
   right:-500px;
-
-  background-color: #fff;
   height: 100%;
+  background-color: #fff;
   // padding-left: 30px;
   // padding-right: 30px;
   border-left: 5px solid $lexOrange;
@@ -785,8 +929,7 @@ nav {
     margin-right: 20px;
     #row-1 {
       transform: rotate(40deg);
-        margin-right: 1px;
-
+      margin-right: 1px;
     }
     #row-2 {
       transform: rotate(-40deg);
@@ -808,7 +951,6 @@ nav {
       width: 14px;
     }
   }
-
   .more {
     margin-left: 10px;
     margin-right: 10px;
@@ -816,7 +958,6 @@ nav {
   }
 
   .archive {
-
       border-top: 3px solid $lightGray;
       border-bottom: 3px solid $lightGray;
       text-align: center;
@@ -840,8 +981,6 @@ nav {
     }
 }
 
-
-
 .adbar {
   @include laptop {
     width: 30%;
@@ -849,6 +988,7 @@ nav {
   @include lg-mobile {
     display: none;
   }
+  width: 10%;
   padding: 30px;
   background-color: #fdfdfd;
   position: fixed;
@@ -860,22 +1000,39 @@ nav {
 }
 
 .sidebar {
-  @include laptop {
+  @include mini-pad {
    display: none;
   }
-  padding: 30px;
-  background-color: #fdfdfd;
+  padding: 10px;
+  margin-right: 3px;
   position: fixed;
-  top: 100px;
+  top: 45px;
   left: 0px;
   z-index: 0;
-  height: 800px;
+  height: 100%;
   overflow: hidden;
   .more {
    text-align: center;
   }
+
+  #lex {
+    position: relative;
+    left: -140px;
+    top: 10%;
+    color: #fff;
+    width: 100px;
+    padding: 5px;
+    background-color: #000;
+    border: 3px solid $lexOrange;
+    p{
+      margin: auto;
+      text-align: center;
+
+    }
+  }
 }
 .wrapper-footer {
+  position: relative;
   margin-top: 80px;
   border-top: 1px solid #ddd;
   z-index: 100;
@@ -889,7 +1046,6 @@ footer span {
     margin-top: 5px;
     margin-left: 5px;
 }
-
 
 /* LEX Styles*/
 
@@ -964,10 +1120,13 @@ footer span {
   margin-top: 5px;
 }
 #talk {
-
   @include mobile {
     left: -100px;
   }
+}
+#classic {
+  width: 145px;
+  margin: auto;
 }
 #lex-foot  #run {
   display: flex;
@@ -994,6 +1153,7 @@ footer span {
   position: relative;
   top: 120px;
   margin: auto;
+  z-index: 30;
 }
 .speech-bubble {
  font-size: 14px;
@@ -1008,11 +1168,11 @@ footer span {
  border-right: 2px solid $lexOrange;
  top: 190px;
  left: 130px;
- width: 24%;
+ width: auto;
  height: 14%;
  margin-left: 10px;
  padding: 5px;
- z-index: 10;
+ z-index: 32;
  box-shadow: $close-shadow;
 }
 .speech-bubble p {
@@ -1053,7 +1213,7 @@ footer span {
   font-size: 18px;
   line-height: 26px;
   font-family: Garamond, Baskerville, "Baskerville Old Face", "Hoefler Text", "Times New Roman", serif;
-
+  z-index: 31;
   @include ipad {
       transition: height 1s ease-out;
       width: 100% !important; //width shouldn't be overridden in landscape
@@ -1135,7 +1295,7 @@ footer span {
     box-shadow: $close-shadow;
   }
 }
-#editor {
+#lex-editor {
   height: 100%;
   width: 43.7%;
   border-right: 5px solid #fbb040;
@@ -1145,7 +1305,7 @@ footer span {
       height: 43.7%;
   }
 }
-#iframe {
+.console {
   font-family: monospace;
   font-size: 17px;
   height: 100%;
@@ -1176,7 +1336,7 @@ footer span {
     opacity: 0;
   }
 }
-#iframe:before {
+.console:before {
   content: '';
   position: absolute;
   margin-left: 90px;
@@ -1188,7 +1348,7 @@ footer span {
   opacity: 0.08;
   z-index: 10px;
 }
-#iframe:after {
+.console:after {
   content: '';
   position: absolute;
   margin-left: 95px;
