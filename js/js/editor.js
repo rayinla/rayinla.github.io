@@ -191,6 +191,7 @@ Array.prototype.toGroupList = function (group) {
     }
   }
   if(rootCheck() === false){
+
   var editor = ace.edit("lex-editor");
   var $editor = $('#editor');
   var $content = $('#lex-content');
@@ -534,8 +535,8 @@ Array.prototype.toGroupList = function (group) {
 /*
 *   Ace Editor  configuration
 **/
-
-
+var classicView;
+var $link = $('.link');
 var $classicBtn = $('#classic');
 var $codeBucket = $('.code-bucket');
 var $lexBtn     = $('#lex');
@@ -567,30 +568,53 @@ function marginFix(arr){
     return arr[clicks];
   }
 
+  function classicDisplay(){
+    $fpContainer.css({display: 'none'});
+    $wContainer.css({display: 'block'});
+    $stickyNav.css({position: 'fixed'});
+    $lexBtn.css({display: 'block'});
+    $codeBucket.css({'margin-top': marginFix(margins)});
+    currentCode = editor.getValue();
+    editor = ace.edit('classic-editor');
+    $runButton = $('.run');
+    $output  = $('.classic-output');
+    setupEditor();
+  }
+
+  function lexDisplay(){
+    bodyOrHtml().scrollTop = 0;
+    $fpContainer.css({display: 'block'});
+    $wContainer.css({display: 'none'});
+    $stickyNav.css({position: 'relative'});
+    $lexBtn.css({display: 'none'});
+    currentCode = editor.getValue();
+    editor = ace.edit('lex-editor');
+    $runButton = $('#run');
+    $output = $('.output');
+    setupEditor();
+  }
+
+  $(window).on('load', function(){
+    if(localStorage.getItem('classicView') === "true"){
+      classicDisplay();
+    }else {
+      lexDisplay();
+    }
+  });
+  // console.log($link)
+  // $link.on('click', function(e){
+  //   e.preventDefault();
+  //   debugger
+  // });
+
   $classicBtn.on('click', function(){
-      $fpContainer.css({display: 'none'});
-      $wContainer.css({display: 'block'});
-      $stickyNav.css({position: 'fixed'});
-      $lexBtn.css({display: 'block'});
-      $codeBucket.css({'margin-top': marginFix(margins)});
-      currentCode = editor.getValue();
-      editor = ace.edit('classic-editor');
-      $runButton = $('.run');
-      $output  = $('.classic-output');
-      setupEditor();
+      localStorage.setItem('classicView',  'true');
+      classicDisplay();
   });
 
   $lexBtn.on('click', function(){
-      bodyOrHtml().scrollTop = 0;
-      $fpContainer.css({display: 'block'});
-      $wContainer.css({display: 'none'});
-      $stickyNav.css({position: 'relative'});
-      $lexBtn.css({display: 'none'});
-      currentCode = editor.getValue();
-      editor = ace.edit('lex-editor');
-      $runButton = $('#run');
-      $output = $('.output');
-      setupEditor();
+      localStorage.setItem('classicView',  'false');
+      lexDisplay();
   });
 
   function setupEditor(){
