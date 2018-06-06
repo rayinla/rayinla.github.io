@@ -194,11 +194,11 @@ img {
   }
 }
 .home-logo {
-  position: relative;
+  position: absolute;
   background-color: transparent;
-  height: 100px;
-  top: -25px;
-  left: 0px;
+  height: 30px;
+  top: 11px;
+  left: 50%;
   z-index: 10;
 }
 .bar-logo {
@@ -500,6 +500,8 @@ nav {
   border-bottom: 1px solid $lightGray;
   text-align: center;
   z-index: 4;
+  display: flex;
+  flex-direction: row;
 }
 .ad-hero {
   width: 100%;
@@ -712,22 +714,43 @@ nav {
   flex-direction: row;
   width: 100%;
   height: 800px;
+  margin-top: 21px;
   background-color: #fff;
   z-index: 1;
+  @include mini-pad {
+      flex-direction: column;
+  }
 }
 .w-container .code-bucket #classic-editor {
   height: 650px;
   width: 70%;
-
+  @include mini-pad {
+    width: 100%;
+    height: 75%;
+  }
+}
+.w-container .code-bucket .console {
+  height: 700px;
+  width: 30%;
+  @include mini-pad {
+      width: 100%;
+      height: 25%;
+  }
 }
 .menu {
   display: none;
   position: relative;
-  top: -150px;
+  bottom: 150px;
   height: 50px;
   width: 70%;
   z-index: 34;
   background-color: #000;
+  @include mini-pad {
+     position: fixed;
+     width: 100%;
+     bottom: 0px;
+     z-index: 9999;
+  }
   .run {
     position: relative;
     width: 60px;
@@ -750,10 +773,7 @@ nav {
     }
   }
 }
-.w-container .code-bucket .console {
-  height: 700px;
-  width: 30%;
-}
+
 .w-container .switch {
   position: fixed;
   width: 50px;
@@ -798,8 +818,12 @@ nav {
   z-index: 999;
 }
 .w-container .post {
-  font-family: 'Source Sans Pro', sans-serif;
-  font-size: 22px;
+  font-family: Cambria, Georgia, serif;
+	font-size: 20px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 400;
+	line-height: 30px;
   padding: 70px;
   position: relative;
   background-color: #fff;
@@ -840,11 +864,11 @@ nav {
 
   h1 {
     text-align: center;
-    background-color:$lexOrange;
     padding: 10px;
-    font-size: 30px;
+    font-size: 50px;
   }
   h2 {
+    font-size: 38px;
     text-align: center;
     background-color: #000;
     color: #fff;
@@ -864,15 +888,17 @@ nav {
     box-shadow: 6px 9px 5px -10px rgba(0,0,0,0.75);
   }
   h3 {
+    font-size: 29px;
     width: 75%;
   }
   h4 {
-
+    font-size: 21px;
     width: 50%;
   }
   h5 {
     width: 25%;
   }
+
   blockquote {
     margin: 1.8em .8em;
     border: 3px solid $lexOrange;
@@ -1015,20 +1041,25 @@ nav {
    text-align: center;
   }
 
-  #lex {
-    position: relative;
-    left: -140px;
-    top: 10%;
-    color: #fff;
-    width: 100px;
-    padding: 5px;
-    background-color: #000;
-    border: 3px solid $lexOrange;
-    p{
-      margin: auto;
-      text-align: center;
+}
 
-    }
+#lex {
+  display: none;
+  position: absolute;
+  left: 0px;
+  color: #fff;
+  width: 100px;
+  margin-top: 11px;
+  margin-left: 5px;
+  padding: 1px;
+  background-color: #000;
+  border: 1px solid $lexOrange;
+  border-radius: 3px;
+  p{
+    margin: auto;
+    text-align: center;
+    padding-top: 3px;
+
   }
 }
 .wrapper-footer {
@@ -1125,8 +1156,21 @@ footer span {
   }
 }
 #classic {
-  width: 145px;
+  width: 152px;
   margin: auto;
+  border-radius: 3px;
+  border: 0.2 solid #fff;
+  .caro-ico{
+    position: relative;
+    top: 50%;
+    margin-right: 3px;
+    transform: translateY(-40%);
+  }
+  @include mini-mobile {
+    overflow-x: hidden;
+    width: 33px;
+
+  }
 }
 #lex-foot  #run {
   display: flex;

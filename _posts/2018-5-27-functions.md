@@ -276,9 +276,8 @@ An alternate solution is to explicitly call `bind(this)` on the closing bracket 
 ```javascript
 //code excerpt
 greet: function(){
-  let self = this;   
   return function(){
-        return 'hello' + ' ' +  self.name;  
+        return 'hello' + ' ' +  this.name;  
   }.bind(this)      
 }
 //end of excerpt
@@ -291,10 +290,9 @@ The final solution is to use the Es6 arrow function.
 
 ```javascript
 //code excerpt
-greet: function(){
-  let self = this;   
+greet: function(){  
   return ()=>{
-        return 'hello' + ' ' +  self.name;  
+        return 'hello' + ' ' +  this.name;  
   }      
 }
 //end of excerpt
