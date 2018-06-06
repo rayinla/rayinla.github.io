@@ -180,8 +180,17 @@ Array.prototype.toGroupList = function (group) {
 };
 
 (function(){
-
-
+  function rootCheck(){
+    if(window.location.pathname === '/')
+    {
+      return true;
+    }
+    else
+    {
+      return false;
+    }
+  }
+  if(rootCheck() === false){
   var editor = ace.edit("lex-editor");
   var $editor = $('#editor');
   var $content = $('#lex-content');
@@ -646,5 +655,5 @@ function marginFix(arr){
 // });
 
     ready();
-
+  }
 })()
