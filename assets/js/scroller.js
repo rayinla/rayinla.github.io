@@ -46,7 +46,7 @@
      scrollCache = bodyOrHtml().scrollTop; // save current position
      bodyOrHtml().scrollTop = 0;
      $contentBucket.css({display: 'none'});
-     $codeBucket.css({display: 'flex'});
+     $codeBucket.css({display: 'flex', 'margin-top' : '20px'});
      $stickyNav.css({position: 'relative'});
      $menu.css({display: 'block'});
 
