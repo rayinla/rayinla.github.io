@@ -76,6 +76,12 @@ $georgia: Georgia, serif;
   }
 }
 
+@mixin lg-mini-mobile {
+  @media screen and (max-width: 400px) {
+    @content;
+  }
+}
+
 @mixin s-mini-mobile {
   @media screen and (max-width: 325px) {
     @content;

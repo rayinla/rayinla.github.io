@@ -180,8 +180,17 @@ Array.prototype.toGroupList = function (group) {
 };
 
 (function(){
-
-
+  function rootCheck(){
+    if(window.location.pathname === '/')
+    {
+      return true;
+    }
+    else
+    {
+      return false;
+    }
+  }
+  if(rootCheck() === false){
   var editor = ace.edit("lex-editor");
   var $editor = $('#editor');
   var $content = $('#lex-content');
@@ -525,7 +534,10 @@ Array.prototype.toGroupList = function (group) {
 /*
 *   Ace Editor  configuration
 **/
+
+
 var $classicBtn = $('#classic');
+var $codeBucket = $('.code-bucket');
 var $lexBtn     = $('#lex');
 var $lexEditor   = $('.lex-editor');
 var $classicEditor   = $('.classic-editor');
@@ -533,13 +545,34 @@ var $fpContainer = $('.fp-container');
 var $stickyNav = $('.s-nav');
 var $wContainer  = $('.w-container');
 var currentCode = '';
-
+var margins = ['20px', '70px'];
+var clicks = -1;
 //Toggling Classic and Lex view
+function bodyOrHtml(){
+  if ('scrollingElement' in document) {
+    return document.scrollingElement;
+  }
+  // Fallback for legacy browsers
+  if (navigator.userAgent.indexOf('WebKit') != -1) {
+    return document.body;
+  }
+  return document.documentElement;
+}
+
+function marginFix(arr){
+    ++clicks;
+    if(clicks > arr.length - 1){
+      return arr[arr.length - 1];
+    }
+    return arr[clicks];
+  }
 
   $classicBtn.on('click', function(){
       $fpContainer.css({display: 'none'});
       $wContainer.css({display: 'block'});
       $stickyNav.css({position: 'fixed'});
+      $lexBtn.css({display: 'block'});
+      $codeBucket.css({'margin-top': marginFix(margins)});
       currentCode = editor.getValue();
       editor = ace.edit('classic-editor');
       $runButton = $('.run');
@@ -548,9 +581,11 @@ var currentCode = '';
   });
 
   $lexBtn.on('click', function(){
+      bodyOrHtml().scrollTop = 0;
       $fpContainer.css({display: 'block'});
       $wContainer.css({display: 'none'});
       $stickyNav.css({position: 'relative'});
+      $lexBtn.css({display: 'none'});
       currentCode = editor.getValue();
       editor = ace.edit('lex-editor');
       $runButton = $('#run');
@@ -620,5 +655,5 @@ var currentCode = '';
 // });
 
     ready();
-
+  }
 })()
