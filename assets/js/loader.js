@@ -8,7 +8,7 @@ $(document).ready(function(){
    debugger
     initLoader();
   }else{
-    setTimeout(function(){showPage()}, 400);
+    setTimeout(function(){showPage()}, 410);
   }
 
 
