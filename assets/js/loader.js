@@ -1,16 +1,23 @@
 $(document).ready(function(){
-
-  $main = $('main');
-  $loader = $('.ship-loader');
-
-  initLoader();
-
-  function initLoader() {
-    setTimeout(function(){showPage()}, 800);
+  var $main = $('main');
+  var $loader = $('.ship-loader');
+  var isClassic = localStorage.getItem('classicView');
+  var $fpContainer = $('.fp-container');
+ if (isClassic != 'true' || isClassic == null || isClassic == undefined)
+ {
+   debugger
+    initLoader();
+  }else{
+    setTimeout(function(){showPage()}, 400);
   }
 
-  function showPage() {
+
+  function initLoader(){
+    $loader.css({display: 'block'});
+    setTimeout(function(){showPage()}, 800);
+  }
+  function showPage(){
     $loader.css({display: 'none'});
     $main.css({display: 'inherit'});
   }
-})
+});
