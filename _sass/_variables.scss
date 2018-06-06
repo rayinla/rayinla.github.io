@@ -23,6 +23,13 @@ $helveticaNeue: "Helvetica Neue", Helvetica, Arial, sans-serif;
 $georgia: Georgia, serif;
 
 // Mobile breakpoints
+
+@mixin landscape {
+  @media screen and (orientation: landscape) {
+    @content;
+  }
+}
+
 @mixin wide-laptop {
   @media screen and (max-width: 1380px) {
     @content;
