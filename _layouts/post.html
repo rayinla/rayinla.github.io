@@ -71,6 +71,14 @@ comments: true
 			<i class="material-icons console-ico">code</i>
 		</div>
 		<div class="post col-4-5">
+
+			  {% if page.previous.url %}
+			    <a class="prev" href="{{page.previous.url}}"> </a>
+			  {% endif %}
+			  {% if page.next.url %}
+			    <a class="next" href="{{page.next.url}}"> </a>
+			  {% endif %}
+
 				 {{content}}
 		</div>
   </div>
