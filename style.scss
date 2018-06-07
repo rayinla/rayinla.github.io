@@ -849,6 +849,7 @@ nav {
     padding: 75px;
     margin-left: 180px;
   }
+
   // @include laptop {
   //  width: 75%;
   //  margin-left: 0px;
@@ -1025,6 +1026,55 @@ nav {
     }
 }
 
+.prev {
+  position: fixed;
+  z-index: 4;
+  top: 200px;
+  cursor: pointer;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  margin-top: -38px;
+ -webkit-transform: translate3d(0,0,0);
+ -ms-transform: translate3d(0,0,0);
+ transform: translate3d(0,0,0);
+ border-style: dotted !important;
+ left: 200px;
+ width: 0;
+ border-color: transparent #000 transparent transparent;
+ border-width: 20.5px 9.5px 20.5px 0 !important;
+ @include mini-pad {
+   left: 15px;
+ }
+}
+.prev:hover {
+  border-width: 20.5px 20px 20.5px 0 !important;
+}
+.next {
+	position: fixed;
+  z-index: 4;
+  top: 200px;
+  cursor: pointer;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  margin-top: -38px;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  right: 45px;
+  width: 0px;
+  border-color: transparent transparent transparent #fff;
+	border-style: dotted !important;
+  border-color:  transparent transparent transparent #000;
+  border-width: 20.5px 0 20.5px 9.5px !important;
+  @include mini-pad {
+     right: 15px;
+   }
+}
+.next:hover {
+  border-width: 20.5px 0px 20.5px 20px !important;
+}
 .adbar {
   @include laptop {
     width: 30%;
