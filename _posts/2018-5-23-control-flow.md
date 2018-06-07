@@ -194,7 +194,7 @@ Else if the answer is greater than three
 ```
 
 Switch Statements
-==================
+-----------------
 As you continue to work with if statements, you might come across this type of code:
 
 ```javascript
@@ -271,7 +271,7 @@ switch(prompt('greet me!')){
 
 
 Loops
-=======
+------
 
 So now we know how to control the data that comes in, but how about the data that goes out to the user?
 
@@ -393,7 +393,7 @@ function render(){
 ```
 
 Breaking loops
-==============
+--------------
 
 A loop continues to run until the condition is false. Sometimes we might want to break out of the loop--Inception-style--with the keyword  `break`.
 
@@ -460,7 +460,7 @@ for(var outer=0;outer < matrix.length; ++outer){
 ````
 
 Continuing loops
-================
+----------------
 
 The continue directive allows us to skip steps in a loop. Perhaps the directive should've been called skip, but, alas, we'll make do with continue.
 
@@ -476,6 +476,6 @@ for (let i = 0; i < 10; i++) {
 
 
 Summary
-=======
+-------
 
 We conquered `if/else if/else` statements, tackled `switch` statements, and untangled `while`, `do while`, and `for loops`. We also learned how to break loops and continue them. Next, we'll learn how a JavaScript program flows around functions.
