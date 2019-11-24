@@ -20,6 +20,6 @@ If you ever get tired of Lex, simply go to classic view to get a full view of th
 
 ![search icon](images/classiclex1.JPG)
 
-You can then toggle to the dev environment to practise the skills you've learned.
+You can then toggle to the dev environment by pressing the coding icon on the far right to practise the skills you've learned.
 
 ![search icon](images/classiclex2.jpg)
