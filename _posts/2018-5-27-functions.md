@@ -1,8 +1,8 @@
 ---
 layout: post
-title: Functions
+title: JavaScript Functions
 ---
-Functions
+JavaScript Functions
 ==========
 
 We can wax poetics about functions and their uses all day. Instead, let's explore life with and without functions.
