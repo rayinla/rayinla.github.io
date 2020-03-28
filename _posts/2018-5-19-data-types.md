@@ -1,11 +1,11 @@
 ---
 layout: post
-title: Data Types
+title: JavaScript Data Types
 image: config.png
 ---
 
 
-Data & Operators
+JavaScript Data Types
 ===========
 
 
