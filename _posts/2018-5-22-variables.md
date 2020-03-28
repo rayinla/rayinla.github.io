@@ -1,10 +1,10 @@
 ---
 layout: post
-title: Variables
+title: JavaScript Variables
 image: config.png
 ---
 
-Variables
+JavaScript Variables
 ==========
 
 
