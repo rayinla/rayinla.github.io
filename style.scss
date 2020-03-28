@@ -320,6 +320,7 @@ img {
 
   .blk-wrapper {
     position: relative;
+    margin-top: -200px;
     top: -850px;
     padding-right: 80px;
     @include kindle {
