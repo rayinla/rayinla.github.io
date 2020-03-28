@@ -1,10 +1,10 @@
 ---
 layout: post
-title: Control Flow
+title: JavaScript Control Flow
 image: config.png
 ---
 
-Control Flow
+JavaScript Control Flow
 ============
 
 There comes a point in time when you need to rely on automated tasks to run code. Think of the traffic lights that control traffic, saving cities from the hassle of appointing a traffic cop on every crossroad. Or the assembly line which performs mundane tasks at incredible speeds.
