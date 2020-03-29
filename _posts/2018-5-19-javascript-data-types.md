@@ -521,22 +521,11 @@ Summary
 
 We covered...
 
-1) Six Primitive Data Types:
-- Strings
-- Numbers
-- Booleans
-- Symbols
-- Undefined
-- Null
+1) Six Primitive Data Types: Strings, Numbers, Booleans, Symbols, Undefined, Null
 
-2) One extra data type:
- - Object
+2) One extra data type: Object
 
-3)Four operators:
-- Arithmetic: `+,-,/...`
-- Assignment: `=, +=,-=...`
-- Comparison: `<, >=, != ...`
-- Logical:` &&, ||, !`
+3)Four operators: Arithmetic: `+,-,/...`, Assignment: `=, +=,-=...`, Comparison: `<, >=, != ...`, Logical:` &&, ||, !`
 
 
 <h3>Challenge:</h3>
