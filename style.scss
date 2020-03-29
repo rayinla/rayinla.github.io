@@ -547,6 +547,8 @@ nav {
   -webkit-box-shadow: $close-shadow;
   -moz-box-shadow: $close-shadow;
   box-shadow: $close-shadow;
+  border-top: 0.5px solid $lightGray;
+  
 
 }
 .posts {
@@ -576,7 +578,8 @@ nav {
   padding: 20px;
   max-width: 400px;
   width: 100%;
-  background-color: #000;
+  background-color: #fff;
+  border: 1px solid $lexOrange;
   -webkit-box-shadow: $close-shadow;
   -moz-box-shadow: $close-shadow;
   box-shadow: $close-shadow;
@@ -1130,6 +1133,8 @@ height: 100%;
 footer {
   padding: 20px 0;
   text-align: center;
+  border-top: 0.5px solid $lightGray;
+   
 }
 footer span {
     font-size: 15px;
