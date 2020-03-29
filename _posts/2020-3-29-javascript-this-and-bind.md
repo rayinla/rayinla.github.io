@@ -25,7 +25,7 @@ This answer requires knowledge of exactly what scope and context means in JavaSc
 
 **Note:** The use of  `that`  as a variable is just a convention and not a rule. You can just as easily name the variable  `boogabooga`.
 
-<h3>Context vs Scope.<h3>
+<h3>Context vs Scope.</h3>
 
 The terms scope and context at first glance just seem like synonyms and may leave you scratching your head when asked to differentiate the two. Both effect the behavior of your code in different ways. Simply put,  scope refers to the viewability of variables and context refers to the accessibility of objects within a function.The confusion often lies in the relationship between scope and context. Let’s break them down further.
 
