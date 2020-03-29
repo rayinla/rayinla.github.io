@@ -620,7 +620,7 @@ height: 100%;
   background-color: #fff;
   border-radius: 5px;
   border: 2px solid $lexOrange;
-  z-index: 9999;
+
 }
 .content-bucket {
   width: 100%;
@@ -680,7 +680,7 @@ height: 100%;
      position: fixed;
      width: 100%;
      bottom: 0px;
-     z-index: 9999;
+     z-index: 99;
   }
   @include landscape {
     position: relative;
@@ -752,7 +752,7 @@ height: 100%;
   right: 0px;
   top: 50%;
   position: fixed;
-  z-index: 999;
+
 }
 .w-container .post {
   font-family: Cambria, Georgia, serif;
