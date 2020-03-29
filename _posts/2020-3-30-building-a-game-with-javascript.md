@@ -1,4 +1,9 @@
-
+---
+layout: post
+title: Building a Game with JavaScript
+---
+Building a Game with JavaScript
+==========
 
 <h3>The Intro</h3>
 The best way to learn a language is to speak it. If you've ever had a friend learning French for the first time, they've probably peppered you with a bevy of phrases in French. The same goes for medical students learning the language of medicine. Jargon is its own language. To learn it, you have to speak it.
