@@ -383,7 +383,7 @@ img {
     background-color: $lexOrange;
     float: left;
   }
-}
+
 .cta-install-modal {
   display: none;
   height: 150px;
@@ -1510,9 +1510,7 @@ footer span {
         -moz-box-shadow: $close-shadow;
         box-shadow: $close-shadow;
       }
-
-    }
-
+   }
 }
 
 
