@@ -847,9 +847,11 @@ nav {
   position: relative;
   background-color: #fff;
   margin-left: 280px;
+  margin-right: 100px
   @include wide-laptop {
-    padding: 75px;
+    padding: 175px;
     margin-left: 180px;
+    margin-right: 100px;
   }
 
   // @include laptop {
