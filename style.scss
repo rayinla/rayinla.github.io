@@ -541,12 +541,9 @@ nav {
 
 */
 .p-container {
-  border: 1px solid #000;
   margin: 0 auto;
   padding: 40px;
   width: 100%;
-
-  border-bottom: 5px solid #000;
   -webkit-box-shadow: $close-shadow;
   -moz-box-shadow: $close-shadow;
   box-shadow: $close-shadow;
@@ -586,7 +583,7 @@ nav {
   transition: all 0.2s ease-in;
 
   h1 {
-   color: #33cc99;
+   color: #fff;
   }
 }
 .posts > a > .post:hover {
