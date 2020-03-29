@@ -17,7 +17,7 @@ Yes, the best way to learn JavaScript is to build cool things. I'm going to teac
 <h3>The Build: Whack-a-Frump</h3>
 We're going to be making a twist on the famous Whack-a-Mole game. Below is all of the code we're going to use to set up the game. This is just the boilerplate stuff.
 
-Grab the full code on [CodePen]('https://codepen.io/howtocodejs/pen/OZKRWb/') to follow along.
+Grab the full code on [CodePen](https://codepen.io/howtocodejs/pen/OZKRWb/) to follow along.
 
 Keep in mind that we'll be making a very minimal version of this game. By the end, I'll provide a list of issues that you can fix and some features you can add.
 
