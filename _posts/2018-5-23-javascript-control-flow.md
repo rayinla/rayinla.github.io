@@ -88,8 +88,6 @@ This might not appear to be a big deal, but in the real world this would be a di
 
 There has to be control over the data we'd like to work with.
 
-<h3>if/ else</h3>
-
 Thankfully, we have if/else statements.
 
 ```javascript
@@ -193,8 +191,8 @@ Else if the answer is greater than three
 
 ```
 
-Switch Statements
------------------
+<h3>Switch Statements</h3>
+
 As you continue to work with if statements, you might come across this type of code:
 
 ```javascript
@@ -270,8 +268,8 @@ switch(prompt('greet me!')){
 ```
 
 
-Loops
-------
+<h2>Loops</h2>
+
 
 So now we know how to control the data that comes in, but how about the data that goes out to the user?
 
