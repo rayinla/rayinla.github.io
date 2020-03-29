@@ -843,12 +843,10 @@ nav {
 	font-variant: normal;
 	font-weight: 400;
 	line-height: 30px;
-  padding: 170px;
   position: relative;
   background-color: #fff;
   margin-left: 280px;
   @include wide-laptop {
-    padding: 175px;
     margin-left: 180px;
     margin-right: 100px;
   }
