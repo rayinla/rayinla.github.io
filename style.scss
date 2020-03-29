@@ -17,7 +17,7 @@
 html {
 
   font-size: 100%;
-
+}
 
 body {
 	background: $white;
@@ -34,7 +34,6 @@ main {
 .container {
   margin: 0 auto;
   max-width: 840px;
-
   padding: 40px;
   width: 100%;
 }
@@ -268,7 +267,8 @@ img {
     padding: 80px;
     margin-left: -280px;
   }
-  .cta-learn {
+}
+.cta-learn {
     @include kindle {
       margin-left: 200px;
     }
@@ -1104,4 +1104,4 @@ height: 100%;
 @import "highlights";
 @import "svg-icons";
 	
-}
+
