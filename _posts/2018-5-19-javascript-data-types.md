@@ -12,14 +12,7 @@ JavaScript Data Types
 
 Open up your Twitter or Instagram account and you're hit with a log in screen prompting you to enter your information. When you enter your username and password, you've just entered data. You fill out a survey, you like a post, you order ten fidget spinners on Amazon - all of that is data. 
 
-In JavaScript, this data is divided into six types:
-
-- Numbers
-- Strings
-- Boolean
-- Null
-- Undefined
-- Symbols
+In JavaScript, this data is divided into six types: Numbers, Strings, Boolean, Null, Undefined, Symbols
 
  <h2> Data Types </h2>
 
