@@ -849,9 +849,13 @@ nav {
   margin-left: 280px;
   @include wide-laptop {
     margin-left: 180px;
-    margin-right: 100px;
+   
   }
-
+  @include ipad {
+    padding: 120px;
+    margin-left: 180px;
+   
+  }
   // @include laptop {
   //  width: 75%;
   //  margin-left: 0px;
