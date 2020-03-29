@@ -23,7 +23,7 @@ body {
 	background: $white;
   padding: 0px;
   margin: 0px;
-  font-size: 18px/1.4;
+  font-size: 16;
   font-family: 'Source Sans Pro', sans-serif;
   color: $darkGray;
   overflow-x: hidden;
@@ -121,7 +121,7 @@ img {
 
 .date {
   font-style: italic;
-  font-size: 17px;
+  font-size: 16px;
   margin-left: 55px;
   color: $gray;
 }
@@ -838,12 +838,12 @@ nav {
 }
 .w-container .post {
   font-family: Cambria, Georgia, serif;
-	font-size: 20px;
+	font-size: 16px;
 	font-style: normal;
 	font-variant: normal;
 	font-weight: 400;
 	line-height: 30px;
-  padding: 70px;
+  padding: 170px;
   position: relative;
   background-color: #fff;
   margin-left: 280px;
