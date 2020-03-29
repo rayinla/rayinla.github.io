@@ -390,8 +390,7 @@ function render(){
 
 ```
 
-Breaking loops
---------------
+<h3>Breaking loops</h3>
 
 A loop continues to run until the condition is false. Sometimes we might want to break out of the loop--Inception-style--with the keyword  `break`.
 
@@ -457,8 +456,7 @@ for(var outer=0;outer < matrix.length; ++outer){
 
 ````
 
-Continuing loops
-----------------
+<h3>Continuing loops</h3>
 
 The continue directive allows us to skip steps in a loop. Perhaps the directive should've been called skip, but, alas, we'll make do with continue.
 
@@ -473,7 +471,7 @@ for (let i = 0; i < 10; i++) {
 > Pro tip: Curly braces are not required if the block of code can be written in one line.
 
 
-Summary
--------
+<h2>Summary</h2>
+
 
 We conquered `if/else if/else` statements, tackled `switch` statements, and untangled `while`, `do while`, and `for loops`. We also learned how to break loops and continue them. Next, we'll learn how a JavaScript program flows around functions.
