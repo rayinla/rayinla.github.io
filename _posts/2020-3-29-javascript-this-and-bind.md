@@ -131,3 +131,5 @@ $(document).ready(function(){
 ```
 We’ve wrapped  `bluezy()`  with the bind function to define the context we want our function to work with. Because we’re working with the DOM, we use  **this**  instead of referring to an actual object name.
 
+<h3>Takeaway</h3>
+"This" concept may seem tricky at first, but when you practise event based programming, you'll slowly begin to become familiar with the quirkiness of `this`. But before you do that, why don't we familiarize ourselves with jQuery by building a game?
