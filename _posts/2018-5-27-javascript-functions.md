@@ -316,13 +316,7 @@ The code above takes advantage of all that functions give us to produce a functi
 <h2>Summary</h2>
 
 
-It may be hard to keep track of all of these different type of functions, so let's list the different function types.
-
-- Declared functions
-- Anonymous functions
-- Callbacks
-- Closures
-- Immediately Invoked Function Expressions
+It may be hard to keep track of all of these different type of functions, so let's list the different function types: Declared functions, Anonymous functions, Callbacks, Closures, Immediately Invoked Function Expressions. We'll be going in depth into some of these function in the coming chapters.
 
 
 >Challenge: write a program that utilizes all of these different functions
