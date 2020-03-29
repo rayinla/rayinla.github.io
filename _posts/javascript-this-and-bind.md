@@ -9,9 +9,13 @@ JavaScript This and Bind
 
 Declared functions are assigned a global context if they aren’t declared within the context of an object. So when we want our closure (inner function) to refer to one of our parent objects, we either have to preserve the value of the object or bind the object to the function.
 
-<h3>Understanding this and bind</h3>
+<h3>Intro</h3>
 
 If you’ve ever manipulated the DOM in JavaScript, you’ve probably come across the contextual  **this** bug. You’re coding up an amazing click event, slamming the keys and feeling like a code ninja. You go to test your code in the browser and nothing works.  `this`  is undefined apparently. You realize that the  **this** keyword in your  `makeButtonLightUp()`  function is referring to the local  **this** rather than the  **this** of your outer  `onclick()`  function. You grumble because you know the solution, and you know it’s hacky.
+
+This is the struggle of the everyday JavaScript coder. We're going to start our deep dive into JavaScript functions by dealing with this tricky topic before moving onto something fun, like building a game. 
+
+<h3>Understanding this and bind</h3>
 
 `var that = this;`
 
