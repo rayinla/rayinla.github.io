@@ -1,5 +1,5 @@
 ---
-layout: sticky
+layout: legal
 title: About
 permalink: /about/
 ---
