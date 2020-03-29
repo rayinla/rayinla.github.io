@@ -585,8 +585,11 @@ nav {
   box-shadow: $close-shadow;
   transition: all 0.2s ease-in;
 
-  h1 {
-   color: #000;
+  h2 {
+   color: $lexOrange;
+   font-size: 18px;
+   margin-left: 5px;
+
   }
 }
 .posts > a > .post:hover {
