@@ -894,15 +894,11 @@ nav {
   h2 {
     font-size: 38px;
     text-align: center;
-    background-color: #000;
     color: #fff;
     border-radius: 4px;
     border-top: 2px solid #000;
     border-bottom: 2px solid #000;
-    padding: 8px;
-    -moz-box-shadow: $close-shadow;
-    -webkit-box-shadow: $close-shadow;
-    box-shadow: $close-shadow;
+    padding: 8px;   
   }
   h3, h4 {
     border-bottom: 2px solid $lightGray;
