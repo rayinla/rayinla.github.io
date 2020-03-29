@@ -5,62 +5,13 @@ title: JavaScript Functions
 JavaScript Functions
 ==========
 
-We can wax poetics about functions and their uses all day. Instead, let's explore life with and without functions.
-
-<h3>Life without Functions</h3>
-
-```javascript
-var pets = 35;
-var owners = 15;
-var petsPerOwner = pets / owners;
-//======Pet Info Form
-var answer = prompt("how many pets do you have?");
-//============
- // update based on answer, add new owner
-pets += answer / 1; //  coerce string into number
-owners += 1; // register new owner
-petsPerOwner = pets / owners;
-
-//test
-`There are now ${petsPerOwner} pets per owner at Pet Nirvana `;
-
-```
-
-Is that easier to read than this?
-
-<h3> Life with functions </h3>
-```javascript
-var pets = 35;
-var owners = 15;
-var petsPerOwner = average(pets, owners);
-
-var answer = prompt("how many pets do you have?");
-registerPets(answer);
-registerOwner();
-updateAvg(); // update based on answer, add new owner
-console.log(`There are now ${petsPerOwner} pets per owner at Pet Nirvana `);
 
 
-function average(total, number){
-  return total / number;
-}
-function registerPets(newNum){
-  pets += Number(newNum); // register new pet(s)
-}
-function registerOwner(){
-  ++owners;
-}
-function updateAvg(){
-  petsPerOwner = Math.ceil(average(pets, owners)); // find new average, round up
-}
-```
 
-Besides legibility, you can also see how much easier it is to do our job when we have all these built-in functions provided for us. `Math.ceil` rounds up and `log()` helps us debug code. Also, notice how the first example still uses a function for pure necessity.
+Without functions, there is no JavaScript, at least all the good parts of JavaScript that we know and love. A function has a parameter or parameters. We can name them whatever we like, just like variables. Though, we should think of parameters more like references rather than storage. We're telling the function that we're expecting some variable or data type to be plugged into this space by the user. We then operate on the parameter names within the body of the function.
 
-Without functions, there is no JavaScript, at least all the good parts of JavaScript that we know and love.
+More times than not, you'll want to make sure you return your expected result. Not doing so will produce `undefined` when you invoke the function. If you intend to use your function to set value, include the return keyword.
 
-Anatomy of a Function
---------------------
 
 ```javascript
 function multiply(x, y){
@@ -74,12 +25,9 @@ return x * y; // a return statement allows
               //the function to produce value
 
 ```
-A function has a parameter or parameters. We can name them whatever we like, just like variables. Though, we should think of parameters more like references rather than storage. We're telling the function that we're expecting some variable or data type to be plugged into this space by the user. We then operate on the parameter names within the body of the function.
 
-More times than not, you'll want to make sure you return your expected result. Not doing so will produce `undefined` when you invoke the function. If you intend to use your function to set value, include the return keyword.
+<h3> Return </h3>
 
-Return
--------
 
 The `return` statement can *return* any data type.
 
@@ -114,8 +62,8 @@ return function(){
 }
 ```
 
-Invoking a function
--------------------
+<h3>Invoking a function</h3>
+
 You invoke a function by adding `()` to its name. If the function requires parameters, you must enter them or you'll get an error.
 
 ```javascript
@@ -133,8 +81,8 @@ function multiply(x, y){
   return x * y;
 }
 ```
-Function notations
---------------------
+<h2>Function notations</h2>
+
 
 When a landmark or a *thing* is significant in any human language, there's often more than one way to declare its name.
 
@@ -301,7 +249,7 @@ greet: function(){
 > Note: Using the arrow function on the outer anonymous function destroys context. Because the arrow function binds automatically, you will be binding `this` to a context outside of the `person` object. So, `this.person` would no longer work.
 
 
-<h3>IIFE</h3>
+<h3>Selv Invoking Functions</h3>
 
 A function that calls itself is called an <b>Immediately Invoked Function Expression(IIFE)</b>.
 
@@ -328,8 +276,8 @@ var greet =
 greet // 'hi'
 ```
 
-Function Mania
----------------
+<h2>Function Mania</h2>
+
 
 We can use IFFE's and closures, combined with anonymous functions, to create an android.
 ```javascript
@@ -365,8 +313,8 @@ The code above takes advantage of all that functions give us to produce a functi
 >Note: Oftentimes, developers wrap JavaScript code with an IFFE if they want their code to run without having to be triggered by an event.
 
 
-Summary
---------
+<h2>Summary</h2>
+
 
 It may be hard to keep track of all of these different type of functions, so let's list the different function types.
 
