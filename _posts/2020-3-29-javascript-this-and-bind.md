@@ -85,9 +85,8 @@ var myHouse = {
     return this.neighborhood + "," + this.address + "," + this.city + "," + this.state
  }
 }
-```
-
 myHouse.printInfo() // >> "Cherry Wood,5 Premium Park,Rolly,NC"
+```
 
 The problem comes when we want to manipulate the DOM. The DOM is an acronym for Document  _Object_  Model, which means we’re dealing with a tree of objects with a starting HTMLDocument node.
 
