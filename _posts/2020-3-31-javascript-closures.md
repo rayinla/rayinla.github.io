@@ -1,7 +1,7 @@
 ---
 layout: post
 title: JavaScript Closures
-
+tag: beginner
 ---
 
 JavaScript Closures
