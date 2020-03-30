@@ -6,7 +6,7 @@ title: JavaScript What Are You?
 ---
 
 
-JavaScript, What Are You?
+JavaScript What Are You?
 ===========
 
 <h2>Intro</h2>
