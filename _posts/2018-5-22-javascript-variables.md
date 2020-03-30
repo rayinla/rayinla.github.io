@@ -2,6 +2,7 @@
 layout: post
 title: JavaScript Variables
 image: config.png
+tag: beginner
 ---
 
 JavaScript Variables
