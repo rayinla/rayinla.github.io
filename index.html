@@ -19,7 +19,7 @@ layout: default
 <div class="p-container">
   <h3> JavaScript Blog </h3>
 <div class="posts">
-  {% for post in site.posts%}
+  {% for post in site.posts %}
   {% if post.tag == "blog" %}
    <a href="{{ site.baseurl }}{{ post.url }}">
     <article class="post">
