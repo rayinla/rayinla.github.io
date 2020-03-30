@@ -2,6 +2,7 @@
 layout: post
 title: JavaScript Hoisting
 image: config.png
+tag: beginner
 ---
 
 JavaScript Hoisting
