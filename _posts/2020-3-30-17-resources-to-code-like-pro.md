@@ -137,4 +137,5 @@ _New around here? Read Using this Website. You can also click here to create an 
 If you’re a computer science student at college, you’re most likely going to be working with Python. Computer Science Circles teaches you the fundamentals of Python. It also provides a sandbox where you can try solving problems.
 
 
-If you want to learn JavaScript while having fun doing so, check out our [front page](https://www.howtocodejs.com).
+<h3>Closing</h3>
+If you want to learn JavaScript while having fun doing so, check out our [front page](https://www.howtocodejs.com). Learning a new language takes time and a solid chef mentality. Use these resources as ingredients and not as a crutch. Build one app, then build another. 
