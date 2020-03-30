@@ -1,10 +1,10 @@
 ---
 layout: post
-title: Learn Code Like a Chef. Not a Diner
+title: Learn Code Like a Chef, Not a Diner
 tag: blog
 ---
 
-Learn Code Like a Chef. Not a Diner
+Learn Code Like a Chef, not a Diner
 ===========
 
 Seven years ago, I wanted to build my own website, just like the one you're reading this article on. So, I did some research and found out that HTML/CSS3, JavaScript, and PHP were the languages I needed to learn to make my dream a reality. So I got books that taught those languages, tackling them like college textbooks, highlighting and trying to grok everything that the authors wrote. By the end, I believed I'd become a bona fide programmer.
