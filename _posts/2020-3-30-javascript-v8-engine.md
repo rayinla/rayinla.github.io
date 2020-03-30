@@ -9,7 +9,7 @@ JavaScript's V8 Engine
 ===========
 
 
-[In a previous article](https://www.howtocodejs.com/what-is-javascript), we detailed how JavaScript’s engine works in terms of event execution and briefly mentioned compilation. Yes, you read that correctly. JavaScript is compiled, though unlike other language compilers that have build stages that allow for early optimization, JavaScript’s compilers are forced to compile the code at the last second — literally. The technology used to compile JavaScript is aptly named Just-In-Time(JIT). This “compilation on the fly” has appeared in modern JavaScript engines to speed up the browsers that implement them.
+[In the first chapter](https://www.howtocodejs.com/what-is-javascript), we detailed how JavaScript’s engine works in terms of event execution and briefly mentioned compilation. Yes, you read that correctly. JavaScript is compiled, though unlike other language compilers that have build stages that allow for early optimization, JavaScript’s compilers are forced to compile the code at the last second — literally. The technology used to compile JavaScript is aptly named Just-In-Time(JIT). This “compilation on the fly” has appeared in modern JavaScript engines to speed up the browsers that implement them.
 
 It can get a bit confusing when developers call JavaScript an interpreted language. That’s because JavaScript engines have, until recently, always been associated with an interpreter. Now, with engines like Google’s [V8](https://v8project.blogspot.bg/2017/05/launching-ignition-and-turbofan.html)  engine, developers can have their cake and eat it too — an engine can have both an interpreter and a compiler.
 
