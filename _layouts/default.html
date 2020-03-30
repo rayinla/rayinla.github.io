@@ -96,10 +96,13 @@
             </div>
           </div>
        -->
-              <div class="p-container">
+              
+
+        </div> <!-- .section -->
+            <div class="p-container">
             <div class="posts">
               {% for post in site.posts reversed%}
-              {% if post.tag == "advanced" %}
+              {% if post.tag == "beginner" %}
                <a href="{{ site.baseurl }}{{ post.url }}">
                 <article class="post">
                   <h2>{{ post.title }}</h2>
@@ -108,9 +111,7 @@
               {% endif %}
               {% endfor %}
             </div>
-            </div> 
-
-        </div> <!-- .section -->
+            </div>
         <!-- Main Content for pages -->
         {{ content }}
         <!-- End Main content -->
