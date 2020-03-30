@@ -1,10 +1,10 @@
 ---
 layout: post
-title: Failing Taught Me How to Code
+title: Failure Taught Me How to Code
 tag: blog
 ---
 
-Failing Taught Me How to Code
+Failure Taught Me How to Code
 ===========
 
 My arm pits were sweating as time ticked away. I needed to get my tests to pass by completing the long list of objectives that I’d started since 9 in the morning. Time was running out: the test was supposed to be over at 7 p.m.,and there was five minutes left till then. I wasn’t going to finish in time, I knew. Took me too long to properly set up class structures. Damn. Didn’t know the test was going to be this difficult. Hardly anytime for Google searches. Fires needed to be put out. The problems were becoming progressively more difficult. 
