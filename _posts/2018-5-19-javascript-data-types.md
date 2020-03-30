@@ -2,6 +2,7 @@
 layout: post
 title: JavaScript Data Types
 image: config.png
+tag: beginner
 ---
 
 
