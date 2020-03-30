@@ -8,7 +8,7 @@ JavaScript Hoisting
 ===========
 
 
-We've mentioned hoisting before when talking about functions and you probably scratched your head. Hoisting is one of those spooky JavaScript quirks. Since we're all about having fun here, why don't I let Rick from Rick and Morty explain it to you. 
+We've mentioned hoisting before when talking about functions. You probably scratched your head. Hoisting is one of those spooky JavaScript quirks. Since we're all about having fun here, why don't I let Rick from Rick and Morty explain it to you. 
 
 >Note: this is fanfiction and not sponsored in any way by Rick&Morty.
 
