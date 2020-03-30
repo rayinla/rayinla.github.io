@@ -60,11 +60,13 @@
        <p class="more blk">Learn More JavaScript</p>
        <!--temporary archive -->
       {% for post in site.posts reversed %}
+         {% if post.tag != "blog" %}
         <a href="{{ site.baseurl }}{{ post.url }}" class='link'>
           <div class="archive">
             <p>{{ post.title }}</p>
           </div>
         </a>
+        {% endif %}
       {% endfor %}
       </aside><!--.hiddenbar -->
       <!-- Main Content for pages -->
