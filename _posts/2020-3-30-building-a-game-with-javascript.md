@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Building a Game with JavaScript
+tag: beginner
 ---
 Building a Game with JavaScript
 ==========
