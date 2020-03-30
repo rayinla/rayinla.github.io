@@ -54,10 +54,10 @@ We’ve mentioned Web APIs and an event loop. There’s also a callback queue. I
 
 <h2>Roles</h2>
 
--   **JavaScript runtime:**  a single customer service call operator. He reads from a script, makes the call, and files it onto the stack.
--   **Web APIs**: a third party data store that holds a message for however long it is instructed to hold it.
--   **The callback queue:**  a loading dock for calls
--   **The event loop:**  a little green droid with one simple job — check if the stack is empty. If it’s empty, take an event from the queue and place it onto the stack. Continue to do so while the condition is true.
+1.  **JavaScript runtime:**  a single customer service call operator. He reads from a script, makes the call, and files it onto the stack.
+2.  **Web APIs**: a third party data store that holds a message for however long it is instructed to hold it.
+3.   **The callback queue:**  a loading dock for calls
+4.   **The event loop:**  a little green droid with one simple job — check if the stack is empty. If it’s empty, take an event from the queue and place it onto the stack. Continue to do so while the condition is true.
 
 <h2>The Comic</h2>
 
