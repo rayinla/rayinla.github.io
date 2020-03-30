@@ -1,6 +1,7 @@
 ---
 layout: post
 title: JavaScript This and Bind
+tag: beginner
 ---
 JavaScript This and Bind
 ==========
