@@ -1,11 +1,11 @@
 ---
 layout: post
-title: JavaScript What Are You? 
+title: JavaScript, What Are You? 
 image: webapicomic.png
 ---
 
 
-JavaScript What Are You?
+JavaScript, What Are You?
 ===========
 
 <h2>Intro</h2>
