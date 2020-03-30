@@ -471,7 +471,97 @@ for (let i = 0; i < 10; i++) {
 > Pro tip: Curly braces are not required if the block of code can be written in one line.
 
 
+<h2> Extra Content: The If Sphagetti </h2>
+
+When we’re controlling the flow of data within a function, it can be tempting to use only a single return statement. A variable will be assigned a new value depending on a condition.
+
+```javascript
+function divider(dividend, divisor){  
+   let response;  
+   if(isNaN(dividend) || isNaN(divisor))  
+   {  
+     response = "Error: input a number";  
+   }  
+   else if(divisor === 0)  
+   {  
+    response = "Error: cannot divide by 0";  
+   }  
+   else   
+   {  
+    response = dividend / divisor;  
+   }return response;  
+ }
+```
+> **_Note_**_: Admittedly, that else block is a stretch._
+
+The code above has a single exit point(return statement), which is fine if you’re thinking in terms of functional logic. When we learn about functions for the first time, it’s ingrained in our being that you only return once. A function is a dog and a dog only has one tail, the return statement. Logically-speaking, the notion of multiple exit points can appear confusing…like a dog with multiple tails. “Which tail will the dog wag next?” is the sort of thing a cynic might say about functions that have multiple returns.
+
+But a single exit point in a maze can create a game of cat and mouse as we peruse through nested conditions. If you looked at the earlier code example long enough, you may have gotten that nagging feeling that said, ‘if the condition is met, why are we not exiting right now? Why do we have to wait?’
+
+It’s as if we reached a possible exit after meeting a condition, only to be funneled to a waiting room. Think: your flight’s delayed after meeting the condition of booking your ticket and being there on time. Yeah, rough.
+
+Conversely, we can use early returns.
+```javascript
+function divider(dividend, divisor){  
+   if(isNaN(dividend) || isNaN(divisor))  
+   {  
+     return "Error: input a number";  
+   }  
+   else if(divisor === 0)  
+   {  
+    return "Error: cannot divide by 0";  
+   }return dividend / divisor;  
+ }
+```
+Multiple exit points allow us to make sense of the logic. Sometimes, we need to be reminded that we’re still within a function as we traverse conditions.
+
+When you think about early returns in terms of pseudo code, you’ll realize that early returns are succinct.
+```
+If a condition is true   
+  return value.
+
+As opposed to,
+
+If a condition is true  
+ assign a valuethe value may or may not change...return value
+```
+There’s less ambiguity, less confusion, and more assurance with early returns. It feels good to know that if you have a base case that handles invalid input, you are exiting the function immediately.
+
+Doing otherwise is akin to dragging your feet, saying, “Yeah, yeah I’ll take care of that later.” Then, assigning the task of garbage disposal to someone else.
+```javascript
+if(hackyInput)  
+{   
+  return; //!!!!  
+}//vsif(hackyInput)  
+{   
+  handleLater = ERROR_MSG;   
+}
+```
+ <h3> Sprinkling More Style</h3>
+
+All of this code can be stripped down by deleting all of those brackets.
+```javascript
+function divider(dividend, divisor){  
+   if(isNaN(dividend) || isNaN(divisor))  
+     return "Error: input a number";  
+   else if(divisor === 0)  
+    return "Error: cannot divide by 0";return dividend / divisor;  
+ }if(hackyInput) return; //!!!!//vsif(hackyInput) handleLater = ERROR_MSG;
+```
+<h3>Thoughts?</h3>
+
+Of course, all of the above should be taken with a grain (or a couple more) of salt. At the end of the day, it is a style of programming. There is a time and place for early returns just like there’s a time and place for fanny packs(is there?).
+
+It would be responsible to include a disclaimer. So here it is:
+
+When you abuse the return statement by placing it in the middle of code, or, worse, a callback, you can create a hellish “Where’s Waldo?” debugging scenario. When your logic is bursting at the seams with complexity, so much so, that you need multiple returns to diffuse some of that complexity, then early returns become a crutch, rather than a tool. In that case, you may want to decouple your code, which is a nice way of telling you to nuke it.
+
+Semantically, an early return should signify to the code reviewer that your first validation is make or break. The function cannot run without the condition being met. In that case, the early return reads more like a fail safe than clever coding.
+
+At the end of the day, good style is in the eye of the beholder…for the most part.
+
+
 <h2>Summary</h2>
 
 
-We conquered `if/else if/else` statements, tackled `switch` statements, and untangled `while`, `do while`, and `for loops`. We also learned how to break loops and continue them. Next, we'll learn how a JavaScript program flows around functions.
+We conquered `if/else if/else` statements, tackled `switch` statements, and untangled `while`, `do while`, and `for loops`. We also learned how to break loops and continue them. We even leanrned how to control flow with style. Next, we'll learn how a JavaScript program flows around functions.
