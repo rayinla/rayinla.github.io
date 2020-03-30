@@ -547,6 +547,9 @@ nav {
   
 
 }
+.p-container h3 {
+ text-align: center;
+}
 .posts {
   @include wide-laptop {
     padding-left: 180px;
