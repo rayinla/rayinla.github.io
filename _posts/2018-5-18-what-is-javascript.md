@@ -2,6 +2,7 @@
 layout: post
 title: JavaScript, What Are You? 
 image: webapicomic.png
+tag: beginner
 ---
 
 
