@@ -73,7 +73,7 @@
                     </div>
                  </div> <!-- .box-burger -->
                </nav>
-               <div class="blk-wrapper">
+<!--                <div class="blk-wrapper">
                  <ul class='how-blk'>
                    <li>H</li>
                    <li>o</li>
@@ -95,7 +95,21 @@
                </div>
             </div>
           </div>
-      
+       -->
+              <div class="p-container">
+            <div class="posts">
+              {% for post in site.posts reversed%}
+              {% if post.tag == "advanced" %}
+               <a href="{{ site.baseurl }}{{ post.url }}">
+                <article class="post">
+                  <h2>{{ post.title }}</h2>
+                </article>
+               </a>
+              {% endif %}
+              {% endfor %}
+            </div>
+            </div> 
+
         </div> <!-- .section -->
         <!-- Main Content for pages -->
         {{ content }}
