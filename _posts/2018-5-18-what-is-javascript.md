@@ -1,7 +1,7 @@
 
 ---
 layout: post
-title: JavaScript, What Are You? 
+title: JavaScript What Are You? 
 
 ---
 
