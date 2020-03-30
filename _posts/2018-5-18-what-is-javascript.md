@@ -1,4 +1,3 @@
-
 ---
 layout: post
 title: JavaScript What Are You? 
@@ -62,7 +61,7 @@ We’ve mentioned Web APIs and an event loop. There’s also a callback queue. I
 
 <h2>The Comic</h2>
 
-![call stack](webapicomic.png)
+![call stack](images/webapicomic.png)
 
 
 On a very synchronous day, the data flow is restricted. The “call operator” or the JavaScript runtime has to manually log all of the calls. The call operator has no time to get to the more important functions, like calling his wife or rendering a web page.
