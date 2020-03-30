@@ -2,6 +2,7 @@
 layout: post
 title: JavaScript Control Flow
 image: config.png
+tag: beginner
 ---
 
 JavaScript Control Flow
