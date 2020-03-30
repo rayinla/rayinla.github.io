@@ -13,7 +13,7 @@ When you first start learning how to program, it can be difficult to find resour
 
 However long it takes, there will come a point where your skills will be sharpened enough to work in teams of coders to build and maintain projects. 
 
-Howtocodejs is the perfect site to learn JavaScript, if you're a beginner. But for those who want to learn different languages or who just want to hear a fresh voice, here are someresources to light your path.
+Howtocodejs is the perfect site to learn JavaScript, if you're a beginner. But for those who want to learn different languages or who just want to hear a fresh voice, here are somere sources to light your path.
 
 #### Teach Yourself Programming in 10 years
 
@@ -135,3 +135,6 @@ Though Ruby on Rails may have lost steam these past few years, it is still a pow
 _New around here? Read Using this Website. You can also click here to create an account or log in. This website teaches…_cscircles.cemc.uwaterloo.ca](https://cscircles.cemc.uwaterloo.ca "https://cscircles.cemc.uwaterloo.ca")[](https://cscircles.cemc.uwaterloo.ca)
 
 If you’re a computer science student at college, you’re most likely going to be working with Python. Computer Science Circles teaches you the fundamentals of Python. It also provides a sandbox where you can try solving problems.
+
+
+If you want to learn JavaScript while having fun doing so, check out our [front page](https://www.howtocodejs.com).
