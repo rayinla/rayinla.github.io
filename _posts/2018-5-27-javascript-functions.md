@@ -1,6 +1,7 @@
 ---
 layout: post
 title: JavaScript Functions
+tag: beginner
 ---
 JavaScript Functions
 ==========
