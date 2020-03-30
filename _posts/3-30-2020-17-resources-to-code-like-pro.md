@@ -1,6 +1,6 @@
 ---
 layout: post
-title: JavaScript's Prototype Chain
+title: 17 Resources You Need to Code Like a Pro
 tag: blog
 ---
 
