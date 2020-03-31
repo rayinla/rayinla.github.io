@@ -132,5 +132,33 @@ $(document).ready(function(){
 ```
 We’ve wrapped  `bluezy()`  with the bind function to define the context we want our function to work with. Because we’re working with the DOM, we use  **this**  instead of referring to an actual object name.
 
+<h3>Auto Binding</h3>
+
+When we brushed over functions, we mentioned the arrow function `()=>{}`. See, that little thing does all that hard work for you through auto binding. But it's always good to know what happens under the hood. That arrow operator is what we call syntactic sugar. It's pretty sweet to not have to keep binding.
+
+Here's the same code re-written with the ES6 arrow function:
+
+```javascript
+$(document).ready(function(){
+   //It is important to notice that 'button' is a DOM object with various methods
+  $('button').on('click', function(){
+     //We must preserve the button's context
+  
+     let bluezy = ()=>{
+       //We're saying, "I want to do fun things with <<that>> button object, 
+      //not <<this>> window object you keep giving me
+       $(this).css("background-color", "blue"); 
+     }   
+     bluezy();
+  });  
+});
+```
+
+We can't use the arrow function all the time, because the arrow function is also an anonymous function. Anonymous functions have to be assigned to a variable. There are downsides to assigning a function to a variable.
+
+Notice how the function call, `bluezy()`, had to be moved under the arrow function; we lose the ability to "hoist" function calls when we use the arrow function. More on hoisting later.
+
+It's also important to note that over using arrow functions can lead to code that's hard to read. 
+
 <h3>Takeaway</h3>
 "This" concept may seem tricky at first, but when you practise event based programming, you'll slowly begin to become familiar with the quirkiness of `this`. But before you do that, why don't we familiarize ourselves with jQuery by building a game?
