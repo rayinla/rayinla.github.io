@@ -2,6 +2,7 @@
 layout: post
 title: JavaScript Control Flow
 image: config.png
+description: Learn JavaScript control flow so that you can master your programs. This tutorial teaches you how to us control flow like a pro. 
 tag: beginner
 ---
 
