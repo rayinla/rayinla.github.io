@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Building a Game with JavaScript
+description: Learn how to build a simple game in JavaScript. The tutorial teaches parts of jQuery and other intermediate JavaScript concepts. 
 tag: beginner
 ---
 Building a Game with JavaScript
