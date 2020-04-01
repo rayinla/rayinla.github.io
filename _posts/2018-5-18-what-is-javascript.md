@@ -2,6 +2,7 @@
 layout: post
 title: JavaScript, What Are You? 
 image: webapicomic.png
+description: Learn the basics of JavaScript's event loop in this tutorial. In short, JavaScript is an single-threaded, non-blocking programming language. 
 tag: beginner
 ---
 
