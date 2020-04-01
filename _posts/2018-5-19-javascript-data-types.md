@@ -2,6 +2,7 @@
 layout: post
 title: JavaScript Data Types
 image: config.png
+description: Learn all you need to know about JavaScript's data types in just a few minutes with this tutorial. 
 tag: beginner
 ---
 
