@@ -2,6 +2,7 @@
 layout: post
 title: JavaScript Hoisting
 image: config.png
+description: Learn how hoisting in JavaScript works with Rick and Morty. 
 tag: beginner
 ---
 
