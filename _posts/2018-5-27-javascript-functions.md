@@ -1,6 +1,7 @@
 ---
 layout: post
 title: JavaScript Functions
+description: Learn JavaScript functions to beef up your applications with amazing code. This tutorial gives you an overview of the JavaScript functions you need in your toolbelt.
 tag: beginner
 ---
 JavaScript Functions
