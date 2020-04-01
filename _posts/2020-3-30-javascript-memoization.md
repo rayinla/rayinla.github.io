@@ -1,6 +1,7 @@
 ---
 layout: post
-title: JavaScript Memoization 
+title: JavaScript Memoization
+description: Learn JavaScript memoization in 3 minutes.
 tag: advanced
 ---
 
