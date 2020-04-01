@@ -1,6 +1,7 @@
 ---
 layout: post
 title: JavaScript's Prototype Chain
+description: Learn JavaScript's prototype chain so you can pass your JavaScript interview!
 tag: advanced
 ---
 
