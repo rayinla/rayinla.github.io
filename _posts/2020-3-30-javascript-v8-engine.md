@@ -1,7 +1,7 @@
 ---
 layout: post
 title: JavaScript's V8 Engine
-description: JavaScript's V8 Engine is explained with lovely cartoons
+description: JavaScript's V8 Engine is explained with lovely cartoons.
 tag: advanced
 ---
 
