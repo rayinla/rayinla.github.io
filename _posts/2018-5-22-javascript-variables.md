@@ -2,6 +2,7 @@
 layout: post
 title: JavaScript Variables
 image: config.png
+description: Learn how to use JavaScript variables in awesome ways. One of them is assigning JavaScript functions to a variable. Isn't that cool?
 tag: beginner
 ---
 
