@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 3 Ways To Earn With Open Source
+title: 3 Ways To Make Money With Open Source
 tag: blog
 ---
 
