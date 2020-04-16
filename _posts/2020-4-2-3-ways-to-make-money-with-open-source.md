@@ -9,7 +9,7 @@ tag: blog
 
 Those who want to get started in open source often want to know how open source makes money. Here's how open source makes money in a nutshell: donations, paid support, and dual licencing. 
 
-We'll go into each of these threee categories but first let's explore the history of open source. If you don't want to do that, you can just skip over to the ways open source makes money.
+We'll describe each of these threee categories, but first let's explore the history of open source. If you don't want to do that, you can just skip over to the ways open source makes money.
 
 The philosophy of open source dates back to the early era of computing, where programmers shared ideas in order to maximize the limits of the first computers. There was a collegiate atmosphere in the field of software development that trumped ideas over monetization. However, when computers became mainstream, commercialized software that would run on those computers threatened to cut off collaboration. It would be corporations who held a monopoly on code and ideas. 
 
