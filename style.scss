@@ -149,6 +149,7 @@ img {
 /* General Styles */
 
 .blk {
+     display: none;
     font-size: 20px;
     color: #fdfdfd;
     background-color: #000;
@@ -317,6 +318,7 @@ img {
   }
 
   .blk-wrapper {
+	  display: none;
     position: relative;
     margin-top: -200px;
     top: 150px;
@@ -1050,7 +1052,7 @@ height: 100%;
 .wrapper-footer {
   position: relative;
   margin-top: 80px;
-  border-top: 1px solid #ddd;
+  border-top: 0.5px solid $lightGray;
   z-index: 100;
 }
 footer {
