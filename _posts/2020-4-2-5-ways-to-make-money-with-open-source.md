@@ -3,10 +3,13 @@ layout: post
 title: 5 Ways To Make Money With Open Source
 description: Those who want to get started in open source often want to know how open source makes money. We'll tell you how.
 tag: blog
+image: vr.jpg
 ---
 
 5 Ways To Make Money With Open Source
 ===========
+
+![nerd](/images/vr.jpg)
 
 Those who want to get started in open source often want to know how open source makes money. Here's how open source makes money in a nutshell: donations/grants, sponsorships/ads, paid support, government funding, and dual licencing. 
 
