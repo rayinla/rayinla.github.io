@@ -10,8 +10,6 @@ tag: beginner
 JavaScript, What Are You?
 ===========
 
-<h2>Intro</h2>
-
 So, you want to learn JavaScript, huh? Before diving into this strange and beautiful language, it's a good idea to know exactly what you're diving into. Kind of like how you'd want to know know someone before marrying them. 
 
 
