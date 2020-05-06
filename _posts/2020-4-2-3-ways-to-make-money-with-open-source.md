@@ -11,7 +11,7 @@ image: vr.jpg
 
 ![nerd](/images/vr.jpg)
 
-Those who want to get started in open source software often want to know how open source makes money. Here's how open source makes money in a nutshell: donations/grants, sponsorships/ads, paid support, government funding, and dual licencing. 
+Those who want to get started in open source software often want to know how open source makes money. Here's the three main ways to earn money with open source: donations/grants, sponsorships/ads, and dual licencing. There are some extra ways to make money from open source that we'll discuss later.
 
 I'll describe each of these categories in detail, but first let's explore the history of open source. If you don't want to do that, you can just skip over to the ways open source makes money.
 
