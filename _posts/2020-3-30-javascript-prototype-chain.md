@@ -9,10 +9,6 @@ tag: advanced
 JavaScript's Prototype Chain
 ===========
 
-
-
-
-
 When you first started learning to program, you may have come across the term object-oriented programming. You looked up what it meant and you found out that it’s simply a buzz word for grouping data into “objects” with attributes.
 
 The keyword used to create these objects in many programming languages is the class. You define a class with a constructor and several public and private functions. If you want one class to inherit from another, you write simple inheritance syntax and (wala!) you have created a chain of inheritance.
@@ -43,13 +39,18 @@ The first thing we need to do is create a constructor. Coding by pre-ES5 standar
 ```javascript
 function Bat(name){  
  this.name = name;  
-}let bob = new Bat('bob');
+}
+let bob = new Bat('bob');
 ```
 Every constructor we initialize gets a free prototype object as one of its properties. We can name a key and set a value to it.
 ```javascript
 Bat.prototype.fly = function(){  
-  console.log('Im flying. Weeee');};Bat.prototype.detect = function(){  
-  console.log('I found a mouse!');};
+  console.log('Im flying. Weeee');
+ }
+  
+Bat.prototype.detect = function(){  
+  console.log('I found a mouse!');
+ }
   ```
 
 Already, you can see the advantage of prototypical inheritance. We can add methods to our class without modifying the class definition, letting the chain handle property inheritance. This is what the chain looks like in one instance of our Bat object:
@@ -66,13 +67,13 @@ We can take advantage of prototype chains to perform class inheritance. This OOP
 ```javascript
 function Mammal(){  
   this.bloodTemp = 'warm';  
-    
 }  
    
-function Carnivore(){  
-     
- }function Lion(name){  
-  Mammal.call(this);  //super. Inherit constructor  
+function Carnivore(){    
+ }
+
+function Lion(name){  
+  Mammal.call(this);  //inherit constructor  
   this.name = name;  
 }
 ```
