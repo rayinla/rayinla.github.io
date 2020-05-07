@@ -137,7 +137,7 @@ bob.weight // 200 Ibs
 bob.weight = "300 Ibs" 
 bob.weight // 300 Ibs
 ```
-You should realize that the new method does not allow you to so easily segregate private and public variables/functions. You have to use a hacky underscore to alert other developer or use a hashtag before the variable name or function name.
+You should realize that the new method(ES6 classes) does not allow you to so easily segregate private and public variables/functions. You have to use a hacky underscore to alert other developer or use a hashtag before the variable name or function name.
 
 ```javascript
   // private property
