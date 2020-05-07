@@ -199,6 +199,10 @@ img {
   top: 11px;
   left: 50%;
   z-index: 10;
+	@include lg-mini-mobile {
+		left: 0%;
+		margin-left: 10px;
+	}
 }
 .bar-logo {
   position: relative;
@@ -426,7 +430,7 @@ img {
 }
 
 .box-burger {
-  @include mobile {
+  @include mini-mobile {
     margin-right: 20px;
     
   }
