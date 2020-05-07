@@ -49,8 +49,8 @@ The new way of building a class in JavaScript is by using a class keyword like a
 
 ```javascript
 class Warrior{
-	constructor(){
-	}
+  constructor(){
+  }
 }
 ```
 However you choose to create a class, the components of a class are usually the same. For this tutorial, we'll use the first method but I'll show you how to do the same thing using the new "class" method.
@@ -60,11 +60,11 @@ The first thing you have to think about when building a class is what the basic 
 We put this information in what we call the constructor:
 ```javascript
 function User(){
-	//constructor
-	this.name;
-	this.height;
-	this.age;
-	this.weight;
+//constructor
+  this.name;
+  this.height;
+  this.age;
+  this.weight;
 }
 ```
 > Note: We us the "this" keyword because when a new user object is created, we want to get the value of the instantiated object and not the class itself.
@@ -73,11 +73,11 @@ Let's go a step further by allowing a someone to assign value to a class by addi
 
 ```javascript
 function User(object){
-	//constructor
-	this.name = object.name;
-	this.height = object.height;
-	this.age = object.age;
-	this.weight = object.weight;
+//constructor
+  this.name = object.name;
+  this.height = object.height;
+  this.age = object.age;
+  this.weight = object.weight;
 }
 ```
 This type of class building is  great practise because it allows anyone calling a class to be able to build up their object like a build-a-bear without having to worry about breaking anything or arranging anything in a specific order. For example:
@@ -97,27 +97,24 @@ Here's how we separate public data from private data in JavaScript. Note that th
 
 ```javascript
 function  User(construct){
-
 //constructor
-
-	this.name = construct.name;
-	this.height = construct.height;
-	this.age = construct.age;
-	this.weight = construct.weight;
+  this.name = construct.name; 
+  this.height = construct.height;
+  this.age = construct.age;
+  this.weight = construct.weight;
 //private
-    let bmiMultiple = 703;
-	let bmi = ()=>{
-		return (this.weight / (this.height * this.height)) * bmiMultiple;
-
-	}
+  let bmiMultiple = 703;
+  let bmi = ()=>{
+    return (this.weight / (this.height * this.height)) * bmiMultiple;
+   }
 //public
-	return {
-		name,
-		height,
-		age,
-		weight,
-		bmi
-	}
+  return {
+    name,
+    height,
+    age,
+    weight,
+    bmi
+  }
 }
 ```
 
@@ -172,20 +169,19 @@ Instead of just rewriting these variables, you can have the CardioUSer inherit f
 
 //constructor
 function  User(construct){
-
-	this.name = construct.name;
-	this.height = construct.height;
-	this.age = construct.age;
-	this.weight = construct.weight;
+  this.name = construct.name;
+  this.height = construct.height;
+  this.age = construct.age;
+  this.weight = construct.weight;
 }
 //prototype
 User.prototype.bmi = ()=>{
-		return (this.weight / (this.height * this.height)) * 703;
-	}
+  return (this.weight / (this.height * this.height)) * 703;
+}
   
 //inheriting constructor
-function  CardioUser(object){
-	User.call(this, object)
+function CardioUser(object){
+  User.call(this, object)
 }
 //prototypical inheritance
 CardioUser.prototype = User.prototype;
@@ -209,24 +205,24 @@ After that, I assigned the functions from User to CardioUSer and wala! CardioUse
 The new way of doing things is much more simple:
 ```javascript
   
-class  User {
-	constructor(construct){
-		this.name = construct.name;
-		this.height = construct.height;
-		this.age = construct.age;
-		this.weight = construct.weight;
-	}
+class User {
+  constructor(construct){
+    this.name = construct.name;
+    this.height = construct.height;
+    this.age = construct.age;
+    this.weight = construct.weight;
+    }
 
-	bmi(){
-		return (this.weight / (this.height * this.height)) * 703;
-	}
+    bmi(){
+      return (this.weight / (this.height * this.height)) * 703;
+    }
 }
 
 
 class CardioUSer extends User {
-	constructor(object){
-		super(object)
-	}
+  constructor(object){
+    super(object)
+   }
 }
 
 let bob = new  CardioUSer({name:"Joe", height:72, age: 30, weight: 200})
