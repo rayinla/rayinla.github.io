@@ -430,10 +430,7 @@ img {
 }
 
 .box-burger {
-  @include mini-mobile {
-    margin-right: 20px;
-    
-  }
+  
   cursor: pointer;
   max-width: 28px;
   position: absolute;
@@ -508,6 +505,12 @@ nav {
   z-index: 4;
   display: flex;
   flex-direction: row;
+    .box-burger {
+	@include mini-mobile {
+   	 margin-right: 20px;
+    
+  	}    	    
+    }	
 }
 .ad-hero {
   width: 100%;
