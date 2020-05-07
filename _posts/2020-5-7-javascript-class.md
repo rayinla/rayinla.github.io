@@ -16,14 +16,14 @@ I can "instantiate" or create an object of the class by writing:
 
 ```javascript
 let bruceLee = Warrior.create("Bruce Lee");
-bruceLee.kick()
+bruceLee.kick();
 ```
 
 What's cool is that I can create a totally new object without having to rewrite the kick function because it's already defined in a class. 
 
 ```javascript
 let chuckNorris = Warrior.create("Chuck Norris");
-chuckNorris.kick()
+chuckNorris.kick();
 ```
 But how do we create a class in the first place? There are a few ways to create a class in JavaScript. We can divide them into the old ways and the new ways. Some purists prefer the old way, but we'll cross that bridge when we get there. 
 
@@ -131,11 +131,11 @@ let bob = User({ height:72, age: 30, name:"Mike", weight: 200}) // 72 is in inch
 ...you can then get information and set information:
 
 ```javascript
-bob.name // Mike
-bob.name = "Joe" // Joe
-bob.weight // 200 Ibs
-bob.weight = "300 Ibs" 
-bob.weight // 300 Ibs
+bob.name; // Mike
+bob.name = "Joe"; // Joe
+bob.weight; // 200 
+bob.weight = 300;
+bob.weight; // 300 Ibs
 ```
 You should realize that the new method(ES6 classes) does not allow you to so easily segregate private and public variables/functions. You have to use a hacky underscore to alert other developer or use a hashtag before the variable name or function name.
 
@@ -156,7 +156,7 @@ If you've explored my function article, you'll notice that I used an anonymous f
 
 We can call our function like so:
 ```javascript
- bob.bmi() // 27.12
+ bob.bmi(); // 27.12
 ```
 
 <h2> Inheritance </h2>
@@ -186,9 +186,9 @@ function CardioUser(object){
 //prototypical inheritance
 CardioUser.prototype = User.prototype;
 
-let andy = new  CardioUser({name:"Joe", height:72, age: 30, weight: 200})
+let andy = new  CardioUser({name:"Joe", height:72, age: 30, weight: 200});
   
-andy.bmi()
+andy.bmi();
 
 ```
 There's a lot going on that has to be broken down. I removed the bmi function from the class and assigned it to the prototype of User, which can then be handed down to CardioUser. This is the most functional way to create classes in JavaScript. The function itself only serves as a constructor while the prototype contains any dynamic function you wish to create.
@@ -225,9 +225,9 @@ class CardioUSer extends User {
    }
 }
 
-let bob = new  CardioUSer({name:"Joe", height:72, age: 30, weight: 200})
+let bob = new  CardioUSer({name:"Joe", height:72, age: 30, weight: 200});
 
-bob.bmi()
+bob.bmi();
 
 ```
 
@@ -239,11 +239,11 @@ You probably know what's happening just by reading the code. I extended the User
 If all that prototype stuff freaks you out, you're probably better off using the new ES6 class.  It's admittedly cleaner and you can actually do things that are available in other scripting languages, like specifying getter and setter methods. As you saw before, the getters and setter were implied, but using the Es6 class we can explicitly set them. 
 ```javascript
 set name (name) {  
-this._name = name;  
+this.name = name;  
 }  
   
 get name () {  
-return this._name;  
+return this.name;  
 }
 
 ```
