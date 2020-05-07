@@ -426,8 +426,9 @@ img {
 }
 
 .box-burger {
-  @include kindle {
-    right: 0px;
+  @include mobile {
+    margin-right: 20px;
+    
   }
   cursor: pointer;
   max-width: 28px;
