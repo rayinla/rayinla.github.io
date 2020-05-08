@@ -10,7 +10,7 @@ tag: beginner
 JavaScript, What Are You?
 ===========
 
-So, you want to learn JavaScript, huh? Before diving into this strange and beautiful language, it's a good idea to know exactly what you're diving into. Kind of like how you'd want to know know someone before marrying them. 
+Before diving into JavaScript, it's a good idea to know exactly what you're diving into. Kind of like how you'd want to know know someone before marrying them. 
 
 
 You probably know that there are many memes and jokes floating about the interweb, hinting at JavaScript's flaws. Some of these have to do with geeky performance issues, but others have to do with the nuances of the language itself. The keyword here is nuance. Things don't always work like you expect them to sometimes, especially if you don't know what's going on under the hood. 
@@ -25,8 +25,15 @@ The moving, singing, and dancing you see on web pages are a result of functions 
 The tiny elves(ie. event functions) then go to a specific HTML element that they've been assigned to and make it move, sing--or whatever they were told to make it do. This doesn't happen all at once. The tiny elves wait for one event at a time. So, each elf corresponds to a specific event and they have to wait for their turn in a line. 
 
 
-This line is called a single thread; JavaScript is a single-threaded language. But the analogy above doesn't exactly do this concept justice. Let's dive deeper, shall we?
+This line is called a single thread; JavaScript is a single-threaded language. But the analogy above doesn't exactly do this concept justice. Let's look at how the creators of JavaScript defines JavaScript: 
 
+"[JavaScript] was originally designed to be a Web scripting language, providing a mechanism to enliven Web pages in browsers and to perform server computation as part of a Web-based client-server architecture."
+
+But the creators also define JavaScript as "an object-oriented programming language for performing computations and manipulating computational objects within a host environment." Those objects are "objects that represent windows, menus, pop-ups, dialog boxes, text areas, anchors, frames, history, cookies, and input/output." Objects also include built-in objects that allow JavaScript programmers to do cool things like the String object, which has attributes that allow programmers to do things like capitalize words. So, we can define JavaScript objects as "a collection of zero or more properties each with attributes that determine how each property can be used."
+
+Now, JavaScript is also used as a server-side language, which goes beyong what the creators intended for JavaScript to be. According to the creators, "ECMAScript usage has moved beyond simple scripting and it is now used for the full spectrum of programming tasks in many different environments and scales."
+
+Now that we've explored JavaScript in a broad sense, let's explore why JavaScript is called a single-threaded language. 
 
 <h2>What is a single-threaded language?</h2>
 
