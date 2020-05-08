@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Learn Code Like a Chef, Not a Diner
+description: You can only learn how to code by actually building projects. 
 tag: blog
 ---
 
