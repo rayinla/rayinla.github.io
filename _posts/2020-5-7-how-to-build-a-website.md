@@ -7,7 +7,7 @@ tag: blog
 How to Build a Website
 ===========
 
-![](https://cdn-images-1.medium.com/max/800/1*eraUvzk7od7TIgy79IoS5A.jpeg)
+![wireframe](https://cdn-images-1.medium.com/max/800/1*eraUvzk7od7TIgy79IoS5A.jpeg)
 
 
 When you want to get somewhere, you’re probably going to use a GPS or some other pathfinder. The same should apply to building a website for the first time. However, instead of telling you how to get there, many blog posts tell you what you need to get there. They’d list the technologies you need to know to build a website but they won’t show you the path. It’s like saying to get to Yellowstone National Park you need a car.
@@ -18,7 +18,7 @@ The purpose of this post is to show you the tools you need to build a website an
 
 <h3>Text editor</h3>
 
-![](https://cdn-images-1.medium.com/max/800/0*t2H99g4RlyYR0TR5)
+![text editor](https://cdn-images-1.medium.com/max/800/0*t2H99g4RlyYR0TR5)
 
 [pixabay](https://pixabay.com/en/text-editor-writing-document-text-1794110/)
 
@@ -28,7 +28,7 @@ Get a text editor and love it, because you’re going to be staring at it while 
 
 <h3> Command line</h3>
 
-![](https://cdn-images-1.medium.com/max/800/0*KvTmQ4-3xccAW46p)
+![CLI](https://cdn-images-1.medium.com/max/800/0*KvTmQ4-3xccAW46p)
 
 
 No, hackers are not the only people who use command lines. Don’t run away from it. This black screen will become your closest virtual friend in due time.
@@ -39,7 +39,7 @@ If you don’t need any hand holding, check out this [cheat sheet](https://www.g
 
 <h2> Now, Let’s Learn Languages</h2>
 
-![](https://cdn-images-1.medium.com/max/800/0*ZlXzlDe1X88qK0vB)
+![desk](https://cdn-images-1.medium.com/max/800/0*ZlXzlDe1X88qK0vB)
 
 
 <h3> HTML</h3>
@@ -121,7 +121,7 @@ Frameworks make it easier to build web applications from scratch. Every language
 
 If you pick a framework, this is the way you should think about web programming from now on. Of course there are other structures, but this a good one to start out with for your first project.
 
--   **Model:** Object Oriented Programming (OOP) in _insert language_
+ **Model:** Object Oriented Programming (OOP) in _insert language_
 
 I know, I know. Wax on, wax off, right? How does OOP help? Well, in the back end, every form of data is an object. For example, every user on Medium is a user object.
 
@@ -131,7 +131,7 @@ class User < ApplicationRecord
 #Lot of relationships goin’ on in here. More on that later.  
 End
 
--   **Controller:** [Restful routing](https://codepen.io/urketadic/details/oZRdRN)
+**Controller:** [Restful routing](https://codepen.io/urketadic/details/oZRdRN)
 
 The controller is used to render HTML pages depending on the route. Within the route method, you can manipulate data from the database which would then be showed in the view.
 
@@ -146,7 +146,7 @@ render the index.html.faketemplate
 
 Here’s a good post about routing: [https://medium.com/fullstacked/restful-api-cheat-sheet-3f96fab970b8](https://medium.com/fullstacked/restful-api-cheat-sheet-3f96fab970b8)
 
--   **View:** [Templates](https://www.sitepoint.com/overview-javascript-templating-engines/)
+**View:** [Templates](https://www.sitepoint.com/overview-javascript-templating-engines/)
 
 Everything you learned about HTML applies, but now you can inject your server language in your HTML files to create dynamic content. If you have 10 users in your database, you can loop through all of the users we stored to the users variable in the controller and render them.
 
