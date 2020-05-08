@@ -1,10 +1,10 @@
 ---
 layout: post
-title: How to Build a Website
+title: How to Build a Website Without Wix
 tag: blog
 ---
 
-How to Build a Website
+How to Build a Website Without Wix
 ===========
 
 ![wireframe](https://cdn-images-1.medium.com/max/800/1*eraUvzk7od7TIgy79IoS5A.jpeg)
