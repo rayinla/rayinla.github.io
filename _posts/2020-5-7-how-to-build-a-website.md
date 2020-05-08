@@ -1,6 +1,7 @@
 ---
 layout: post
 title: How to Build a Website Without Wix
+description: Takes notes, because I'll teach you how to build a wesbite from scratch.
 tag: blog
 ---
 
