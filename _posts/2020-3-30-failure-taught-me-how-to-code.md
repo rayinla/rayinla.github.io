@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Failure Taught Me How to Code
+description: Sometimes in order to succeed, you must fail. Use my story to learn how to learn.
 tag: blog
 ---
 
