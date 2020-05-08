@@ -1,6 +1,7 @@
 ---
 layout: legal
 title: About
+description: Why howtocodejs exists today.
 permalink: /about/
 ---
 
