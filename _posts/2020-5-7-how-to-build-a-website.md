@@ -47,7 +47,7 @@ If you don’t need any hand holding, check out this [cheat sheet](https://www.g
 HTML helps form the skeleton of the website. Most website consist of a navigation bar, main content area, and a footer.
 
 Learn Page Layout: [https://www.w3schools.com/html/html_layout.asp](https://www.w3schools.com/html/html_layout.asp)
-```
+```html
 <!Doctype html>  
 <html>  
   <head>  
