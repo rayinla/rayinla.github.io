@@ -13,7 +13,11 @@ When you first started learning to program, you may have come across the term ob
 
 The keyword used to create these objects in many programming languages is the class. You define a class with a constructor and several public and private functions. If you want one class to inherit from another, you write simple inheritance syntax and (wala!) you have created a chain of inheritance.
 
-Of course, this all groovy if you’re anyone but a JavaScript developer. Until ES2015, the language did not implement a class. Instead, it used and still uses a prototype chain. The new ES6 “class” is just a sugary syntactic concoction that hides the inner workings of the prototype chain. Understanding how the prototype chain works is crucial if you want to develop performant code while using JavaScript’s OOP paradigm.
+Of course, this all groovy if you’re anyone but a JavaScript developer. Until ES2015, the language did not implement a class. Instead, it used and still uses a prototype chain. The new ES6 “class” is a sugary syntactic concoction that hides the inner workings of the prototype chain. Understanding how the prototype chain works is crucial if you want to develop performant code while using JavaScript’s OOP paradigm.
+
+According to the ECMAScript standard, JavaScript objects are not class-based but are created "via constructors which create objects and then execute code that initializes all or part of them by assigning initial values to their properties. Each constructor is a function that has a property named 'prototype' that is used to implement prototype-based inheritance and shared properties."
+
+ECMAScript defines an object's prototype as "an implicit reference to the value of its constructor's "prototype" property." So, a prototype chain is "a non-null implicit reference to its prototype, and so on." 
 
 For those familiar (or not so familiar) with computer science, the prototype chain is a linked list. It’s a gross oversimplification, but keeping it simple is the key to gaining understanding. Here’s Mozilla‘s definition of a prototype chain:
 
@@ -28,7 +32,14 @@ The image above is slightly misleading because the last element in a prototype c
 
 <h3> How Does Thinking of the Prototype Chain as a List Help?</h3>
 
-Well, there is one major quirk that we should know about lists. When we want to traverse a list, we have to start from the head of the list. So, in terms of Big O notation, it would take O(n) time to retrieve an element in the prototype chain. You can start to imagine the performance problems you might face if you have prototype chains that are too long.
+When you realize that JavaScript is not inherently class-based, it changes the way you think about inheritance. For example, in other languages, sub classes only inherit the structure and behavior of a class, because classes leave state to the instance of a class. On the other hand, JavaScript objects inherit behavior, structure, and state. 
+
+When you think about prototypes as a chain it makes sense that everything becomes inheritable. From a practicale standpoint, this akes sense as well because when interfacing with the client, you want state to freely bubble up or down towawrds different sub classes. React, a JavaScript framework, takes advantage of this property by introducing components that take advantage of JavaScript's use of classes to allow objects to inherit state.
+
+JavaScript classes also differ from other languages because you can add properties whenever you like to objects without defining everything upfront. This allows JavaScript to be more flexible.
+
+
+
 
 <h3>How Do We Initialize Our Chain?</h3>
 
