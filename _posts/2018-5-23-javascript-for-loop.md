@@ -2,7 +2,7 @@
 layout: post
 title: JavaScript For Loop
 image: config.png
-description: Learn JavaScript control flow so that you can master your programs. This tutorial teaches you how to control flow like a pro. 
+description: Learn everything you need to know about the for loop.
 tag: beginner
 ---
 
