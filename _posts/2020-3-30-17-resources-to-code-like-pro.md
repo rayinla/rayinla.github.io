@@ -1,6 +1,7 @@
 ---
 layout: post
 title: 17 Resources You Need to Code Like a Pro
+description: Get up and running with these 17 reasources so that you can code like a boss.
 tag: blog
 ---
 
