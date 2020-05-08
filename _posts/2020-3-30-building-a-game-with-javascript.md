@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Building a Game with JavaScript
+description: Learn event-driven programming, closures, callbacks, and animation by building a game.
 tag: beginner
 ---
 Building a Game with JavaScript
