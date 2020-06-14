@@ -6,10 +6,10 @@ tag: blog
 image: vr.jpg
 ---
 
-How To Earn Money With Open Source
+ How To Make Money From Open Source
 ===========
 
-![earn money with open source](/images/vr.jpg)
+![make money from open source](/images/vr.jpg)
 
 Those who want to get started in open source software often want to know how to make money from open source. Here are the main ways to earn money from open source: donations, grants, sponsorships, ads, and dual licencing. There are some extra ways to make money from open source that we'll discuss later.
 
