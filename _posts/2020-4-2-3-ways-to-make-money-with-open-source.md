@@ -1,17 +1,17 @@
 ---
 layout: post
-title: 3 Ways To Make Money With Open Source
+title: How To Earn Money With Open Source
 description: Those who want to get started in open source often want to know how open source makes money. We'll tell you how.
 tag: blog
 image: vr.jpg
 ---
 
-3 Ways To Make Money With Open Source
+How To Earn Money With Open Source
 ===========
 
-![nerd](/images/vr.jpg)
+![earn money with open source](/images/vr.jpg)
 
-Those who want to get started in open source software often want to know how open source makes money. Here's the three main ways to earn money with open source: donations/grants, sponsorships/ads, and dual licencing. There are some extra ways to make money from open source that we'll discuss later.
+Those who want to get started in open source software often want to know how to earn money with open source. Here are the main ways to earn money with open source: donations, grants, sponsorships, ads, and dual licencing. There are some extra ways to make money from open source that we'll discuss later.
 
 I'll describe each of these categories in detail, but first let's explore the history of open source. If you don't want to do that, you can just skip over to the ways open source makes money.
 
