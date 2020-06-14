@@ -15,6 +15,8 @@ Those who want to get started in open source software often want to know how to 
 
 I'll describe each of these categories in detail, but first let's explore the history of open source. If you don't want to do that, you can just skip over to the ways open source makes money.
 
+<h2> What is Open Source? </h2?
+
 The philosophy of open source dates back to the early era of computing, where programmers shared ideas in order to maximize the limits of the first computers. There was a collegiate atmosphere in the field of software development that trumped ideas over monetization. However, when computers became mainstream, commercialized software that would run on those computers threatened to cut off collaboration. It would be corporations who held a monopoly on code and ideas. 
 
 The Open Software Initiative was founded in 1998 to combat that problem. The idea was that source code would be shared to the public for free. The public would then be able to use and distribute the code with little to no restrictions. 
@@ -23,20 +25,27 @@ But free access does not mean open source software has to be free of cost. There
 
 Henry Zhu, the maintainer of Babel, countered the “freemium” ideology in an excellent TechCrunch article written months ago when he said, “We trust startups with millions of VC money and encourage a culture of ‘failing fast,’ yet somehow the idea of giving to volunteers who may have showed years of dedication is undesirable?”
 
-In response to burnout, large open source repositories like Babel that take on a core group of maintainers have turned to sources of revenue that can co-exist with the open source creed. There are three major ways to fund your open source project.
+In response to burnout, large open source repositories like Babel that take on a core group of maintainers have turned to sources of revenue that can co-exist with the open source creed. There are several companies like RedHat, Elastic, and MongoDB that are profitable despite being open source. 
 
-<h2> The Ways to Earn Money </h2>
+So, how can we make money from open source?
+
+<h2> #1: We need loyal users </h2>
+
+This seems to go without saying, but it's important to understand that we need to build a great product before we can ever expect to monetize it effectively. The only way we can clear the "freemiun" hurdle is by building a tool that entices users to delve deeper. There's a lot of competition out there in the open source world and we need to convince users of our credibility. That means crediting the right people and building a team of contributors that users can trust. Something as simple as a top notch documentation of the codebase can signal to users that the project is credible. As a result, they will be more willing to part with their money, trusting that the contributors have strong command of their project.
+
+Once we have loyal users, we can then explore ways in which we can make money from the project.
+
+<h2> Options for monetization </h2>
 
 <h3> Donations  and grants</h3>
 Henry Zhu rightly mentioned the contradiction within the VC-backed startup culture where millions are poured into failing companies while large, proven open source projects are forced to gather whatever comes to them in the way of donations. On the other hand, the nature of donations have changed because of services like Kickstarter and GoFundMe. While these sites cater more to commercial products, an innovative open source project can take advantage of crowdsourcing  by linking its Kickstarter or GoFundMe account within its GitHub page. 
-
 
 This may not seem to much different from the usual “pay for my coffee” Paypal donations at first, but many projects don’t detail why donations are needed. Many users think that projects are maintained by a horde of developers who have plenty of time to spare on these projects. A well constructed pitch can have the potential to fuel contributions from large companies who would like to use the software.
 
 Specifically, there are software foundations that offer grants. You can check out the Python Software foundation, the Sloan foundation, and Mozilla Open Source Support.
 
 <h3> Sponsorships </h3>
-Someone asking how to make money with open source is kinda like a blogger asking how to make money blogging. The blogger provides useful information at no cost to his or her reader. So what do they do? They advertise/market/etc. I know that idea makes us developers cringe, but you have to put on your business hat if you want to make money with open source. Rather than fill the download page of your project with ads, you can tastefully include sponsorships if your project is heavily trafficked. 
+Someone asking how to make money with open source is  like a blogger asking how to make money blogging. The blogger provides useful information at no cost to his or her reader. So what do they do? They advertise/market/etc. I know that idea makes us developers cringe, but you have to put on your business hat if you want to make money with open source. Rather than fill the download page of your project with ads, you can tastefully include sponsorships if your project is heavily trafficked. 
 
 
 For thoses first embarking on a project, you can still think like a blogger. Why not market your project to sites like reddit and HackerNews? If your project is truly worth paying for, those communities will likely respond positively. They may create a word of mouth that sends traffic to your landing page. 
@@ -47,6 +56,9 @@ Once you get a certain amount of traffic, you can usher in the sponsors. You can
 What's great about sponsorships is that if you make the right deals, you can make much more than you would on, say, Adsense because you essentially cut out the middleman. Also, by aligning yourself with companies like DigitalOcean you further legitimize your product, though that's an admittedly small benefit.
 
 In an age when Microsoft is trying so hard to show users that they support open source, now is the time to take advantage of this and leverage goodwill. There is money to be made by persuading a tech company that a sponsorship logo on an open source landing page is worth a lot of money. 
+
+<h3> Government Funding </h3>
+If you're wondering how to make money to develop open source project as a solo act, then you may be able to work in collaboration with  government institutions to build open source technologies. Now that entire industries are moving online, you may be able to find a rare position that allows you to get paid a salary while doing what you love.
 
 <h3>Paid Support</h3>
 Providing paid support would be the next step in terms of monetization depending on the size of the project. In fact, it should be the first step, because many businesses won't sniff your software if they can't get reliable customer service. The point of using open source software is to save time, but if a business has to waste that time fixing issues with a project, then they might as well build their own. Your knowledge of the project is more valuable than the project in a sense.
@@ -68,11 +80,20 @@ The concept behind dual licensing isn’t new. Software companies often offer a 
 
 Licence Zero streamlines this process by providing two licence options: the prosperity and parity licenses. The former allows a 32 day free trial for commercial users while the latter forces the commercial user to open source their software. Either way, the idea is to make sure those who can afford to support the open source project do so. 
 
-<h3> Government Funding </h3>
-If you're wondering how to make money to develop open source project as a solo act, then you may be able to work in collaboration with  government institutions to build open source technologies. Now that entire industries are moving online, you may be able to find a rare position that allows you to get paid a salary while doing what you love.
+<h3> Open Core </h3>
+
+One of the best ways to make money from open source is to follow the premium model, where you allow users to freely use some features within your project while restricting other features for power users(enterprises, etc.). The key here is in balancing what you keep as open source with what you decide to keep proprietary.
+
+You shouldn't make users feel that they have to pay for premium features to use your project. You can avoid potential issues by pinning down the features that one would need to scale their project from an MVP stage to production. The tools that will be useful for deployment and production should be made proprietary so that you can make a customer out of a company.
+
+What's cool about this strategy is that you can also bundle paid support for the proprieatary features. Rather than providing support for the entire project, you can allocate time and effort to help clients that have already proven that they're willing to pay premium.
+
+<h3> Software as a Service </h3>
+
+You can host your project so that users don't have to worry about maintanance headaches like upgrades, downtime, and backups. Then, you can charge your users a fee for this service. SaaS is commonly used to side-step all the issues involved with paid support. It's a scalable version of paid support thanks to the cloud. 
 
 <h3>Conclusion</h3>
-Open source projects require the same open spirit within finance. In order for the best projects to continue to thrive, we need to find ways to fund them while still maintaining open source principles. The goal of open source was to provide code that can be shared by other coders. Now that developers have become  increasingly been dependent on repositories like Babel, the balance has shifted somewhat and has made some projects more of a service than a collaboration. To establish balance, projects have to acquire donations, offer support, or creatively licence their service. 
+In order for the best projects to continue to thrive, we need to find ways to fund them while still maintaining open source principles. The goal of open source was to provide code that can be shared by other coders. Now that developers have become  increasingly been dependent on repositories like Babel, the balance has shifted somewhat and has made some projects more of a service than a collaboration. Oftentimes, a cocktail of strategies have to be used to overcome the small conversion rate involved with open source. 
 
 
 
