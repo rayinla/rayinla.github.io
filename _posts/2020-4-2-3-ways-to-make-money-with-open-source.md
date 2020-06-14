@@ -15,7 +15,7 @@ Those who want to get started in open source software often want to know how to 
 
 I'll describe each of these categories in detail, but first let's explore the history of open source. If you don't want to do that, you can just skip over to the ways open source makes money.
 
-<h2> What is Open Source? </h2?
+<h2> What is Open Source? </h2>
 
 The philosophy of open source dates back to the early era of computing, where programmers shared ideas in order to maximize the limits of the first computers. There was a collegiate atmosphere in the field of software development that trumped ideas over monetization. However, when computers became mainstream, commercialized software that would run on those computers threatened to cut off collaboration. It would be corporations who held a monopoly on code and ideas. 
 
