@@ -2,7 +2,7 @@
 layout: post
 title: JavaScript This and Bind
 description: Learn how JavaScript this and JavaScript bind keywords interact with oneanother to provide context for your variables. And learn how the JavaScript this keyword functions in ES6. 
-tag: beginner
+tag: advanced
 ---
 JavaScript This and Bind
 ==========
