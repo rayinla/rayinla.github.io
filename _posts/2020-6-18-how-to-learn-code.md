@@ -34,9 +34,9 @@ By the time the exam rolled in, I popped in my headphones and listened to the We
 
 There’s this oft repeated phrase that goes, “practise makes perfect.” Said without context, that is not true--at least not absolutely true. Practice brings the conscience into the subconscious, which is good. But bad practice brings bad habits into the subconscious as well. 
 
-An example of one of my bad habits was my overreliance on inefficient methods of problem-solving. Rather than using built in methods, I practised reinventing the machine, fooling myself into believing that I was becoming a good coder. I did this because it was comfortable to draw out code exactly as my brain processed them rather than looking for abstractions. So I became good at being inefficient rather than becoming good at being efficient. 
+An example of one of my bad habits was my overreliance on inefficient methods of problem-solving. Rather than using built in methods, I practised reinventing the machine, fooling myself into believing that I was becoming a good coder. I did this because it was comfortable to draw out code exactly as my brain processed them rather than looking for abstractions. I became good at being inefficient rather than becoming good at being efficient. In order to fix this, I implemented a few methods that you can use to learn how to code. 
 
-So, <b>to actually learn something, we have to know the right way to do it. And to know the right way to do things we have to ask questions.</b> I asked a lot more questions my second time round. I made sure that what I was doing was efficient, not only correct. It’s very easy to say, “well, the code works, so that’s that.” But why does it work? How can I do the same thing with less code? Is there some method in the docs that will allow me to achieve this goal?
+<b> First, I asked a lot more questions my second time round.</b> T actually learn something, we have to know the right way to do it. And to know the right way to do things we have to ask questions. I made sure that what I was doing was efficient, not only correct. It’s very easy to say, “well, the code works, so that’s that.” But why does it work? How can I do the same thing with less code? Is there some method in the documentation that will allow me to achieve this goal?
 
 <b> Secondly, I reinforced my learning with review.</b> After spending the day coding, I would get home and go over the lesson plans to ensure that I grasped nuances that would help me improve. We can always reinforce our learning by changing things up. Why not read a book? Then, switch over to a quick and dirty article? What was left out? What can you add? That makes the actual coding more fun because you’re engaged with the code. Now, this is not possible for most people, but, in small increments, it may help some.
 
@@ -85,8 +85,11 @@ I’ll end this long diatribe by saying this: we should at least learn to love w
 But, hell, the result sure is sweet.
 
 
+<h3> Bonus Content/ Glossary:</h3>
 
+<b>Documentation:</b> These are pages curated by language experts that provide detailed explanation of almost every aspect of the language. It's like the instructions to IKEA furniture. You should treat them like cheat sheets if you want to be able to solve problems as you code. They might look a little scary at first, but you'll get used to them. You should make a habit of frequenting them wheveever you get stuck. 
 
+<b> Coding Bootcamp </b> There are many coding bootcamps out there. Most of them cost a lot of money and they teach you different languages depending on the bootcamp. I would honestly treat these bootcamps as a last resort if you really feel like you've tried everything or if you're the sort of person that isn't self-motivated.
  
 
 
