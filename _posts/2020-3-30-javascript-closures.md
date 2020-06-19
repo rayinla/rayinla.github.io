@@ -2,7 +2,7 @@
 layout: post
 title: JavaScript Closures
 description: When you’re first learning JavaScript, terms like closures  make the language appear mystical. This JavaScript tutorial will demystify this arcane concept. 
-tag: beginner
+tag: advanced
 ---
 
 JavaScript Closures
