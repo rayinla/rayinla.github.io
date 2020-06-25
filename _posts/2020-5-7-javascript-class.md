@@ -8,7 +8,7 @@ JavaScript Class
 ==========
 
 
-You can think of classes as houses that contain variables  and functions. The same reason we use a variable to store numbers is the same reason we use a class to store functions; we want to be able to create a pattern that allows us to reuse information in an efficient way.
+You can think of a JavaScript class as a house that contain variables  and functions. The same reason we use a variable to store numbers is the same reason we use a class to store functions; we want to be able to create a pattern that allows us to reuse information in an efficient way.
 
 But classes are special because they work like a blue print for other people to use and build cool things with. For example, I can have a class that's called Warrior. 
 
