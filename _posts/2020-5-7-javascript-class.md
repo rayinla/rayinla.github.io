@@ -1,10 +1,10 @@
 ---
 layout: post
-title: JavaScript Classes
+title: JavaScript Class
 description: Learn everything you need to create classes in ES5 and ES6.
 tag: beginner
 ---
-JavaScript Classes
+JavaScript Class
 ==========
 
 
