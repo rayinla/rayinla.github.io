@@ -19,7 +19,7 @@ This seems to go without saying, but it's important to understand that we need t
 
 Once we have loyal users, we can then explore ways in which we can make money from the project.
 
-<h2> Options for monetization </h2>
+<h2> #2: Options for monetization </h2>
 
 <h3> Donations  and grants</h3>
 Henry Zhu rightly mentioned the contradiction within the VC-backed startup culture where millions are poured into failing companies while large, proven open source projects are forced to gather whatever comes to them in the way of donations. On the other hand, the nature of donations have changed because of services like Kickstarter and GoFundMe. While these sites cater more to commercial products, an innovative open source project can take advantage of crowdsourcing  by linking its Kickstarter or GoFundMe account within its GitHub page. 
