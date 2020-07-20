@@ -11,23 +11,7 @@ image: vr.jpg
 
 ![make money from open source](/images/vr.jpg)
 
-Those who want to get started in open source software often want to know how to make money from open source. Here are the main ways to earn money from open source: donations, grants, sponsorships, ads, and dual licencing. There are some extra ways to make money from open source that we'll discuss later.
-
-I'll describe each of these categories in detail, but first let's explore the history of open source. If you don't want to do that, you can just skip over to the ways open source makes money.
-
-<h2> What is Open Source? </h2>
-
-The philosophy of open source dates back to the early era of computing, where programmers shared ideas in order to maximize the limits of the first computers. There was a collegiate atmosphere in the field of software development that trumped ideas over monetization. However, when computers became mainstream, commercialized software that would run on those computers threatened to cut off collaboration. It would be corporations who held a monopoly on code and ideas. 
-
-The Open Software Initiative was founded in 1998 to combat that problem. The idea was that source code would be shared to the public for free. The public would then be able to use and distribute the code with little to no restrictions. 
-
-But free access does not mean open source software has to be free of cost. There are ways to alleviate the pressure of having to continuously maintain projects that suck valuable time away, time you’re happy to share, but time nonetheless. The problem arises when money is introduced to a community that balks at the mention of commercialism as it pertains to open source. 
-
-Henry Zhu, the maintainer of Babel, countered the “freemium” ideology in an excellent TechCrunch article written months ago when he said, “We trust startups with millions of VC money and encourage a culture of ‘failing fast,’ yet somehow the idea of giving to volunteers who may have showed years of dedication is undesirable?”
-
-In response to burnout, large open source repositories like Babel that take on a core group of maintainers have turned to sources of revenue that can co-exist with the open source creed. There are several companies like RedHat, Elastic, and MongoDB that are profitable despite being open source. 
-
-So, how can we make money from open source?
+Those who want to get started in open source software often want to know how to make money from open source. Here are the main ways to earn money from open source: donations, grants, sponsorships, ads, and dual licencing. There are some extra ways we can make money from open source that we'll discuss later. But first...
 
 <h2> #1: We need loyal users </h2>
 
