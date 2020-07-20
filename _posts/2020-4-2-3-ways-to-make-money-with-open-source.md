@@ -11,7 +11,7 @@ image: vr.jpg
 
 ![make money from open source](/images/vr.jpg)
 
-Those who want to get started in open source software often want to know how to make money from open source. Here are the main ways to earn money from open source: donations, grants, sponsorships, ads, and dual licencing. There are some extra ways we can make money from open source that we'll discuss later. But first...
+Those who want to get started in open source software often want to know how to make money from open source. Here are the main ways to earn money from open source: donations, grants, sponsorships, ads, licencing, and SaaS. But first...
 
 <h2> #1: We need loyal users </h2>
 
