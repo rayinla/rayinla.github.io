@@ -11,7 +11,7 @@ image: vr.jpg
 
 ![make money from open source](/images/vr.jpg)
 
-Those who want to get started in open source software often want to know how to make money from open source. Here are the main ways to earn money from open source: donations, grants, sponsorships, ads, licencing, open core, and SaaS. I'll give a brief overview of these methods below:
+Here are the main ways to earn money from open source: donations, grants, sponsorships, ads, licencing, open core, and SaaS. I'll give a brief overview of these methods below:
 
 <h3> Donations  and grants</h3>
  An innovative open source project can take advantage of crowdsourcing  by linking its Kickstarter or GoFundMe account within its GitHub page. This may not seem to much different from the usual “pay for my coffee” Paypal donations at first, but many projects don’t detail why donations are needed. Many users think that projects are maintained by a horde of developers who have plenty of time to spare on these projects. A well constructed pitch can have the potential to fuel contributions from large companies who would like to use the software.
