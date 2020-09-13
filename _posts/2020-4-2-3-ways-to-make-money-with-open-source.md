@@ -11,15 +11,7 @@ image: vr.jpg
 
 ![make money from open source](/images/vr.jpg)
 
-Those who want to get started in open source software often want to know how to make money from open source. Here are the main ways to earn money from open source: donations, grants, sponsorships, ads, licencing, and SaaS. But first...
-
-<h2> #1: We need loyal users </h2>
-
-This seems to go without saying, but it's important to understand that we need to build a great product before we can ever expect to monetize it effectively. The only way we can clear the "freemiun" hurdle is by building a tool that entices users to delve deeper. There's a lot of competition out there in the open source world and we need to convince users of our credibility. That means crediting the right people and building a team of contributors that users can trust. Something as simple as a top notch documentation of the codebase can signal to users that the project is credible. As a result, they will be more willing to part with their money, trusting that the contributors have strong command of their project.
-
-Once we have loyal users, we can then explore ways in which we can make money from the project.
-
-<h2> #2: Options for monetization </h2>
+Those who want to get started in open source software often want to know how to make money from open source. Here are the main ways to earn money from open source: donations, grants, sponsorships, ads, licencing, open core, and SaaS. I'll give a brief overview of these methods below:
 
 <h3> Donations  and grants</h3>
  An innovative open source project can take advantage of crowdsourcing  by linking its Kickstarter or GoFundMe account within its GitHub page. This may not seem to much different from the usual “pay for my coffee” Paypal donations at first, but many projects don’t detail why donations are needed. Many users think that projects are maintained by a horde of developers who have plenty of time to spare on these projects. A well constructed pitch can have the potential to fuel contributions from large companies who would like to use the software.
